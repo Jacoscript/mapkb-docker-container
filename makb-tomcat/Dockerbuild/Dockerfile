@@ -4,7 +4,7 @@
 # THIS SCRIPT COULD BE MODIFIED TO BUILD THEM FROM SOURCE
 # !!!! .war, .jar and /usgs files must be added to the Dockerbuild folder !!!!
 
-FROM tomcat:9.0.30-jdk11-openjdk-slim
+FROM tomcat:9.0.30-jdk11-openjdk
 ENV karma karma-web-0.0.1-SNAPSHOT
 ENV tomcat_dir /usr/local/tomcat
 ENV tomcat_bin $tomcat_dir/bin
