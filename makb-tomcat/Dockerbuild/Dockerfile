@@ -6,7 +6,11 @@
 
 FROM tomcat:9.0.30-jdk11-openjdk-slim
 ENV karma karma-web-0.0.1-SNAPSHOT
+ENV tomcat_dir /usr/local/tomcat
+ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /usr/local/tomcat/webapps
+ENV marmotta_dir /marmotta
+ENV marmotta_config_dir $marmotta_dir/config
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 
@@ -23,6 +27,26 @@ COPY  $karma.war $webapps
 RUN mkdir $webapps/usgs
 COPY 'usgs' $webapps/usgs
 
+# Configure Tomcat
+RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/marmotta' > $tomcat_bin/setenv.sh 
+RUN echo 'export JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Xmx4096m -XX:PermSize=128m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError"' >> $tomcat_bin/setenv.sh
+RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/setenv.sh
+RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
+
+RUN mkdir $webapps/karma
+COPY python $webapps/karma
+COPY preloaded-ontologies $webapps/karma
+
+# Configure Marmotta
+RUN mkdir -p $marmotta_config_dir
+COPY karma_wfs_config.properties $marmotta_config_dir
+COPY karma_wfs_mappings.properties $marmotta_config_dir
+COPY karma_wfs_uris.properties $marmotta_config_dir
+RUN mkdir -p $marmotta_dir/WEB-INF/lib
+COPY ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
+COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
+
+# TODO: Write intialization script to start catalina and move configs
+
 # Tomcat listens on port 8080
 EXPOSE 8080
-
