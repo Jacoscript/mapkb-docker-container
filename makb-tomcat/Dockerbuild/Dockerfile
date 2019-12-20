@@ -2,7 +2,7 @@
 # WAR FILES ARE TOO LARGE TO STORE IN GITLAB
 # IF PROBLEMS COULD BE RESOLVED WITH GITHUB AND MAVEN ON LOCAL WORKSTATIONS
 # THIS SCRIPT COULD BE MODIFIED TO BUILD THEM FROM SOURCE
-# !!!! .war files must be added to the Dockerbuild folder !!!!
+# !!!! .war, .jar and /usgs files must be added to the Dockerbuild folder !!!!
 
 FROM tomcat:9.0.30-jdk11-openjdk-slim
 ENV karma karma-web-0.0.1-SNAPSHOT
@@ -28,7 +28,7 @@ RUN mkdir $webapps/usgs
 COPY 'usgs' $webapps/usgs
 
 # Configure Tomcat
-RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/marmotta' > $tomcat_bin/setenv.sh 
+RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/webapps/marmotta' > $tomcat_bin/setenv.sh 
 RUN echo 'export JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Xmx4096m -XX:PermSize=128m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError"' >> $tomcat_bin/setenv.sh
 RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/setenv.sh
 RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
@@ -47,6 +47,10 @@ COPY ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
 COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
 
 # TODO: Write intialization script to start catalina and move configs
+COPY docker-entrypoint.sh /usr/local/bin
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Tomcat listens on port 8080
 EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
