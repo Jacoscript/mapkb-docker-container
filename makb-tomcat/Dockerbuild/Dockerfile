@@ -11,6 +11,7 @@ ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /usr/local/tomcat/webapps
 ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
+ENV jar jar
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 
@@ -19,13 +20,13 @@ RUN mkdir -p '/usr/local/tomcat/conf/Catalina/localhost'
 COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 
 # Deploy requisite war files 
-COPY 'geoserver.war' $webapps
-COPY 'marmotta.war' $webapps
-COPY  $karma.war $webapps 
+COPY $jar/geoserver.war $webapps
+COPY $jar/marmotta.war $webapps
+COPY $jar/$karma.war $webapps 
 
 # Deploy USGS Karma4Marmotta
 RUN mkdir $webapps/usgs
-COPY 'usgs' $webapps/usgs
+COPY $jar/usgs $webapps/usgs
 
 # Configure Tomcat
 RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/webapps/marmotta' > $tomcat_bin/setenv.sh 
@@ -34,8 +35,8 @@ RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/set
 RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
 
 RUN mkdir $webapps/karma
-COPY python $webapps/karma
-COPY preloaded-ontologies $webapps/karma
+COPY $jar/python $webapps/karma
+COPY $jar/preloaded-ontologies $webapps/karma
 
 # Configure Marmotta
 RUN mkdir -p $marmotta_config_dir
@@ -43,7 +44,7 @@ COPY karma_wfs_config.properties $marmotta_config_dir
 COPY karma_wfs_mappings.properties $marmotta_config_dir
 COPY karma_wfs_uris.properties $marmotta_config_dir
 RUN mkdir -p $marmotta_dir/WEB-INF/lib
-COPY ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
+COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
 COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
 
 # TODO: Write intialization script to start catalina and move configs
