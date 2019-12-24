@@ -12,6 +12,10 @@ ENV webapps /usr/local/tomcat/webapps
 ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
+
+# Install Maven
+RUN apt-get update && apt-get install maven -y
+
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 
@@ -23,6 +27,7 @@ COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 COPY $jar/geoserver.war $webapps
 COPY $jar/marmotta.war $webapps
 COPY $jar/$karma.war $webapps 
+COPY $jar/web-services-rdf-0.0.1-SNAPSHOT.war $webapps
 
 # Deploy USGS Karma4Marmotta
 RUN mkdir $webapps/usgs
@@ -46,7 +51,7 @@ COPY karma_wfs_mappings.properties $marmotta_config_dir
 COPY karma_wfs_uris.properties $marmotta_config_dir
 RUN mkdir -p $marmotta_dir/WEB-INF/lib
 COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
-COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
+#COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
 
 # TODO: Write intialization script to start catalina and move configs
 COPY docker-entrypoint.sh /usr/local/bin
