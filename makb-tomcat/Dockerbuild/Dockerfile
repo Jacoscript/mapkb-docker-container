@@ -14,7 +14,7 @@ ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
 
 # Install Maven
-RUN apt-get update && apt-get install maven -y
+RUN apt-get update && apt-get install maven openssh-server -y
 
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
@@ -40,6 +40,13 @@ RUN echo 'export JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Xmx4096m -XX:PermSi
 RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/setenv.sh
 RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
 
+# Configure SSH
+RUN echo "root:toor" | chpasswd
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
 RUN mkdir $webapps/karma
 COPY $jar/python $webapps/karma
 COPY $jar/preloaded-ontologies $webapps/karma
@@ -59,5 +66,6 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Tomcat listens on port 8080
 EXPOSE 8080
+EXPOSE 22
 
 CMD ["catalina.sh", "run"]

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+service ssh start
+
 if [ "$1" = 'catalina.sh' ]; then
     if [ -d /marmotta ]; then
         echo "Initializing MAKB, this will take about 60 seconds"
