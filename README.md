@@ -55,6 +55,40 @@ The icon appears as follows: ![Green Arrows](images/vs42.png)
 14. Enter the password, in this case __toor__ and press enter.  
 ![Remote-SSH: Password](images/vs141.png)  
 15. Visual Studio Code is now configured to allow you to do development in your container. You can `cd /usr/local/tomcat/webapps` and clone MAKB directly to the webapps folder on the container.
+## Connecting your container to GitLab
+These instructions assume you've already configured Visual Studio Code to connect your container.  
+1.  Start your docker instances if you haven't already done so and connect Visual Studio Code.
+2.  Open a new terminal by Clicking `Terminal > New Terminal`
+3.  In the new terminal pane type `ssh-keygen` and press Enter
+4.  Continue pressing enter until the command completes.
+5.  Click `File > Open file` and navigate to /root/.ssh/id_rsa.pub
+6.  Copy the text to the clipboard.
+7.  Using your favorite web browser, navigate to [https://code.chs.usgs.gov/groups/cegis](https://code.chs.usgs.gov/groups/cegis) and log in with your AD credentials.
+8.  Click the Avatar in the upright hand corner of the browser view port and select Settings.
+9.  On the left hand side select 'SSH Keys'
+10. In the Key field paste the text you copied from Visual Studio Code.
+11. In the title field give the key is nice name, like MAKB Docker Container.
+12. Click Add key
+13. Close the browser window. You are done with it.
+14. If the id_rsa.pub file is still open in Visual Studio Code, close it.
+15. Open a new terminal pane if one is not already open.
+16. Type `cd /usr/local/tomcat/webapps` and press Enter
+17. Type `git clone git@code.chs.usgs.gov:cegis/makb.git` and press Enter
+18. If you are prompted to continue connecting say yes
+19. Click `File > Open Folder`
+20. Navigate to `/usr/local/tomcat/webapps/makb` or simply paste it in the dialog box and press Enter.  
+21. Enter your container password (__toor__) when prompted to do so.  
+22. Congratulations, you can now interact with with your container filesystem and MAKB Git repository through Visual Studio Code.
+
+
+
+
+
+
+
+
+
+
 # I've screwed up my development environment, now what?
 If you should find yourself in a situation where you've done something that leaves your containers in an unworkable state (or it's just too timeconsuming to fix), simply issue the command `docker-compose down` followed by the command `docker-compose up` from the root of your cloned repository as indicated by the screenshot below:  
 ![Repaving container](images/screwup1.png)  
