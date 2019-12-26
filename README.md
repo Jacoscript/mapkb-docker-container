@@ -33,10 +33,28 @@ Visual Studio Code has the ability to interact with a remote file system over SS
 ![Extensions](images/vs21.png)  
 3.  After installing the install button will change to a gear icon:   ![Gear Icon](images/vs31.png)
 4.  Find the green arrows at the bottom left corner of the windows and click them.  
-![Green Arrows](images/vs41.png)
-The icon appears as follows: ![Green Arrows](images/vs42.png)
+![Green Arrows](images/vs41.png)  
+The icon appears as follows: ![Green Arrows](images/vs42.png)  
 5.  In the resulting popup dialog select Remote-SSH: Connect to Host..., ignoring any other options.  
-![Remote-SSH: Connect to Host...](images/vs51.png)
+![Remote-SSH: Connect to Host...](images/vs51.png)  
+6.  Select Add New SSH Host..., ignoring any other options  
+![Add New SSH Host...](images/vs61.png)  
+7.  Type `ssh root@localhost -p 2222` in the dialog box and press Enter  
+![SSH Host](images/vs71.png)  
+8.  Select the top config file and press enter.  
+![SSH Config](images/vs81.png)  
+9.  Upon completion, the following dialog box will show up in the lower right corner of the window:  
+![SSH Host Configured](images/vs91.png)  
+10. Click the green arrows in the lower left hand corner again. ![Green Arrows](images/vs42.png)  
+11. In the resulting popup dialog select Remote-SSH: Connect to Host..., ignoring any other options.  
+![Remote-SSH: Connect to Host...](images/vs51.png)  
+12. Select localhost and press Enter  
+![Remote-SSH: localhost](images/vs121.png)  
+13. Visual Studio Code will open a new window and ask you to accept the SHA fingerprint, click Continue.  
+![Remote-SSH: Fingerprint](images/vs131.png)  
+14. Enter the password, in this case __toor__ and press enter.  
+![Remote-SSH: Password](images/vs141.png)  
+15. Visual Studio Code is now configured to allow you to do development in your container. You can `cd /usr/local/tomcat/webapps` and clone MAKB directly to the webapps folder on the container.
 # I've screwed up my development environment, now what?
 If you should find yourself in a situation where you've done something that leaves your containers in an unworkable state (or it's just too timeconsuming to fix), simply issue the command `docker-compose down` followed by the command `docker-compose up` from the root of your cloned repository as indicated by the screenshot below:  
 ![Repaving container](images/screwup1.png)  
