@@ -13,8 +13,8 @@
 9.  In the powershell window press CTRL+C to stop the MAKB containers.
 # How to start and stop the MAKB containers
 If Docker Desktop isn't running, start it.
-Open a powershell terminal, (again bash can be used interchangably here) and change directory to the root of your cloned repository.
-Type `docker-compose start` to start the MAKB containers.
-When you are done for the day, type `docker-compose stop` to shutdown the container.
+Open a powershell terminal, (again bash can be used interchangably here) and change directory to the root of your cloned repository.  
+Type `docker-compose start` to start the MAKB containers.  
+When you are done for the day, type `docker-compose stop` to shutdown the container.   
 __There is another command `docker-compose down`, this will destroy the containers and will not give you an opportunity to confirm, you extreme caution before running this command__
 
