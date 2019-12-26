@@ -16,5 +16,13 @@ If Docker Desktop isn't running, start it.
 Open a powershell terminal, (again bash can be used interchangably here) and change directory to the root of your cloned repository.  
 Type `docker-compose start` to start the MAKB containers.  
 When you are done for the day, type `docker-compose stop` to shutdown the container.   
-__There is another command `docker-compose down`, this will destroy the containers and will not give you an opportunity to confirm, you extreme caution before running this command__
+__There is another command `docker-compose down`, this will destroy the containers and will not give you an opportunity to confirm, use extreme caution before running this command__
+# So what do I do with this?
+My original goal was to create a sort of shared folder between the tomcat container and the local workstation (a volume in docker terminology). Unfortunately the firewall rules within the organization prevented me from doing so.  Instead I installed SSH in the tomcat container.  
+To access the container via SSH, simply point your preferred SSH client at _localhost_ port _2222_.  
+If you are using the Windows (or Linux) SSH client thw command is as follows: `ssh root@localhost -p 2222`  
+If you are using PuTTY the PuTTY configuration is as follows:
+![PuTTY configuration](images/putty1.png)
+If you are prompted for a username, the username is __root__ the password to log in is __toor__
+
 
