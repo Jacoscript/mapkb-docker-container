@@ -31,7 +31,9 @@ Visual Studio Code has the ability to interact with a remote file system over SS
 1.  Download [Visual Studio Code.](https://code.visualstudio.com/)
 2.  Click on the Extensions Pane and install the Remote - SSH extension provided by Microsoft by clicking the green install button.  If the extension cannot be found simply type "SSH" into the search box:  
 ![Extensions](images/vs21.png)  
-3.  After installing the install button will change to a gear icon:   ![Gear Icon](images/vs31.png)  
+3.  After installing the install button will change to a gear icon:   ![Gear Icon](images/vs31.png)
+4.  Find the green arrows at the bottom left corner of the windows and click them.  
+![Green Arrows](images/vs41.png)
 # I've screwed up my development environment, now what?
 If you should find yourself in a situation where you've done something that leaves your containers in an unworkable state (or it's just too timeconsuming to fix), simply issue the command `docker-compose down` followed by the command `docker-compose up` from the root of your cloned repository as indicated by the screenshot below:  
 ![Repaving container](images/screwup1.png)  
