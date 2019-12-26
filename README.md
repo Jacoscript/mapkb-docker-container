@@ -35,6 +35,8 @@ Visual Studio Code has the ability to interact with a remote file system over SS
 4.  Find the green arrows at the bottom left corner of the windows and click them.  
 ![Green Arrows](images/vs41.png)
 The icon appears as follows: ![Green Arrows](images/vs42.png)
+5.  In the resulting popup dialog select Remote-SSH: Connect to Host..., ignoring any other options.  
+![Remote-SSH: Connect to Host...](images/vs51.png)
 # I've screwed up my development environment, now what?
 If you should find yourself in a situation where you've done something that leaves your containers in an unworkable state (or it's just too timeconsuming to fix), simply issue the command `docker-compose down` followed by the command `docker-compose up` from the root of your cloned repository as indicated by the screenshot below:  
 ![Repaving container](images/screwup1.png)  
