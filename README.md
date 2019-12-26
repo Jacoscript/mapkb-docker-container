@@ -29,5 +29,7 @@ At a minimum this allows you to do all your development as you've always done.  
 # I've screwed up my development environment, now what?
 If you should find yourself in a situation where you've done something that leaves your containers in an unworkable state (or it's just too timeconsuming to fix), simply issue the command `docker-compose down` followed by the command `docker-compose up` from the root of your cloned repository as indicated by the screenshot below:  
 ![Repaving container](images/screwup1.png)  
-__IF YOU ARE DOING ANY DEVELOPMENT INSIDE YOUR CONTAINER MAKE SURE YOU COMMIT AND PUSH ANY CHANGES YOU WISH TO KEEP BEFORE DOING THIS AS THE CONTENTS OF THE CONTAINER WILL BE REVERTED TO THE DEFAULT STATE__
+__IF YOU ARE DOING ANY DEVELOPMENT INSIDE YOUR CONTAINER MAKE SURE YOU COMMIT AND PUSH ANY CHANGES YOU WISH TO KEEP BEFORE DOING THIS AS THE CONTENTS OF THE CONTAINER WILL BE REVERTED TO THE DEFAULT STATE__  
+Any authenication tokens will also be destroyed as well.  You will need to remove the public key for localhost from `%HOMEPATH%\.ssh\known_hosts`:  
+![Known hosts](images/screwup2.png)  
 
