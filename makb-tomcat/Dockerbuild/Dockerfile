@@ -50,6 +50,8 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 RUN mkdir $webapps/karma
 COPY $jar/python $webapps/karma
 COPY $jar/preloaded-ontologies $webapps/karma
+RUN mkdir $webapps/data
+COPY $jar/data $webapps/data
 
 # Configure Marmotta
 RUN mkdir -p $marmotta_config_dir
