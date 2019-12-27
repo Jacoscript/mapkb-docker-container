@@ -19,6 +19,21 @@ Open a powershell terminal, (again bash can be used interchangably here) and cha
 Type `docker-compose start` to start the MAKB containers.  
 When you are done for the day, type `docker-compose stop` to shutdown the container.   
 __There is another command `docker-compose down`, this will destroy the containers and will not give you an opportunity to confirm, use extreme caution before running this command__
+# Configuring GeoServer
+The Docker entrypoint script uses REST to import the shape files and namespaces for USGS into GeoServer.  Unfortunately I haven't figured out how to automatically publish the layers. Luckily, process is pretty straight forward.
+1.  Navigate to [http://localhost:8080/geoserver](http://localhost:8080/geoserver)
+2.  Login as __admin__ with password __geoserver__  
+![GeoServer Login](images/geoserver21.png) 
+3.  Click the Add layers button  
+![Add Layers](images/geoserver31.png) 
+4.  Select __usgsns:usgs_prototype_geonames__ in the dropdown  
+![New Layer](images/geoserver41.png)
+5.  Click the Publish link  
+![Publish Link](images/geoserver51.png)
+6.  Under __Bounding Boxes__ heading click "Compute from data" and "Compute from native bounds"  
+![Bounding Boxes](images/geoserver61.png)
+7.  Click the save button.
+8.  Click Add a new Layer and repeat steps 3 through 7 for __usgsns_usgs_prototype_gnis__ and __usgsns:usgs_prototype_structures__
 # So what do I do with this?
 My original goal was to create a sort of shared folder between the tomcat container and the local workstation (a volume in docker terminology). Unfortunately the firewall rules within the organization prevented me from doing so.  Instead I installed SSH in the tomcat container.  
 To access the container via SSH, simply point your preferred SSH client at _localhost_ port _2222_.  
