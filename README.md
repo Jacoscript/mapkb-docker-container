@@ -1,7 +1,7 @@
 # Steps for installing
 1.  Create a support ticket with the IT Service Desk to install Docker if it is not already installed on your computer.
 2.  Clone this repository.
-3.  Copy the jar folder from N:\CEGIS\Jacques\makb_container to `./makb-tomcat/Dockerbuild`  
+3.  Copy the jar folder from `N:\CEGIS\Jacques\makb_container` to `./makb-tomcat/Dockerbuild`  
 ![CEGIS folder](images/install31.png)
 ![makb-tomcat folder](images/install32.png)
 4.  Start Docker Desktop if it is not already running.
@@ -33,7 +33,7 @@ The Docker entrypoint script uses REST to import the shape files and namespaces 
 6.  Under __Bounding Boxes__ heading click "Compute from data" and "Compute from native bounds"  
 ![Bounding Boxes](images/geoserver61.png)
 7.  Click the save button.
-8.  Click Add a new Layer and repeat steps 3 through 7 for __usgsns_usgs_prototype_gnis__ and __usgsns:usgs_prototype_structures__
+8.  Click Add a new Layer and repeat steps 3 through 7 for __usgsns:usgs_prototype_gnis__ and __usgsns:usgs_prototype_structures__
 # So what do I do with this?
 My original goal was to create a sort of shared folder between the tomcat container and the local workstation (a volume in docker terminology). Unfortunately the firewall rules within the organization prevented me from doing so.  Instead I installed SSH in the tomcat container.  
 To access the container via SSH, simply point your preferred SSH client at _localhost_ port _2222_.  
