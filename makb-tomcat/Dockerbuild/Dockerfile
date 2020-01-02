@@ -25,7 +25,7 @@ COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 
 # Deploy requisite war files 
 COPY $jar/geoserver.war $webapps
-COPY $jar/marmotta.war $webapps
+COPY $jar/marmotta584.war $webapps/marmotta.war
 COPY $jar/$karma.war $webapps 
 COPY $jar/web-services-rdf-0.0.1-SNAPSHOT.war $webapps
 
