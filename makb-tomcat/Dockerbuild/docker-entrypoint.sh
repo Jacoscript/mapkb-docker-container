@@ -40,6 +40,7 @@ if [ "$1" = 'catalina.sh' ]; then
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.expiry = 240' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.active = true' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.contenttype =' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
+        echo 'security.enabled = false' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
 
         
 
