@@ -23,6 +23,10 @@ COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 RUN mkdir -p '/usr/local/tomcat/conf/Catalina/localhost'
 COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 
+# Copy SSH GitLab keys if we have them
+COPY .ssh /root/.ssh
+RUN chmod 600 /root/.ssh/* 
+
 # Deploy requisite war files 
 COPY $jar/geoserver.war $webapps
 COPY $jar/marmotta.war $webapps
