@@ -40,6 +40,9 @@ if [ "$1" = 'catalina.sh' ]; then
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.expiry = 240' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.active = true' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.contenttype =' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
+        
+        # Disable security in Marmotta
+        echo 'security.enabled = false' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
 
         
 
@@ -47,6 +50,8 @@ if [ "$1" = 'catalina.sh' ]; then
         # Setup database - This is currently broken
         cat /usr/local/tomcat/webapps/marmotta/system-config.properties | sed 's/ = sa/ = postgres/' | sed -e 's/database.url = .*/database.url = jdbc:postgresql:\/\/makb-docker-container_postgresql_1:5432\/marmotta\ndatabase.type = postgres/' > /usr/local/tomcat/webapps/marmotta/system-config.properties.temp
         mv /usr/local/tomcat/webapps/marmotta/system-config.properties.temp /usr/local/tomcat/webapps/marmotta/system-config.properties
+
+        mv /.ssh /root/.ssh
 
     fi 
 
