@@ -1,6 +1,6 @@
 # Steps for installing
 1.  Create a support ticket with the IT Service Desk to install Docker if it is not already installed on your computer.
-2.  Clone this repository.
+2.  Clone this repository. __Do not change the folder name.  It must be stay makb-docker-container, otherwise it will break Docker__
 3.  Copy the jar folder from `N:\CEGIS\Jacques\makb_container` to `./makb-tomcat/Dockerbuild`  
 ![CEGIS folder](images/install31.png)
 ![makb-tomcat folder](images/install32.png)
