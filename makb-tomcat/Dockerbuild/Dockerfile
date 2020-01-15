@@ -22,6 +22,7 @@ COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 # Let all hosts (including local machine) access the manager
 RUN mkdir -p '/usr/local/tomcat/conf/Catalina/localhost'
 COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
+RUN chmod 777 /usr/local/tomcat/conf/Catalina/localhost/manager.xml
 
 # Copy SSH GitLab keys if we have them
 COPY .ssh /root/.ssh
