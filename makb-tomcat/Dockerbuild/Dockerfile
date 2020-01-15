@@ -68,6 +68,7 @@ COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
 
 # TODO: Write intialization script to start catalina and move configs
 COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Tomcat listens on port 8080
