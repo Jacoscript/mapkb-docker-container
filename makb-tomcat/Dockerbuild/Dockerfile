@@ -13,6 +13,8 @@ ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
 
+RUN mv  $webapps.dist/* $webapps
+
 # Install Maven
 RUN apt-get update && apt-get install maven openssh-server -y
 
