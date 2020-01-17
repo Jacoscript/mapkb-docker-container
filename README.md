@@ -59,7 +59,8 @@ The icon appears as follows: ![Green Arrows](images/vs42.png)
 ![Add New SSH Host...](images/vs61.png)  
 7.  Type `ssh root@localhost -p 2222` in the dialog box and press Enter  
 ![SSH Host](images/vs71.png)  
-8.  Select the top config file and press enter.  
+8.  Select the top config file and press enter.
+__If the top config file gives you errors, the bottom config file C:\ProgramData\ssh\ssh\_config works as well__
 ![SSH Config](images/vs81.png)  
 9.  Upon completion, the following dialog box will show up in the lower right corner of the window:  
 ![SSH Host Configured](images/vs91.png)  

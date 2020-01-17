@@ -13,6 +13,8 @@ ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
 
+RUN mv  $webapps.dist/* $webapps
+
 # Install Maven
 RUN apt-get update && apt-get install maven openssh-server -y
 
@@ -68,6 +70,7 @@ COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
 
 # TODO: Write intialization script to start catalina and move configs
 COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Tomcat listens on port 8080
