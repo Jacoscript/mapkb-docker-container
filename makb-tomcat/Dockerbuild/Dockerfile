@@ -4,7 +4,9 @@
 # THIS SCRIPT COULD BE MODIFIED TO BUILD THEM FROM SOURCE
 # !!!! .war, .jar and /usgs files must be added to the Dockerbuild folder !!!!
 
+
 FROM tomcat:9.0.30-jdk11-openjdk
+ARG ENV
 ENV karma karma-web-0.0.1-SNAPSHOT
 ENV tomcat_dir /usr/local/tomcat
 ENV tomcat_bin $tomcat_dir/bin
@@ -12,11 +14,13 @@ ENV webapps /usr/local/tomcat/webapps
 ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
-
 RUN mv  $webapps.dist/* $webapps
 
+# Set development flag
+RUN if [ "$ENV" = "dev" ]; then touch /.is_development; fi
+
 # Install Maven
-RUN apt-get update && apt-get install maven openssh-server -y
+RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get install maven openssh-server -y; fi
 
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
@@ -47,11 +51,13 @@ RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/set
 RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
 
 # Configure SSH
-RUN echo "root:toor" | chpasswd
-RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+RUN if [ "$ENV" = "dev" ]; then echo "root:toor" | chpasswd; fi
+RUN if [ "$ENV" = "dev" ]; then echo "PermitRootLogin yes" >> /etc/ssh/sshd_config; fi
 
 # SSH login fix. Otherwise user is kicked off after login
-RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN if [ "$ENV" = "dev" ]; then sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd; fi
+RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
+
 
 RUN mkdir $webapps/karma
 COPY $jar/python $webapps/karma
