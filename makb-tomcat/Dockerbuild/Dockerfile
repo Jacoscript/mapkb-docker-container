@@ -32,6 +32,10 @@ COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 # Copy SSH GitLab keys if we have them
 COPY .ssh /root/.ssh
 RUN chmod 600 /root/.ssh/* 
+RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
+
+# Clone asset repo
+RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
 
 # Deploy requisite war files 
 COPY $jar/geoserver.war $webapps
@@ -56,7 +60,6 @@ RUN if [ "$ENV" = "dev" ]; then echo "PermitRootLogin yes" >> /etc/ssh/sshd_conf
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN if [ "$ENV" = "dev" ]; then sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd; fi
-RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
 
 
 RUN mkdir $webapps/karma

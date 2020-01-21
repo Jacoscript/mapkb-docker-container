@@ -51,6 +51,7 @@ if [ "$1" = 'catalina.sh' ]; then
         cat /usr/local/tomcat/webapps/marmotta/system-config.properties | sed 's/ = sa/ = postgres/' | sed -e 's/database.url = .*/database.url = jdbc:postgresql:\/\/makb-docker-container_postgresql_1:5432\/marmotta\ndatabase.type = postgres/' > /usr/local/tomcat/webapps/marmotta/system-config.properties.temp
         mv /usr/local/tomcat/webapps/marmotta/system-config.properties.temp /usr/local/tomcat/webapps/marmotta/system-config.properties
 
+
         # Clone the repo if we are not in development
         if [ ! -e /.is_development ]; then 
             git clone git@code.chs.usgs.gov:cegis/makb.git /usr/local/tomcat/webapps/makb
