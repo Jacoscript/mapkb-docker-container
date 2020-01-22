@@ -5,7 +5,7 @@
 # !!!! .war, .jar and /usgs files must be added to the Dockerbuild folder !!!!
 
 
-FROM tomcat:9.0.30-jdk11-openjdk
+FROM makb-assets
 ARG ENV
 ENV karma karma-web-0.0.1-SNAPSHOT
 ENV tomcat_dir /usr/local/tomcat
@@ -30,12 +30,8 @@ RUN mkdir -p '/usr/local/tomcat/conf/Catalina/localhost'
 COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
 
 # Copy SSH GitLab keys if we have them
-COPY .ssh /root/.ssh
-RUN chmod 600 /root/.ssh/* 
-RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
-
-# Clone asset repo
-RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
+COPY .ssh/* /root/.ssh/
+RUN chmod 600 /root/.ssh/*
 
 # Deploy requisite war files 
 COPY $jar/geoserver.war $webapps
