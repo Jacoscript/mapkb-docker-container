@@ -22,6 +22,12 @@ if [ "$1" = 'catalina.sh' ]; then
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_gnis", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:/data/shp/usgs_layers/gnis"} ] } } }' $REST/workspaces/usgsns/datastores
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_structures", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:/data/shp/usgs_layers/structures"} ] } } }' $REST/workspaces/usgsns/datastores
         
+        
+        /makb_assets/scripts/export_geoserver.sh admin geoserver
+        for i in `ls /makb_assets/json_data`
+        do
+            $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
+        done
 
 
         $1 stop

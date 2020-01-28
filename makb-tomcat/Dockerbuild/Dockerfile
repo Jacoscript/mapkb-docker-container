@@ -22,6 +22,9 @@ RUN if [ "$ENV" = "dev" ]; then touch /.is_development; fi
 # Install Maven
 RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get install maven openssh-server -y; fi
 
+# Install htop
+RUN apt-get update && apt-get install htop
+
 # Create a user called tomcat with password s3cret to access manager/html
 COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
 
