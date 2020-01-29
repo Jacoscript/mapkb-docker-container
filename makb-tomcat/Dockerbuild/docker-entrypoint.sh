@@ -24,7 +24,10 @@ if [ "$1" = 'catalina.sh' ]; then
         
         # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
         if [ ! -z ${GEOSERVER_URL+x} ]; then 
+            echo "Running Geoserver layer export"
             /makb_assets/scripts/export_geoserver.sh
+        fi
+        echo "Running Geoserver layer import"
         for i in `ls /makb_assets/json_data`
         do
             $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
