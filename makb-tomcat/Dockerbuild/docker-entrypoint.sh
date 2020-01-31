@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MAKB_ASSETS="/makb_assets"
+SCRIPTS="$MAKB_ASSETS/scripts"
 if [ -e /.is_development ]; then service ssh start; fi
 
 if [ "$1" = 'catalina.sh' ]; then
@@ -32,6 +34,10 @@ if [ "$1" = 'catalina.sh' ]; then
         do
             $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
         done
+
+        # Do script imports
+        $SCRIPTS/convert.sh
+        $SCRIPTS/import_marmotta.sh
 
 
         $1 stop
