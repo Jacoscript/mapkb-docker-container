@@ -14,7 +14,7 @@ COPY makb_assets /makb_assets
 RUN chmod a+x /makb_assets/scripts/*
 
 # Download data
-RUN /makb_assets/scripts/download.sh
+RUN cd /makb_assets && /makb_assets/scripts/download.sh
 
 # Remove any keys
 RUN for i in `ls /root/.ssh`; do if [ $i != 'config' ]; then rm /root/.ssh/$i; fi; done

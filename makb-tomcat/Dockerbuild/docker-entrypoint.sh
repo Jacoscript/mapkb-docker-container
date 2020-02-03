@@ -36,8 +36,8 @@ if [ "$1" = 'catalina.sh' ]; then
         done
 
         # Do script imports
-        $SCRIPTS/convert.sh
-        $SCRIPTS/import_marmotta.sh
+        #$SCRIPTS/convert.sh
+        #$SCRIPTS/import_marmotta.sh
 
 
         $1 stop
