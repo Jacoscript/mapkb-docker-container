@@ -3,6 +3,7 @@ RUN mkdir /root/.ssh
 RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
 COPY .ssh/* /root/.ssh/
 RUN chmod 600 /root/.ssh/*
+COPY karma /root/karma
 
 # Clone asset repo
 #--- Disabled for development --- RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
