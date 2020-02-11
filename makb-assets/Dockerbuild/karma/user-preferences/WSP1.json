@@ -1,0 +1,34 @@
+{
+    "ViewPreferences": {
+        "maxRowsToShowInNestedTables": 20,
+        "maxCharactersInHeader": 10,
+        "maxCharactersInCell": 200,
+        "defaultRowsToShowInTopTables": 150
+    },
+    "Commands": [
+        {
+            "Command": "GenerateR2RMLModelCommandPreferences",
+            "PreferenceValues": {"modelSparqlEndPoint": "http://localhost:9999/openrdf-sesame/repositories/karma_models"}
+        },
+        {
+            "Command": "PublishRDFCommandPreferences",
+            "PreferenceValues": {
+                "hostName": "localhost:3306",
+                "modelName": "karma",
+                "rdfPrefix": "s",
+                "rdfSparqlEndPoint": "http://localhost:9999/openrdf-sesame/repositories/karma_data",
+                "saveToStore": false,
+                "dbName": "jenadb",
+                "addInverseProperties": "false",
+                "rdfNamespace": "http://localhost:8080/source/"
+            }
+        },
+        {
+            "Command": "ImportServiceCommandPreferences",
+            "PreferenceValues": {
+                "ServiceUrl": "http://localhost:8080/geoserver/wfs?service=wfs&version=2.0.0&request=GetFeature&typeNames=usgsns:usgs_structures",
+                "WorksheetName": "usgs_structures"
+            }
+        }
+    ]
+}

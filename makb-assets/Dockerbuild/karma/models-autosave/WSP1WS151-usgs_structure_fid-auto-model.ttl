@@ -1,0 +1,482 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1cv6poq4lx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "usgs_structure_fid" ;
+	km-dev:modelPublicationTime "1545342838933"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasBaseURI "http://data.usgs.gov/structures/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://data.usgs.gov/structures/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"prefix\": \"tnm-struct\",
+                    \"hasPrefix\": true,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"AddNodeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"label\",
+                \"type\": \"other\",
+                \"value\": \"geosparql:Feature1\"
+            },
+            {
+                \"name\": \"uri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature\"
+            },
+            {
+                \"name\": \"id\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature1\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features_20180401\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features_20180401\"},
+                    {\"columnName\": \"usgsns:FEATURE_NA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/ontology/structures/hasOfficialName\",
+                    \"DomainLabel\": \"Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_NA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_NA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features_20180401\"},
+                    {\"columnName\": \"usgsns:PRIM_LAT_D\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#lat\",
+                    \"DomainLabel\": \"Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LAT_D\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LAT_D\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features_20180401\"},
+                    {\"columnName\": \"usgsns:PRIM_LONG_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#long\",
+                    \"DomainLabel\": \"Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LONG_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features_20180401\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LONG_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c a rr:TriplesMap .
+
+_:node1cv6poq4lx1 km-dev:hasTriplesMap km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx2 rr:tableName "usgs_structure_fid" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasLogicalTable _:node1cv6poq4lx2 .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c rr:logicalTable _:node1cv6poq4lx2 ;
+	rr:subjectMap _:node1cv6poq4lx3 .
+
+_:node1cv6poq4lx1 km-dev:hasSubjectMap _:node1cv6poq4lx3 .
+
+_:node1cv6poq4lx3 km-dev:isPartOfMapping _:node1cv6poq4lx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Feature1" ;
+	rr:class geo:Feature ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features_20180401\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_cab1f0b7-763d-42f8-8570-7bea8673b9e3 rr:predicate <http://data.usgs.gov/ontology/structures/hasOfficialName> .
+
+_:node1cv6poq4lx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features_20180401\",\"usgsns:FEATURE_NA\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasObjectMap _:node1cv6poq4lx4 .
+
+km-dev:PredicateObjectMap_cab1f0b7-763d-42f8-8570-7bea8673b9e3 rr:objectMap _:node1cv6poq4lx4 .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c rr:predicateObjectMap km-dev:PredicateObjectMap_cab1f0b7-763d-42f8-8570-7bea8673b9e3 .
+
+km-dev:PredicateObjectMap_cab1f0b7-763d-42f8-8570-7bea8673b9e3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_cab1f0b7-763d-42f8-8570-7bea8673b9e3 .
+
+km-dev:PredicateObjectMap_854a2611-9e5f-4df0-bbc2-a178a3651bdb rr:predicate wgs84pos:lat .
+
+_:node1cv6poq4lx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features_20180401\",\"usgsns:PRIM_LAT_D\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasObjectMap _:node1cv6poq4lx5 .
+
+km-dev:PredicateObjectMap_854a2611-9e5f-4df0-bbc2-a178a3651bdb rr:objectMap _:node1cv6poq4lx5 .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c rr:predicateObjectMap km-dev:PredicateObjectMap_854a2611-9e5f-4df0-bbc2-a178a3651bdb .
+
+km-dev:PredicateObjectMap_854a2611-9e5f-4df0-bbc2-a178a3651bdb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_854a2611-9e5f-4df0-bbc2-a178a3651bdb .
+
+km-dev:PredicateObjectMap_ab8e2c09-1713-45f4-a7fb-83802f24d3ed rr:predicate wgs84pos:long .
+
+_:node1cv6poq4lx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features_20180401\",\"usgsns:PRIM_LONG_\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasObjectMap _:node1cv6poq4lx6 .
+
+km-dev:PredicateObjectMap_ab8e2c09-1713-45f4-a7fb-83802f24d3ed rr:objectMap _:node1cv6poq4lx6 .
+
+km-dev:TriplesMap_2330a0db-3d74-4bc3-816d-3d87254f4c0c rr:predicateObjectMap km-dev:PredicateObjectMap_ab8e2c09-1713-45f4-a7fb-83802f24d3ed .
+
+km-dev:PredicateObjectMap_ab8e2c09-1713-45f4-a7fb-83802f24d3ed a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cv6poq4lx1 .
+
+_:node1cv6poq4lx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ab8e2c09-1713-45f4-a7fb-83802f24d3ed .

@@ -1,0 +1,1229 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1cvn357j6x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "usgs_structures3" ;
+	km-dev:modelPublicationTime "1545889554023"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "usgs_structures3" ;
+	km-dev:hasBaseURI "http://data.usgs.gov/structures/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:ADMINTYPE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgs:ADMIN_TYPE\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_admin_type(getValue(\\\"usgsns:ADMINTYPE\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgs:ADMIN_TYPE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:FCODE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FeatureTypeCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_fcode(getValue(\\\"usgsns:FCODE\\\")) \"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureTypeCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:FTYPE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FeatureType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_ftype(getValue(\\\"usgsns:FTYPE\\\"))\\n\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:latitude\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_lat(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:latitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:longitude\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_lon(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:longitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_pt(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://data.usgs.gov/structures/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"prefix\": \"tnm-struct\",
+                    \"hasPrefix\": true,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"OrganizeColumnsCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"orderedColumns\",
+                \"type\": \"orderedColumns\",
+                \"value\": [{
+                    \"visible\": true,
+                    \"children\": \"[{\\\"visible\\\":false,\\\"name\\\":\\\"numberMatched\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"numberMatched\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"numberReturned\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"numberReturned\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"timeStamp\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"timeStamp\\\"}]},{\\\"visible\\\":true,\\\"children\\\":\\\"[{\\\\\\\"visible\\\\\\\":true,\\\\\\\"children\\\\\\\":\\\\\\\"[{\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:ADMINTYPE\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:ADMINTYPE\\\\\\\\\\\\\\\"}]},{\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:FCODE\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:FCODE\\\\\\\\\\\\\\\"}]},{\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:FTYPE\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:FTYPE\\\\\\\\\\\\\\\"}]},{\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\"children\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"children\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"visible\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":true,\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"gml:pos\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"usgsns:the_geom\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"gml:Point\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"gml:pos\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}]}]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"gml:Point\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"usgsns:the_geom\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"gml:Point\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}]}]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:the_geom\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:FeatureCollection\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"wfs:member\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:usgs_structures\\\\\\\\\\\\\\\"},{\\\\\\\\\\\\\\\"columnName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"usgsns:the_geom\\\\\\\\\\\\\\\"}]}]\\\\\\\",\\\\\\\"name\\\\\\\":\\\\\\\"usgsns:usgs_structures\\\\\\\",\\\\\\\"id\\\\\\\":[{\\\\\\\"columnName\\\\\\\":\\\\\\\"wfs:FeatureCollection\\\\\\\"},{\\\\\\\"columnName\\\\\\\":\\\\\\\"wfs:member\\\\\\\"},{\\\\\\\"columnName\\\\\\\":\\\\\\\"usgsns:usgs_structures\\\\\\\"}]}]\\\",\\\"name\\\":\\\"wfs:member\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xmlns:gml\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xmlns:usgsns\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:usgsns\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xmlns:wfs\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:wfs\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xmlns:xs\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:xs\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xmlns:xsi\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:xsi\\\"}]},{\\\"visible\\\":false,\\\"name\\\":\\\"xsi:schemaLocation\\\",\\\"id\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xsi:schemaLocation\\\"}]}]\",
+                    \"name\": \"wfs:FeatureCollection\",
+                    \"id\": [{\"columnName\": \"wfs:FeatureCollection\"}]
+                }]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [
+            \"Transformation\",
+            \"IgnoreInBatch\"
+        ]
+    },
+    {
+        \"commandName\": \"AddNodeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"label\",
+                \"type\": \"other\",
+                \"value\": \"geosparql:Feature1\"
+            },
+            {
+                \"name\": \"uri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature\"
+            },
+            {
+                \"name\": \"id\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Feature1\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgs:ADMIN_TYPE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://dbpedia.org/ontology/administrator\",
+                    \"DomainLabel\": \"Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgs:ADMIN_TYPE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgs:ADMIN_TYPE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:FeatureTypeCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://dbpedia.org/ontology/purpose\",
+                    \"DomainLabel\": \"Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureTypeCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureTypeCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:FeatureType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.w3.org/2004/02/skos/core#Concept\",
+                    \"DomainId\": \"http://www.w3.org/2004/02/skos/core#Concept1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                    \"DomainLabel\": \"Concept1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"usgsns:wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"usgsns:latitude\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#lat\",
+                    \"DomainLabel\": \"geosparql:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:latitude\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:latitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:usgs_structures\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"usgsns:longitude\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Feature\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#long\",
+                    \"DomainLabel\": \"geosparql:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:longitude\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:usgs_structures\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"usgsns:longitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP4:WS270AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.w3.org/2004/02/skos/core#Concept1\",
+                    \"edgeId\": \"http://purl.org/dc/elements/1.1/subject\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2004/02/skos/core#Concept\",
+                    \"edgeSourceId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"edgeSourceUri\": \"http://www.opengis.net/ont/geosparql#Feature\"
+                }]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP4:WS270AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://www.opengis.net/ont/geosparql#Feature1\",
+                    \"edgeSourceUri\": \"http://www.opengis.net/ont/geosparql#Feature\"
+                }]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 a rr:TriplesMap .
+
+_:node1cvn357j6x1 km-dev:hasTriplesMap km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x2 rr:tableName "usgs_structures3" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasLogicalTable _:node1cvn357j6x2 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:logicalTable _:node1cvn357j6x2 ;
+	rr:subjectMap _:node1cvn357j6x3 .
+
+_:node1cvn357j6x1 km-dev:hasSubjectMap _:node1cvn357j6x3 .
+
+_:node1cvn357j6x3 km-dev:isPartOfMapping _:node1cvn357j6x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Feature1" ;
+	rr:class geo:Feature ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "geosparql:Feature1" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_aed5e9bb-8c99-4d01-aee2-58ca1de43a5b rr:predicate <http://dbpedia.org/ontology/administrator> .
+
+_:node1cvn357j6x4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgs:ADMIN_TYPE\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x4 .
+
+km-dev:PredicateObjectMap_aed5e9bb-8c99-4d01-aee2-58ca1de43a5b rr:objectMap _:node1cvn357j6x4 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_aed5e9bb-8c99-4d01-aee2-58ca1de43a5b .
+
+km-dev:PredicateObjectMap_aed5e9bb-8c99-4d01-aee2-58ca1de43a5b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aed5e9bb-8c99-4d01-aee2-58ca1de43a5b .
+
+km-dev:PredicateObjectMap_a6b8926b-f22e-4ac8-bc19-b376328bbb65 rr:predicate <http://dbpedia.org/ontology/purpose> .
+
+_:node1cvn357j6x5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgsns:FeatureTypeCode\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x5 .
+
+km-dev:PredicateObjectMap_a6b8926b-f22e-4ac8-bc19-b376328bbb65 rr:objectMap _:node1cvn357j6x5 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_a6b8926b-f22e-4ac8-bc19-b376328bbb65 .
+
+km-dev:PredicateObjectMap_a6b8926b-f22e-4ac8-bc19-b376328bbb65 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a6b8926b-f22e-4ac8-bc19-b376328bbb65 .
+
+km-dev:PredicateObjectMap_c050c811-fcfd-4e29-9287-09fd321cec9f rr:predicate dc:subject .
+
+km-dev:RefObjectMap_41696eff-e327-47d0-bc36-44c29058d6e4 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap km-dev:RefObjectMap_41696eff-e327-47d0-bc36-44c29058d6e4 .
+
+km-dev:PredicateObjectMap_c050c811-fcfd-4e29-9287-09fd321cec9f rr:objectMap km-dev:RefObjectMap_41696eff-e327-47d0-bc36-44c29058d6e4 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_c050c811-fcfd-4e29-9287-09fd321cec9f .
+
+km-dev:PredicateObjectMap_c050c811-fcfd-4e29-9287-09fd321cec9f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c050c811-fcfd-4e29-9287-09fd321cec9f .
+
+km-dev:PredicateObjectMap_f63aae8b-469f-4178-9a34-16a708852fdb rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_06db39fb-10ba-4d29-a6e6-c131e132175c a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap km-dev:RefObjectMap_06db39fb-10ba-4d29-a6e6-c131e132175c .
+
+km-dev:PredicateObjectMap_f63aae8b-469f-4178-9a34-16a708852fdb rr:objectMap km-dev:RefObjectMap_06db39fb-10ba-4d29-a6e6-c131e132175c .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_f63aae8b-469f-4178-9a34-16a708852fdb .
+
+km-dev:PredicateObjectMap_f63aae8b-469f-4178-9a34-16a708852fdb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f63aae8b-469f-4178-9a34-16a708852fdb .
+
+km-dev:PredicateObjectMap_4bae9874-fe6a-43c7-bfdf-ca80ce3dc721 rr:predicate wgs84pos:lat .
+
+_:node1cvn357j6x6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgsns:the_geom\",\"gml:Point\",\"usgsns:latitude\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x6 .
+
+km-dev:PredicateObjectMap_4bae9874-fe6a-43c7-bfdf-ca80ce3dc721 rr:objectMap _:node1cvn357j6x6 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_4bae9874-fe6a-43c7-bfdf-ca80ce3dc721 .
+
+km-dev:PredicateObjectMap_4bae9874-fe6a-43c7-bfdf-ca80ce3dc721 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4bae9874-fe6a-43c7-bfdf-ca80ce3dc721 .
+
+km-dev:PredicateObjectMap_1c7afdcb-dfc3-4b0e-b94c-4a95433e1651 rr:predicate wgs84pos:long .
+
+_:node1cvn357j6x7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgsns:the_geom\",\"gml:Point\",\"usgsns:longitude\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x7 .
+
+km-dev:PredicateObjectMap_1c7afdcb-dfc3-4b0e-b94c-4a95433e1651 rr:objectMap _:node1cvn357j6x7 .
+
+km-dev:TriplesMap_7b40648f-4322-41be-bd81-4b33b4b87de5 rr:predicateObjectMap km-dev:PredicateObjectMap_1c7afdcb-dfc3-4b0e-b94c-4a95433e1651 .
+
+km-dev:PredicateObjectMap_1c7afdcb-dfc3-4b0e-b94c-4a95433e1651 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1c7afdcb-dfc3-4b0e-b94c-4a95433e1651 .
+
+km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 a rr:TriplesMap .
+
+_:node1cvn357j6x1 km-dev:hasTriplesMap km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 .
+
+km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x8 rr:tableName "usgs_structures3" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasLogicalTable _:node1cvn357j6x8 .
+
+km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 rr:logicalTable _:node1cvn357j6x8 ;
+	rr:subjectMap _:node1cvn357j6x9 .
+
+_:node1cvn357j6x1 km-dev:hasSubjectMap _:node1cvn357j6x9 .
+
+_:node1cvn357j6x9 km-dev:isPartOfMapping _:node1cvn357j6x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2004/02/skos/core#Concept1" ;
+	rr:class skos:Concept ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "skos:Concept1" .
+
+km-dev:PredicateObjectMap_2fab6a5e-a606-4a04-bff3-9666df262500 rr:predicate rdfs:label .
+
+_:node1cvn357j6x10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgsns:FeatureType\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x10 .
+
+km-dev:PredicateObjectMap_2fab6a5e-a606-4a04-bff3-9666df262500 rr:objectMap _:node1cvn357j6x10 .
+
+km-dev:TriplesMap_a242e173-4aff-4a8f-b6bf-b81010ba7e16 rr:predicateObjectMap km-dev:PredicateObjectMap_2fab6a5e-a606-4a04-bff3-9666df262500 .
+
+km-dev:PredicateObjectMap_2fab6a5e-a606-4a04-bff3-9666df262500 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2fab6a5e-a606-4a04-bff3-9666df262500 .
+
+km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 a rr:TriplesMap .
+
+_:node1cvn357j6x1 km-dev:hasTriplesMap km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 .
+
+km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x11 rr:tableName "usgs_structures3" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasLogicalTable _:node1cvn357j6x11 .
+
+km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 rr:logicalTable _:node1cvn357j6x11 ;
+	rr:subjectMap _:node1cvn357j6x12 .
+
+_:node1cvn357j6x1 km-dev:hasSubjectMap _:node1cvn357j6x12 .
+
+_:node1cvn357j6x12 km-dev:isPartOfMapping _:node1cvn357j6x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "geosparql:Geometry1" .
+
+km-dev:PredicateObjectMap_03523212-189d-4360-bf1c-ad5f672baec9 rr:predicate geo:asWKT .
+
+_:node1cvn357j6x13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:usgs_structures\",\"usgsns:the_geom\",\"gml:Point\",\"usgsns:wkt\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasObjectMap _:node1cvn357j6x13 .
+
+km-dev:PredicateObjectMap_03523212-189d-4360-bf1c-ad5f672baec9 rr:objectMap _:node1cvn357j6x13 .
+
+km-dev:TriplesMap_e1757600-8507-4ba8-b2fc-26534a6095f5 rr:predicateObjectMap km-dev:PredicateObjectMap_03523212-189d-4360-bf1c-ad5f672baec9 .
+
+km-dev:PredicateObjectMap_03523212-189d-4360-bf1c-ad5f672baec9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1cvn357j6x1 .
+
+_:node1cvn357j6x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_03523212-189d-4360-bf1c-ad5f672baec9 .
