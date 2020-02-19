@@ -14,13 +14,12 @@ ENV webapps /usr/local/tomcat/webapps
 ENV marmotta_dir /marmotta
 ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
-RUN mv  $webapps.dist/* $webapps
 
 # Set development flag
 RUN if [ "$ENV" = "dev" ]; then touch /.is_development; fi
 
-# Install Maven
-RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get install maven openssh-server -y; fi
+# Install SSH
+RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get openssh-server -y; fi
 
 # Install htop
 RUN apt-get update && apt-get install htop

@@ -1,4 +1,11 @@
 FROM tomcat:9.0.30-jdk11-openjdk
+ENV tomcat_dir /usr/local/tomcat
+ENV tomcat_bin $tomcat_dir/bin
+ENV webapps /usr/local/tomcat/webapps
+
+# Install Maven
+RUN apt-get update && apt-get install maven -y
+RUN mv  $webapps.dist/* $webapps
 RUN mkdir /root/.ssh
 RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
 COPY .ssh/* /root/.ssh/
@@ -12,6 +19,12 @@ RUN chmod -R a-x /deployment_scripts/readme.txt
 RUN for i in `ls /deployment_scripts`; do if [ -x /deployment_scripts/$i ]; then /deployment_scripts/$i; fi; done
 RUN rm -rf /deployment_scripts/
 
+#Install GeoServer
+#RUN ​wget https://github.com/geoserver/geoserver/archive/2.16.0.tar.gz
+#RUN unzip geoserver-2.16.0-war.zip 
+#RUN mv geoserver.war $webapps
+
+
 # Clone asset repo
 #--- Disabled for development --- RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
 
@@ -22,7 +35,7 @@ COPY makb_assets /makb_assets
 RUN chmod a+x /makb_assets/scripts/*
 
 # Download data
-RUN cd /makb_assets && /makb_assets/scripts/download.sh
+qRUN cd /makb_assets && /makb_assets/scripts/download.sh
 
 # Remove any keys
 RUN for i in `ls /root/.ssh`; do if [ $i != 'config' ]; then rm /root/.ssh/$i; fi; done
