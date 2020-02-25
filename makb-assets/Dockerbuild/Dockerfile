@@ -4,10 +4,10 @@ ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /usr/local/tomcat/webapps
 
 # Install Maven
-RUN apt-get update && apt-get install maven -y
-RUN mv  $webapps.dist/* $webapps
-RUN mkdir /root/.ssh
-RUN echo 'StrictHostKeyChecking no' >> /root/.ssh/config
+RUN apt-get update && apt-get install maven -y; \
+    mv  $webapps.dist/* $webapps; \
+    mkdir /root/.ssh; \ 
+   echo 'StrictHostKeyChecking no' >> /root/.ssh/config
 COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
 COPY deployment_scripts /deployment_scripts
@@ -24,9 +24,14 @@ RUN chmod -R a+x /deployment_scripts; \
     wget -O /geoserver.tar.gz https://github.com/geoserver/geoserver/archive/2.16.0.tar.gz; \
     tar xvf /geoserver.tar.gz -C /; mvn clean install -f /geoserver-2.16.0/src -am -Dmaven.test.skip=true; \
     mv /geoserver-2.16.0/src/web/app/target/geoserver.war $webapps; \
-
-    git clone https://github.com/usc-isi-i2/Web-Karma /Web-Karma; cat /Web-Karma/pom.xml | sed "s/http:\/\/repo1./https:\/\/repo1./g" > /Web-Karma/pomnew.xml; mv /Web-Karma/pomnew.xml /Web-Karma/pom.xml; mvn clean install -f /Web-Karma/pom.xml -Dmaven.test.skip=true; cp /Web-Karma/karma-web/target/karma-web-0.0.1-SNAPSHOT.war $webapps; cp /Web-Karma/karma-web-services/web-services-rdf/target/web-services-rdf-0.0.1-SNAPSHOT.war $webapps ; \
-    git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps;
+    git clone https://github.com/usc-isi-i2/Web-Karma /Web-Karma; \
+    cat /Web-Karma/pom.xml | sed "s/http:\/\/repo1./https:\/\/repo1./g" > /Web-Karma/pomnew.xml; \
+    mv /Web-Karma/pomnew.xml /Web-Karma/pom.xml; \
+    mvn clean install -f /Web-Karma/pom.xml -Dmaven.test.skip=true; \
+    cp /Web-Karma/karma-web/target/karma-web-0.0.1-SNAPSHOT.war $webapps; \
+    cp /Web-Karma/karma-web-services/web-services-rdf/target/web-services-rdf-0.0.1-SNAPSHOT.war $webapps; \
+    git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; \ 
+    mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps
 
 # Install OpenJDK 8 and Marmotta
 #RUN sh -c "cd /opt; wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; tar xvf OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; rm OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz"
@@ -35,11 +40,13 @@ RUN chmod -R a+x /deployment_scripts; \
 
 
 # Clone asset repo
-#--- Disabled for development --- RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
-
-# Only doing this to save time during development because cloning takes forever
-COPY makb_assets /makb_assets
+RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
 
 # Make scripts executable
-RUN chmod a+x /makb_assets/scripts/*; cd /makb_assets && /makb_assets/scripts/download.sh \
+RUN chmod a+x /makb_assets/scripts/*; \
+    cd /makb_assets && /makb_assets/scripts/download.sh; \
     for i in `ls /root/.ssh`; do if [ $i != 'config' ]; then rm /root/.ssh/$i; fi; done
+
+# Clean up
+RUN rm -rf /geoserver-2.16.0; \
+    rm -rf /karma4marmotta; \

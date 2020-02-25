@@ -36,14 +36,14 @@ COPY .ssh/* /root/.ssh/
 RUN chmod 600 /root/.ssh/*
 
 # Deploy requisite war files 
-COPY $jar/geoserver.war $webapps
-COPY $jar/marmotta584.war $webapps/marmotta.war
-COPY $jar/$karma.war $webapps 
-COPY $jar/web-services-rdf-0.0.1-SNAPSHOT.war $webapps
+#COPY $jar/geoserver.war $webapps
+#COPY $jar/marmotta584.war $webapps/marmotta.war
+#COPY $jar/$karma.war $webapps 
+#COPY $jar/web-services-rdf-0.0.1-SNAPSHOT.war $webapps
 
 # Deploy USGS Karma4Marmotta
-RUN mkdir $webapps/usgs
-COPY $jar/usgs $webapps/usgs
+#RUN mkdir $webapps/usgs
+#COPY $jar/usgs $webapps/usgs
 
 # Configure Tomcat
 RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/webapps/marmotta' > $tomcat_bin/setenv.sh 

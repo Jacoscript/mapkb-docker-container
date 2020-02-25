@@ -39,8 +39,15 @@ if [ "$1" = 'catalina.sh' ]; then
         #$SCRIPTS/convert.sh
         #$SCRIPTS/import_marmotta.sh
 
-
+        mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
+        for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
+        mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
+        cat /jetty.out | grep "Started Jetty Server" > /dev/null
+        while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
+        rm -rf /makb_assets/rdf_data
+        /makb_assets/scripts/convert.sh
         $1 stop
+        pkill java
         mv /marmotta/WEB-INF/lib/* /usr/local/tomcat/webapps/marmotta/WEB-INF/lib
         rm -rf /marmotta/WEB-INF
         mv /marmotta/config /usr/local/tomcat/webapps/marmotta
