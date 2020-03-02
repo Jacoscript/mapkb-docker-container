@@ -20,10 +20,17 @@ if [ "$1" = 'catalina.sh' ]; then
         CURL='curl -u admin:geoserver'
         
         $CURL -X POST -H "Content-Type: application/json" -d '{ "namespace": { "prefix": "usgsns", "uri": "http://data.usgs.gov/" } }' $REST/namespaces
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_geonames", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:/data/shp/geonames"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_gnis", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:/data/shp/usgs_layers/gnis"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_structures", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:/data/shp/usgs_layers/structures"} ] } } }' $REST/workspaces/usgsns/datastores
-        
+        #$CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_geonames", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///data/shp/geonames"} ] } } }' $REST/workspaces/usgsns/datastores
+        #$CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_gnis", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///data/shp/usgs_layers/gnis"} ] } } }' $REST/workspaces/usgsns/datastores
+        #$CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_structures", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///data/shp/usgs_layers/structures"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "boundaries", "description": "Boundaries datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/boundaries/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "doi_regions", "description": "DOI Regions datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/doi_regions"} ] } } }' $REST/workspaces/usgsns/datastores
+        #genonames
+        #gnis
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "NHD", "description": "NHD datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/nhd/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "PADUS_DC", "description": "PADUS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/padus"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "structures_DC", "description": "Structures datastore for DC", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/structures/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "transportation", "description": "Transportation datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/transportation/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
         # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
         if [ ! -z ${GEOSERVER_URL+x} ]; then 
             echo "Running Geoserver layer export"
