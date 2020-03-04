@@ -36,11 +36,15 @@ if [ "$1" = 'catalina.sh' ]; then
             echo "Running Geoserver layer export"
             /makb_assets/scripts/export_geoserver.sh
         fi
-        #echo "Running Geoserver layer import"
-        #for i in `ls /makb_assets/json_data`
-        #do
-        #    $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
-        #done
+        echo "Running Geoserver layer import"
+        for i in `ls /makb_assets/json_data`
+        do
+            $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
+            #STORE=`cat /makb_assets/json_data/$i | grep -P -o '"dataStore","name":"usgsns:(.*?)"' | grep -P -o '"usgsns:(.*?)"' | sed 's/usgsns://g'`
+            # TODO get current datastore
+            # TODO Update feature with correct datastore
+            #$CURL -X PUT -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/{datastore}/featuretypes
+        done
 
         # Do script imports
         #$SCRIPTS/convert.sh
