@@ -24,14 +24,6 @@ if [ "$1" = 'catalina.sh' ]; then
         #$CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_gnis", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///data/shp/usgs_layers/gnis"} ] } } }' $REST/workspaces/usgsns/datastores
         #$CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "usgs_prototype_structures", "description": "shapefiles for the usgs prototype", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///data/shp/usgs_layers/structures"} ] } } }' $REST/workspaces/usgsns/datastores
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "boundaries", "description": "Boundaries datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/boundaries/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "doi_regions", "description": "DOI Regions datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/doi_regions"} ] } } }' $REST/workspaces/usgsns/datastores
-        #genonames
-        #gnis
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "NHD", "description": "NHD datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/nhd/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "PADUS_DC", "description": "PADUS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/padus"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "structures_DC", "description": "Structures datastore for DC", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/structures/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "transportation", "description": "Transportation datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/transportation/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
-        # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
         if [ ! -z ${GEOSERVER_URL+x} ]; then 
             echo "Running Geoserver layer export"
             /makb_assets/scripts/export_geoserver.sh
@@ -41,10 +33,23 @@ if [ "$1" = 'catalina.sh' ]; then
         do
             $CURL -X POST -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/featuretypes
             #STORE=`cat /makb_assets/json_data/$i | grep -P -o '"dataStore","name":"usgsns:(.*?)"' | grep -P -o '"usgsns:(.*?)"' | sed 's/usgsns://g'`
-            # TODO get current datastore
             # TODO Update feature with correct datastore
-            #$CURL -X PUT -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/{datastore}/featuretypes
         done
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "doi_regions", "description": "DOI Regions datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/doi_regions"} ] } } }' $REST/workspaces/usgsns/datastores
+        #genonames
+        #gnis
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "NHD", "description": "NHD datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/nhd/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "PADUS_DC", "description": "PADUS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/padus"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "structures_DC", "description": "Structures datastore for DC", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/structures/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "transportation", "description": "Transportation datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/transportation/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
+        for i in `ls /makb_assets/json_data`
+        do
+            #STORE=`cat /makb_assets/json_data/$i | grep -P -o '"dataStore","name":"usgsns:(.*?)"' | grep -P -o '"usgsns:(.*?)"' | sed 's/usgsns://g'`
+            # TODO Update feature with correct datastore
+            featuretype=`echo $i | sed "s/\..*//g"`
+            $CURL -X PUT -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/datastores/boundaries/featuretypes/$featuretype
+        done
+        # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
 
         # Do script imports
         #$SCRIPTS/convert.sh
@@ -52,13 +57,13 @@ if [ "$1" = 'catalina.sh' ]; then
 
         mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
         for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
-        #mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
-        #cat /jetty.out | grep "Started Jetty Server" > /dev/null
-        #while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
+        mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
+        cat /jetty.out | grep "Started Jetty Server" > /dev/null
+        while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
         rm -rf /makb_assets/rdf_data
-        #/makb_assets/scripts/convert.sh
+        /makb_assets/scripts/convert.sh
         $1 stop
-        #pkill java
+        pkill java
         mv /marmotta/WEB-INF/lib/* /usr/local/tomcat/webapps/marmotta/WEB-INF/lib
         rm -rf /marmotta/WEB-INF
         mv /marmotta/config /usr/local/tomcat/webapps/marmotta
