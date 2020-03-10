@@ -19,7 +19,7 @@ ENV jar jar
 RUN if [ "$ENV" = "dev" ]; then touch /.is_development; fi
 
 # Install SSH
-RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get openssh-server -y; fi
+RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get install openssh-server -y; fi
 
 # Install htop
 RUN apt-get update && apt-get install htop
