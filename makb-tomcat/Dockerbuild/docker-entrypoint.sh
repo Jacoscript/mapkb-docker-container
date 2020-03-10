@@ -62,6 +62,7 @@ if [ "$1" = 'catalina.sh' ]; then
         while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
         rm -rf /makb_assets/rdf_data
         /makb_assets/scripts/convert.sh
+        /makb_assets/scripts/import_marmotta.sh
         $1 stop
         pkill java
         mv /marmotta/WEB-INF/lib/* /usr/local/tomcat/webapps/marmotta/WEB-INF/lib
