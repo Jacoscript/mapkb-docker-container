@@ -61,10 +61,10 @@ RUN if [ "$ENV" = "dev" ]; then sed 's@session\s*required\s*pam_loginuid.so@sess
 
 
 RUN mkdir $webapps/karma
-COPY $jar/python $webapps/karma
-COPY $jar/preloaded-ontologies $webapps/karma
+COPY python $webapps/karma
+COPY preloaded-ontologies $webapps/karma
 RUN mkdir /data
-COPY $jar/data /data
+COPY data /data
 
 # Configure Marmotta
 RUN mkdir -p $marmotta_config_dir

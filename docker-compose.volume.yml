@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+    tomcat:
+        restart: always
+        environment:
+            - BRANCH
+            - GEOSERVER_URL
+            - GEOSERVER_ADMIN
+            - GEOSERVER_PASSWORD
+            - MAKB_SRC
+        build: "./makb-tomcat/Dockerbuild"
+        ports:
+            - "8080:8080"
+            - "2222:22"
+        volumes: 
+            - $MAKB_SRC:/usr/local/tomcat/webapps/makb
+        tty: true
+    postgresql:
+        restart: always
+        build: "./makb-postgresql/Dockerbuild"
+        ports:
+            - "5432:5432"
