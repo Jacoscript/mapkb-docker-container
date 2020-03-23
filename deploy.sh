@@ -1,11 +1,16 @@
 #!/bin/bash
-DOCKER=''
-DOCKER_COMPOSE=''
+DOCKER='docker'
+DOCKER_COMPOSE='docker-compose'
 DOI=''
 REBUILD_MAKB_ASSETS=''
+MAKB_BRANCH='master'
 function build_makb_assets() {
     
-    $DOCKER build -t makb-assets makb-assets/Dockerbuild
+    if [[ "$REBUILD_MAKB_ASSETS" == "y" || "$REBUILD_MAKB_ASSETS" == "Y" ]]
+    then 
+        echo "Rebuilding makb-assets image"
+        $DOCKER build -t makb-assets makb-assets/Dockerbuild
+    fi
 }
 
 function create_doiroot_script() {
@@ -43,16 +48,12 @@ function confirm_doi_deployment() {
 }
 
 function confirm_docker_superuser() {
-    echo "Do you require superuser privileges to run docker and docker-compose (y/n)?"
-    read __superuser
+    $DOCKER_COMPOSE > /dev/null 2> /dev/null
 
-    if [[ "$__superuser" == "y" || $__superuser = "Y" ]]
+    if [[ $? == 126 ]]
     then
-        DOCKER='sudo docker'
-        DOCKER_COMPOSE='sudo docker-compose'
-    else
-        DOCKER='docker'
-        DOCKER_COMPOSE='docker-compose'
+        DOCKER="sudo -E $DOCKER"
+        DOCKER_COMPOSE="sudo -E $DOCKER_COMPOSE"
     fi
 }
 
@@ -80,7 +81,7 @@ function check_makb_assets_rebuild() {
 }
 
 function check_docker() {
-    which docker
+    docker > /dev/null 2> /dev/null
 
     if [[ $? == 0 ]]
     then
@@ -89,6 +90,18 @@ function check_docker() {
         echo "Please install Docker before running this script."
         exit 1
     fi
+}
+
+function check_docker_compose() {
+    docker-compose > /dev/null 2> /dev/null
+    if [[ $? == 0 || $? == 126 ]]
+    then
+        echo "Docker Compose has been found"
+    else
+        echo "Please install Docker Compose before running this script."
+        exit 1
+    fi
+
 }
 
 function check_dev_mode() {
@@ -104,15 +117,70 @@ function check_dev_mode() {
             then 
                 MAKB_SRC=ssh
             fi
+        else
+            echo "Specify what branch you'd like to deploy or leave blank for 'master'"
+            read __branch
+            if [[ "$__branch" != "" ]]
+            then
+                MAKB_BRANCH="$__branch"
+            fi
         fi
     fi
 }
-check_docker
-#confirm_doi_deployment
-#create_doiroot_script
 
-#confirm_docker_superuser
-#check_makb_assets_rebuild
-#check_ssh
+function copy_ssh() {
+    echo "Copying ssh key into containers"
+    cp ~/.ssh/id_rsa* makb-assets/Dockerbuild/.ssh/
+    cp ~/.ssh/id_rsa* makb-tomcat/Dockerbuild/.ssh/
+}
+
+function checked_deployed() {
+
+    $DOCKER ps -a | grep makb-docker-container > /dev/null
+
+    if [[ $? == 0 ]]
+    then
+        echo "The MAKB project is already deployed." 
+        echo "Run '$DOCKER_COMPOSE start' to launch it."
+        echo "Run '$DOCKER_COMPOSE stop' to shut it down."
+        echo "To redeploy the MAKB project run '$DOCKER_COMPOSE down' before running this script."
+        exit 1
+    fi
+}
+
+function deploy() {
+    if [ -z ${MAKB_SRC+x} ]
+    then
+        $DOCKER_COMPOSE build
+    else
+        $DOCKER_COMPOSE build --build-arg ENV=dev
+    fi
+
+    if [ -z ${MAKB_SRC+x} ]
+    then
+        BRANCH="$MAKB_BRANCH"
+        export BRANCH
+        $DOCKER_COMPOSE up
+    elif [[ $MAKB_SRC == "ssh" ]]
+    then
+        $DOCKER_COMPOSE up
+    else
+        export MAKB_SRC
+        $DOCKER_COMPOSE -f docker-compose.volume.yml up
+    fi
+}
+
+
+
+check_docker
+check_docker_compose
+confirm_docker_superuser
+checked_deployed
+confirm_doi_deployment
+check_makb_assets_rebuild
+check_ssh
 check_dev_mode
-echo $MAKB_SRC
+copy_ssh
+create_doiroot_script
+build_makb_assets
+deploy
