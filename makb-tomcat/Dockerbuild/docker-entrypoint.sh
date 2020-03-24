@@ -51,9 +51,7 @@ if [ "$1" = 'catalina.sh' ]; then
         done
         # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
 
-        # Do script imports
-        #$SCRIPTS/convert.sh
-        #$SCRIPTS/import_marmotta.sh
+
 
         mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
         for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
