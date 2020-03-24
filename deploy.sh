@@ -58,7 +58,7 @@ function confirm_docker_superuser() {
 }
 
 function check_ssh() {
-    if [  ! -e ~/.ssh/id_rsa ]
+    if [  ! -e ~/.ssh/id_* ]
     then
         echo "Please create an SSH key and add it to GitLab before you run this script."
         exit
@@ -94,7 +94,7 @@ function check_docker() {
 
 function check_docker_compose() {
     docker-compose > /dev/null 2> /dev/null
-    if [[ $? == 0 || $? == 126 ]]
+    if [[ $? == 1 || $? == 126 ]]
     then
         echo "Docker Compose has been found"
     else
@@ -130,8 +130,8 @@ function check_dev_mode() {
 
 function copy_ssh() {
     echo "Copying ssh key into containers"
-    cp ~/.ssh/id_rsa* makb-assets/Dockerbuild/.ssh/
-    cp ~/.ssh/id_rsa* makb-tomcat/Dockerbuild/.ssh/
+    cp ~/.ssh/id_* makb-assets/Dockerbuild/.ssh/
+    cp ~/.ssh/id_* makb-tomcat/Dockerbuild/.ssh/
 }
 
 function checked_deployed() {
