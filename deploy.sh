@@ -9,7 +9,7 @@ function build_makb_assets() {
     if [[ "$REBUILD_MAKB_ASSETS" == "y" || "$REBUILD_MAKB_ASSETS" == "Y" ]]
     then 
         echo "Rebuilding makb-assets image"
-        $DOCKER build -t makb-assets makb-assets/Dockerbuild
+        $DOCKER build --no-cache -t makb-assets makb-assets/Dockerbuild
     fi
 }
 
