@@ -48,9 +48,9 @@ function confirm_doi_deployment() {
 }
 
 function confirm_docker_superuser() {
-    $DOCKER_COMPOSE > /dev/null 2> /dev/null
+    $DOCKER ps -a > /dev/null 2> /dev/null
 
-    if [[ $? == 126 ]]
+    if [[ $? == 1 ]]
     then
         DOCKER="sudo -E $DOCKER"
         DOCKER_COMPOSE="sudo -E $DOCKER_COMPOSE"

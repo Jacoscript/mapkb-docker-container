@@ -1,4 +1,17 @@
 # Steps for installing
+1.  Clone this repository on a USGS server running Docker
+2.  Change directory to the cloned repository
+3.  Run `$ ./deploy.sh`
+4.  Answer the questions at the prompts provided
+5.  Acquire a tasty beverage (this may take awhile....)
+6.  There is no step 6
+
+# After the container is installed
+1.  Navigate to http://<server-ip>:8080/marmotta/core/admin/contexts.html, where server-ip is the IP address of your server
+2.  Acquire another tasty beverage while the RDF contexts import
+3.  Enjoy!
+
+<!-->
 1.  Create a support ticket with the IT Service Desk to install Docker if it is not already installed on your computer.
 2.  Clone this repository. __Do not change the folder name.  It must be stay makb-docker-container, otherwise it will break Docker__
 3.  Copy the jar folder from `N:\CEGIS\Jacques\makb_container` to `./makb-tomcat/Dockerbuild`  
@@ -114,4 +127,6 @@ If you should find yourself in a situation where you've done something that leav
 __IF YOU ARE DOING ANY DEVELOPMENT INSIDE YOUR CONTAINER MAKE SURE YOU COMMIT AND PUSH ANY CHANGES YOU WISH TO KEEP BEFORE DOING THIS AS THE CONTENTS OF THE CONTAINER WILL BE REVERTED TO THE DEFAULT STATE__  
 Any authenication tokens will also be destroyed as well, such as GitLab.  You will need to remove the public key for localhost from `%HOMEPATH%\.ssh\known_hosts`:  
 ![Known hosts](images/screwup2.png)  
+-->
+
 
