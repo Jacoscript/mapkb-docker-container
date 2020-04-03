@@ -7,7 +7,7 @@
 6.  There is no step 6
 
 # After the container is installed
-1.  Navigate to http://<server-ip>:8080/marmotta/core/admin/contexts.html, where server-ip is the IP address of your server
+1.  Navigate to http://\<server-ip>:8080/marmotta/core/admin/contexts.html, where server-ip is the IP address of your server
 2.  Acquire another tasty beverage while the RDF contexts import
 3.  Enjoy!
 
