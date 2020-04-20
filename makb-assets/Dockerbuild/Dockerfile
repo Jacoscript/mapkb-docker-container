@@ -4,7 +4,7 @@ ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /usr/local/tomcat/webapps
 
 # Install Maven
-RUN apt-get update && apt-get install maven -y; \
+RUN apt-get update && apt-get install maven p7zip-full -y; \
     mv  $webapps.dist/* $webapps; \
     mkdir /root/.ssh; \ 
    echo 'StrictHostKeyChecking no' >> /root/.ssh/config
