@@ -43,7 +43,8 @@ if [ "$1" = 'catalina.sh' ]; then
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "PADUS_DC", "description": "PADUS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/padus"} ] } } }' $REST/workspaces/usgsns/datastores
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "structures_DC", "description": "Structures datastore for DC", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/structures"} ] } } }' $REST/workspaces/usgsns/datastores
         $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "transportation", "description": "Transportation datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/transportation/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
-        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "gnis", "description": "GNIS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/DC_Features"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "gnis_DC", "description": "GNIS datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/DC_Features"} ] } } }' $REST/workspaces/usgsns/datastores
+        $CURL -X POST -H "Content-Type: application/json" -d '{ "dataStore": { "name": "tester", "description": "Tester datastore", "connectionParameters": { "entry": [ {"@key":"url","$":"file:///makb_assets/data/tester/Shape"} ] } } }' $REST/workspaces/usgsns/datastores
         for i in `ls /makb_assets/json_data`
         do
             #STORE=`cat /makb_assets/json_data/$i | grep -P -o '"dataStore","name":"usgsns:(.*?)"' | grep -P -o '"usgsns:(.*?)"' | sed 's/usgsns://g'`
