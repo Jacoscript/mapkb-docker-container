@@ -58,12 +58,12 @@ function confirm_docker_superuser() {
 }
 
 function check_ssh() {
-    if [  ! -e ~/.ssh/id_* ]
+    if [ `ls -1 ~/.ssh/id_*  2>/dev/null | wc -l ` -gt 0 ]
     then
+        echo "SSH key has been found"
+    else
         echo "Please create an SSH key and add it to GitLab before you run this script."
         exit
-    else
-        echo "SSH key has been found"
     fi 
 }
 
