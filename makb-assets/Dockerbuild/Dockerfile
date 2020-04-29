@@ -24,12 +24,7 @@ RUN chmod -R a+x /deployment_scripts; \
     wget -O /geoserver.tar.gz https://github.com/geoserver/geoserver/archive/2.16.0.tar.gz; \
     tar xvf /geoserver.tar.gz -C /; mvn clean install -f /geoserver-2.16.0/src -am -Dmaven.test.skip=true; \
     mv /geoserver-2.16.0/src/web/app/target/geoserver.war $webapps; \
-    git clone https://github.com/usc-isi-i2/Web-Karma /Web-Karma; \
-    cat /Web-Karma/pom.xml | sed "s/http:\/\/repo1./https:\/\/repo1./g" > /Web-Karma/pomnew.xml; \
-    mv /Web-Karma/pomnew.xml /Web-Karma/pom.xml; \
-    mvn clean install -f /Web-Karma/pom.xml -Dmaven.test.skip=true; \
-    cp /Web-Karma/karma-web/target/karma-web-0.0.1-SNAPSHOT.war $webapps; \
-    cp /Web-Karma/karma-web-services/web-services-rdf/target/web-services-rdf-0.0.1-SNAPSHOT.war $webapps; \
+    mv /archives/*.war $webapps; \
     git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; \ 
     mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps
 
