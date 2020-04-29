@@ -21,10 +21,11 @@ RUN chmod -R a+x /deployment_scripts; \
     chmod -R a-x /deployment_scripts/readme.txt; \
     for i in `ls /deployment_scripts`; do if [ -x /deployment_scripts/$i ]; then /deployment_scripts/$i; fi; done; \
     rm -rf /deployment_scripts/; \
-    wget -O /geoserver.tar.gz https://github.com/geoserver/geoserver/archive/2.16.0.tar.gz; \
-    tar xvf /geoserver.tar.gz -C /; mvn clean install -f /geoserver-2.16.0/src -am -Dmaven.test.skip=true; \
-    mv /geoserver-2.16.0/src/web/app/target/geoserver.war $webapps; \
-    mv /archives/*.war $webapps; \
+    wget -O geoserver.zip http://sourceforge.net/projects/geoserver/files/GeoServer/2.16.0/geoserver-2.16.0-war.zip; \
+    unzip geoserver.zip -d geoserver; \
+    mv geoserver/geoserver.war $webapps; \
+    rm geoserver.zip; \
+    rm -rf geoserver/; \
     git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; \ 
     mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps
 
@@ -34,8 +35,9 @@ RUN chmod -R a+x /deployment_scripts; \
 #RUN sh -c "cd /; git clone https://github.com/apache/marmotta.git; cd /marmotta; git checkout MARMOTTA-584; JAVA_HOME=/opt/jdk8u242-b08 mvn clean install -Dmaven.test.skip=true; cd launchers/marmotta-webapp; JAVA_HOME=/opt/jdk8u242-b08 mvn package"
 
 
-# Clone asset repo
-RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets
+# Clone asset repo and copy .war files to webapps folder
+RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets; \
+    mv /makb_assets/archives/*.war $webapps
 
 # Make scripts executable
 RUN chmod a+x /makb_assets/scripts/*; \
@@ -43,5 +45,4 @@ RUN chmod a+x /makb_assets/scripts/*; \
     for i in `ls /root/.ssh`; do if [ $i != 'config' ]; then rm /root/.ssh/$i; fi; done
 
 # Clean up
-RUN rm -rf /geoserver-2.16.0; \
-    rm -rf /karma4marmotta; \
+RUN rm -rf /karma4marmotta
