@@ -81,6 +81,7 @@ if [ "$1" = 'catalina.sh' ]; then
             cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
         done
         /makb_assets/scripts/convert.sh
+        $1 stop
         /makb_assets/scripts/import_marmotta.sh
 
         # Add LD Cache endpoint
