@@ -35,9 +35,19 @@ RUN chmod -R a+x /deployment_scripts; \
 #RUN sh -c "cd /; git clone https://github.com/apache/marmotta.git; cd /marmotta; git checkout MARMOTTA-584; JAVA_HOME=/opt/jdk8u242-b08 mvn clean install -Dmaven.test.skip=true; cd launchers/marmotta-webapp; JAVA_HOME=/opt/jdk8u242-b08 mvn package"
 
 
-# Clone asset repo and copy .war files to webapps folder
+# Clone asset repo and modify web-services rdf war file to work with tomcat
+# Copy .war files to webapps folder
 RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets; \
+    7z rn /makb_assets/archives/web-services-rdf-0.0.1-SNAPSHOT.war \
+        WEB-INF/lib/asm-debug-all-4.1.jar \ 
+        WEB-INF/classes/asm-debug-all-4.1.jar; \
+    7z rn /makb_assets/archives/web-services-rdf-0.0.1-SNAPSHOT.war \ 
+        WEB-INF/lib/asm-all-repackaged-2.2.0-b21.jar \ 
+        WEB-INF/classes/asm-all-repackaged-2.2.0-b21.jar; \
+    7z d /makb_assets/archives/web-services-rdf-0.0.1-SNAPSHOT.war \ 
+        WEB-INF/lib/javax.ws.rs-api-2.0.jar; \
     mv /makb_assets/archives/*.war $webapps
+
 
 # Make scripts executable
 RUN chmod a+x /makb_assets/scripts/*; \
