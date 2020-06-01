@@ -56,21 +56,32 @@ if [ "$1" = 'catalina.sh' ]; then
 
 
 
-        mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
-        for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
-        mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
-        cat /jetty.out | grep "Started Jetty Server" > /dev/null
-        while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
-        rm -rf /makb_assets/rdf_data
-        /makb_assets/scripts/convert.sh
-        /makb_assets/scripts/import_marmotta.sh
+        #mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
+        for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /usr/local/tomcat/webapps/examples; done
+        #mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
+        #cat /jetty.out | grep "Started Jetty Server" > /dev/null
+        #while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
+        #rm -rf /makb_assets/rdf_data
         $1 stop
-        pkill java
+        #pkill java
+        mv /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/lib/asm-debug-all-4.1.jar /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/classes/
+        mv /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/lib/asm-all-repackaged-2.2.0-b21.jar /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/classes/
+        rm /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/lib/javax.ws.rs-api-2.0.jar
         mv /marmotta/WEB-INF/lib/* /usr/local/tomcat/webapps/marmotta/WEB-INF/lib
         rm -rf /marmotta/WEB-INF
         mv /marmotta/config /usr/local/tomcat/webapps/marmotta
         mv /marmotta/* /usr/local/tomcat/webapps/marmotta
         rmdir /marmotta
+        rm /usr/local/tomcat/logs/catalina.out
+        $1 start
+        cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+        while [ $? -ne 0 ]; do
+            echo "Waiting for catalina..."
+            sleep 1s
+            cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+        done
+        /makb_assets/scripts/convert.sh
+        /makb_assets/scripts/import_marmotta.sh
 
         # Add LD Cache endpoint
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.name = Karma Endpoint - USGS WFS' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
