@@ -206,7 +206,7 @@ def gu_nativeamericanarea_uri(x):
     return 'http://data.usgs.gov/lod/topo/gu_nativeamericanarea/' +x
 
 def gu_plssfirstdivision_uri(x):
-    "Return a URI for GU_PLSSFirstDivision."d
+    "Return a URI for GU_PLSSFirstDivision."
     return 'http://data.usgs.gov/lod/topo/gu_plssfirstdivision/' +x
 
 def gu_plssspecialsurvey_uri(x):
