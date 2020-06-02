@@ -1,0 +1,1729 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e4ohmebnx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "NHDWaterbody" ;
+	km-dev:modelPublicationTime "1585666799991"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "NHDWaterbody" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdwaterbody_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdwaterbody_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Resolution\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return resolution_uri(getValue(\\\"usgsns:Resolution\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fType_uri(getValue(\\\"usgsns:FType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return make_poly_3d(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:AreaSqKm\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/areaSqKm_Standard\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:FDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/fDate\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:GNIS_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_ID\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:GNIS_Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_Name\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:NHDPlusID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/nhdPlusID\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Permanent_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:ReachCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/reachCode\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:ReachCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:ReachCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Shape_Area\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Area\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:VPUID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/vpuID\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDWaterbody\"},
+                    {\"columnName\": \"usgsns:Visibility\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/visibilityFilter\",
+                    \"DomainLabel\": \"NHDWaterbody1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDWaterbody\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 a rr:TriplesMap .
+
+_:node1e4ohmebnx1 km-dev:hasTriplesMap km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx2 rr:tableName "NHDWaterbody" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasLogicalTable _:node1e4ohmebnx2 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:logicalTable _:node1e4ohmebnx2 ;
+	rr:subjectMap _:node1e4ohmebnx3 .
+
+_:node1e4ohmebnx1 km-dev:hasSubjectMap _:node1e4ohmebnx3 .
+
+_:node1e4ohmebnx3 km-dev:isPartOfMapping _:node1e4ohmebnx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody1" ;
+	rr:class <http://data.usgs.gov/lod/topo/Hydrography/NHDWaterbody> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_fe88a692-09d2-490f-9a4b-2f8e32d058b6 rr:predicate <http://data.usgs.gov/lod/topo/areaSqKm_Standard> .
+
+_:node1e4ohmebnx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:AreaSqKm\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx4 .
+
+km-dev:PredicateObjectMap_fe88a692-09d2-490f-9a4b-2f8e32d058b6 rr:objectMap _:node1e4ohmebnx4 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_fe88a692-09d2-490f-9a4b-2f8e32d058b6 .
+
+km-dev:PredicateObjectMap_fe88a692-09d2-490f-9a4b-2f8e32d058b6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fe88a692-09d2-490f-9a4b-2f8e32d058b6 .
+
+km-dev:PredicateObjectMap_5e7b0a11-08d3-4570-9b77-e9c836ba1031 rr:predicate <http://data.usgs.gov/lod/topo/fDate> .
+
+_:node1e4ohmebnx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:FDate\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx5 .
+
+km-dev:PredicateObjectMap_5e7b0a11-08d3-4570-9b77-e9c836ba1031 rr:objectMap _:node1e4ohmebnx5 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_5e7b0a11-08d3-4570-9b77-e9c836ba1031 .
+
+km-dev:PredicateObjectMap_5e7b0a11-08d3-4570-9b77-e9c836ba1031 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5e7b0a11-08d3-4570-9b77-e9c836ba1031 .
+
+km-dev:PredicateObjectMap_8fa55ab2-fea8-4a72-96d8-7eed019ac017 rr:predicate <http://data.usgs.gov/lod/topo/gnis_ID> .
+
+_:node1e4ohmebnx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:GNIS_ID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx6 .
+
+km-dev:PredicateObjectMap_8fa55ab2-fea8-4a72-96d8-7eed019ac017 rr:objectMap _:node1e4ohmebnx6 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_8fa55ab2-fea8-4a72-96d8-7eed019ac017 .
+
+km-dev:PredicateObjectMap_8fa55ab2-fea8-4a72-96d8-7eed019ac017 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8fa55ab2-fea8-4a72-96d8-7eed019ac017 .
+
+km-dev:PredicateObjectMap_68839f65-b8b1-4f81-94eb-c7da03a8394c rr:predicate <http://data.usgs.gov/lod/topo/gnis_Name> .
+
+_:node1e4ohmebnx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:GNIS_Name\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx7 .
+
+km-dev:PredicateObjectMap_68839f65-b8b1-4f81-94eb-c7da03a8394c rr:objectMap _:node1e4ohmebnx7 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_68839f65-b8b1-4f81-94eb-c7da03a8394c .
+
+km-dev:PredicateObjectMap_68839f65-b8b1-4f81-94eb-c7da03a8394c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_68839f65-b8b1-4f81-94eb-c7da03a8394c .
+
+km-dev:PredicateObjectMap_e961a833-34b7-4bac-9294-93ca1057a985 rr:predicate <http://data.usgs.gov/lod/topo/nhdPlusID> .
+
+_:node1e4ohmebnx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:NHDPlusID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx8 .
+
+km-dev:PredicateObjectMap_e961a833-34b7-4bac-9294-93ca1057a985 rr:objectMap _:node1e4ohmebnx8 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_e961a833-34b7-4bac-9294-93ca1057a985 .
+
+km-dev:PredicateObjectMap_e961a833-34b7-4bac-9294-93ca1057a985 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e961a833-34b7-4bac-9294-93ca1057a985 .
+
+km-dev:PredicateObjectMap_60b01ef4-2d4a-461a-b306-c49adcd1ff4e rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e4ohmebnx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:Permanent_\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx9 .
+
+km-dev:PredicateObjectMap_60b01ef4-2d4a-461a-b306-c49adcd1ff4e rr:objectMap _:node1e4ohmebnx9 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_60b01ef4-2d4a-461a-b306-c49adcd1ff4e .
+
+km-dev:PredicateObjectMap_60b01ef4-2d4a-461a-b306-c49adcd1ff4e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_60b01ef4-2d4a-461a-b306-c49adcd1ff4e .
+
+km-dev:PredicateObjectMap_a2ec7a39-c551-4d67-9402-59c75e92a221 rr:predicate <http://data.usgs.gov/lod/topo/reachCode> .
+
+_:node1e4ohmebnx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:ReachCode\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx10 .
+
+km-dev:PredicateObjectMap_a2ec7a39-c551-4d67-9402-59c75e92a221 rr:objectMap _:node1e4ohmebnx10 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_a2ec7a39-c551-4d67-9402-59c75e92a221 .
+
+km-dev:PredicateObjectMap_a2ec7a39-c551-4d67-9402-59c75e92a221 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a2ec7a39-c551-4d67-9402-59c75e92a221 .
+
+km-dev:PredicateObjectMap_560c3d45-7639-4b21-9e4e-ca6ef16ed2c5 rr:predicate <http://data.usgs.gov/lod/topo/shape_Area> .
+
+_:node1e4ohmebnx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:Shape_Area\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx11 .
+
+km-dev:PredicateObjectMap_560c3d45-7639-4b21-9e4e-ca6ef16ed2c5 rr:objectMap _:node1e4ohmebnx11 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_560c3d45-7639-4b21-9e4e-ca6ef16ed2c5 .
+
+km-dev:PredicateObjectMap_560c3d45-7639-4b21-9e4e-ca6ef16ed2c5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_560c3d45-7639-4b21-9e4e-ca6ef16ed2c5 .
+
+km-dev:PredicateObjectMap_83b8bf2c-5621-40f7-8e46-64a5965d511b rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e4ohmebnx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx12 .
+
+km-dev:PredicateObjectMap_83b8bf2c-5621-40f7-8e46-64a5965d511b rr:objectMap _:node1e4ohmebnx12 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_83b8bf2c-5621-40f7-8e46-64a5965d511b .
+
+km-dev:PredicateObjectMap_83b8bf2c-5621-40f7-8e46-64a5965d511b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_83b8bf2c-5621-40f7-8e46-64a5965d511b .
+
+km-dev:PredicateObjectMap_fc7549f1-8f7f-4d6f-affa-8193886fa0df rr:predicate <http://data.usgs.gov/lod/topo/visibilityFilter> .
+
+_:node1e4ohmebnx13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:Visibility\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx13 .
+
+km-dev:PredicateObjectMap_fc7549f1-8f7f-4d6f-affa-8193886fa0df rr:objectMap _:node1e4ohmebnx13 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_fc7549f1-8f7f-4d6f-affa-8193886fa0df .
+
+km-dev:PredicateObjectMap_fc7549f1-8f7f-4d6f-affa-8193886fa0df a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fc7549f1-8f7f-4d6f-affa-8193886fa0df .
+
+km-dev:PredicateObjectMap_8112485f-d895-40d7-967b-3af54e4e0048 rr:predicate <http://data.usgs.gov/lod/topo/vpuID> .
+
+_:node1e4ohmebnx14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:VPUID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasObjectMap _:node1e4ohmebnx14 .
+
+km-dev:PredicateObjectMap_8112485f-d895-40d7-967b-3af54e4e0048 rr:objectMap _:node1e4ohmebnx14 .
+
+km-dev:TriplesMap_99caa2f5-2efe-41e0-8472-29aaaeb72758 rr:predicateObjectMap km-dev:PredicateObjectMap_8112485f-d895-40d7-967b-3af54e4e0048 .
+
+km-dev:PredicateObjectMap_8112485f-d895-40d7-967b-3af54e4e0048 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8112485f-d895-40d7-967b-3af54e4e0048 .
+
+km-dev:TriplesMap_486b04cf-8063-4b8c-a610-966ab4ca414a a rr:TriplesMap .
+
+_:node1e4ohmebnx1 km-dev:hasTriplesMap km-dev:TriplesMap_486b04cf-8063-4b8c-a610-966ab4ca414a .
+
+km-dev:TriplesMap_486b04cf-8063-4b8c-a610-966ab4ca414a km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx15 rr:tableName "NHDWaterbody" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasLogicalTable _:node1e4ohmebnx15 .
+
+km-dev:TriplesMap_486b04cf-8063-4b8c-a610-966ab4ca414a rr:logicalTable _:node1e4ohmebnx15 ;
+	rr:subjectMap _:node1e4ohmebnx16 .
+
+_:node1e4ohmebnx1 km-dev:hasSubjectMap _:node1e4ohmebnx16 .
+
+_:node1e4ohmebnx16 km-dev:isPartOfMapping _:node1e4ohmebnx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:id\"]}" .
+
+km-dev:TriplesMap_e8eebdb3-090f-46a5-abca-0a4c76abdfe4 a rr:TriplesMap .
+
+_:node1e4ohmebnx1 km-dev:hasTriplesMap km-dev:TriplesMap_e8eebdb3-090f-46a5-abca-0a4c76abdfe4 .
+
+km-dev:TriplesMap_e8eebdb3-090f-46a5-abca-0a4c76abdfe4 km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx17 rr:tableName "NHDWaterbody" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasLogicalTable _:node1e4ohmebnx17 .
+
+km-dev:TriplesMap_e8eebdb3-090f-46a5-abca-0a4c76abdfe4 rr:logicalTable _:node1e4ohmebnx17 ;
+	rr:subjectMap _:node1e4ohmebnx18 .
+
+_:node1e4ohmebnx1 km-dev:hasSubjectMap _:node1e4ohmebnx18 .
+
+_:node1e4ohmebnx18 km-dev:isPartOfMapping _:node1e4ohmebnx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:Resolution\"]}" .
+
+km-dev:TriplesMap_032828a6-e049-4e12-98eb-baa862925b4e a rr:TriplesMap .
+
+_:node1e4ohmebnx1 km-dev:hasTriplesMap km-dev:TriplesMap_032828a6-e049-4e12-98eb-baa862925b4e .
+
+km-dev:TriplesMap_032828a6-e049-4e12-98eb-baa862925b4e km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx19 rr:tableName "NHDWaterbody" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasLogicalTable _:node1e4ohmebnx19 .
+
+km-dev:TriplesMap_032828a6-e049-4e12-98eb-baa862925b4e rr:logicalTable _:node1e4ohmebnx19 ;
+	rr:subjectMap _:node1e4ohmebnx20 .
+
+_:node1e4ohmebnx1 km-dev:hasSubjectMap _:node1e4ohmebnx20 .
+
+_:node1e4ohmebnx20 km-dev:isPartOfMapping _:node1e4ohmebnx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_991d7e55-ea1b-41f9-800e-9578fb9fdb48 a rr:TriplesMap .
+
+_:node1e4ohmebnx1 km-dev:hasTriplesMap km-dev:TriplesMap_991d7e55-ea1b-41f9-800e-9578fb9fdb48 .
+
+km-dev:TriplesMap_991d7e55-ea1b-41f9-800e-9578fb9fdb48 km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx21 rr:tableName "NHDWaterbody" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4ohmebnx1 .
+
+_:node1e4ohmebnx1 km-dev:hasLogicalTable _:node1e4ohmebnx21 .
+
+km-dev:TriplesMap_991d7e55-ea1b-41f9-800e-9578fb9fdb48 rr:logicalTable _:node1e4ohmebnx21 ;
+	rr:subjectMap _:node1e4ohmebnx22 .
+
+_:node1e4ohmebnx1 km-dev:hasSubjectMap _:node1e4ohmebnx22 .
+
+_:node1e4ohmebnx22 km-dev:isPartOfMapping _:node1e4ohmebnx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDWaterbody\",\"usgsns:FType\"]}" .

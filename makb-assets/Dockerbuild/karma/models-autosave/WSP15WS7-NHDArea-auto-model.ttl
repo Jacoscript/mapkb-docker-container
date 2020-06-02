@@ -1,0 +1,2245 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e587n8jox1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "NHDArea" ;
+	km-dev:modelPublicationTime "1586193212025"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "NHDArea" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdarea_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fType_uri(getValue(\\\"usgsns:FType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Resolution\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return resolution_uri(getValue(\\\"usgsns:Resolution\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdarea_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt1\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return make_poly_3d(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_polygon(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:AreaSqKm\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/areaSqKm_Standard\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:FDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/fDate\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:dateTime\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:GNIS_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_ID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:GNIS_Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:NHDPlusID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/nhdPlusID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Permanent_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Shape_Area\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Area\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:VPUID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/vpuID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:Visibility\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/visibilityFilter\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDArea\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"wkt1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDArea\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/resolution\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fCode\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDArea\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d a rr:TriplesMap .
+
+_:node1e587n8jox1 km-dev:hasTriplesMap km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox2 rr:tableName "NHDArea" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasLogicalTable _:node1e587n8jox2 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:logicalTable _:node1e587n8jox2 ;
+	rr:subjectMap _:node1e587n8jox3 .
+
+_:node1e587n8jox1 km-dev:hasSubjectMap _:node1e587n8jox3 .
+
+_:node1e587n8jox3 km-dev:isPartOfMapping _:node1e587n8jox1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Hydrography/NHDArea1" ;
+	rr:class <http://data.usgs.gov/lod/topo/Hydrography/NHDArea> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_f37c679b-d18e-4211-b963-de3a9f1db47a rr:predicate <http://data.usgs.gov/lod/topo/areaSqKm_Standard> .
+
+_:node1e587n8jox4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:AreaSqKm\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox4 .
+
+km-dev:PredicateObjectMap_f37c679b-d18e-4211-b963-de3a9f1db47a rr:objectMap _:node1e587n8jox4 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_f37c679b-d18e-4211-b963-de3a9f1db47a .
+
+km-dev:PredicateObjectMap_f37c679b-d18e-4211-b963-de3a9f1db47a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f37c679b-d18e-4211-b963-de3a9f1db47a .
+
+km-dev:PredicateObjectMap_82a9c39c-a7e3-4191-9975-7f6fa899e167 rr:predicate <http://data.usgs.gov/lod/topo/fCode> .
+
+km-dev:RefObjectMap_cdc4fa0f-43ce-4176-a674-a0f5cbab5f03 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_1957f4e5-8102-414e-90c4-c3d309f63c53 ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap km-dev:RefObjectMap_cdc4fa0f-43ce-4176-a674-a0f5cbab5f03 .
+
+km-dev:PredicateObjectMap_82a9c39c-a7e3-4191-9975-7f6fa899e167 rr:objectMap km-dev:RefObjectMap_cdc4fa0f-43ce-4176-a674-a0f5cbab5f03 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_82a9c39c-a7e3-4191-9975-7f6fa899e167 .
+
+km-dev:PredicateObjectMap_82a9c39c-a7e3-4191-9975-7f6fa899e167 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_82a9c39c-a7e3-4191-9975-7f6fa899e167 .
+
+km-dev:PredicateObjectMap_7554ebdb-a32c-4fbb-94e0-d4e5f8306186 rr:predicate <http://data.usgs.gov/lod/topo/fDate> .
+
+_:node1e587n8jox5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:FDate\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#dateTime" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox5 .
+
+km-dev:PredicateObjectMap_7554ebdb-a32c-4fbb-94e0-d4e5f8306186 rr:objectMap _:node1e587n8jox5 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_7554ebdb-a32c-4fbb-94e0-d4e5f8306186 .
+
+km-dev:PredicateObjectMap_7554ebdb-a32c-4fbb-94e0-d4e5f8306186 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7554ebdb-a32c-4fbb-94e0-d4e5f8306186 .
+
+km-dev:PredicateObjectMap_56432870-31b3-4097-a69f-05d8a2984b13 rr:predicate <http://data.usgs.gov/lod/topo/fType> .
+
+km-dev:RefObjectMap_e240eea9-b46b-43d4-b04e-e61b34d68cf9 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_ab430165-fa85-4ecc-9287-8dbbea9208b3 ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap km-dev:RefObjectMap_e240eea9-b46b-43d4-b04e-e61b34d68cf9 .
+
+km-dev:PredicateObjectMap_56432870-31b3-4097-a69f-05d8a2984b13 rr:objectMap km-dev:RefObjectMap_e240eea9-b46b-43d4-b04e-e61b34d68cf9 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_56432870-31b3-4097-a69f-05d8a2984b13 .
+
+km-dev:PredicateObjectMap_56432870-31b3-4097-a69f-05d8a2984b13 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_56432870-31b3-4097-a69f-05d8a2984b13 .
+
+km-dev:PredicateObjectMap_77a999b5-d043-4e5f-a200-78c19759d079 rr:predicate <http://data.usgs.gov/lod/topo/gnis_ID> .
+
+_:node1e587n8jox6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:GNIS_ID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox6 .
+
+km-dev:PredicateObjectMap_77a999b5-d043-4e5f-a200-78c19759d079 rr:objectMap _:node1e587n8jox6 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_77a999b5-d043-4e5f-a200-78c19759d079 .
+
+km-dev:PredicateObjectMap_77a999b5-d043-4e5f-a200-78c19759d079 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_77a999b5-d043-4e5f-a200-78c19759d079 .
+
+km-dev:PredicateObjectMap_ff2b550d-2a42-4574-b988-0a8957af9eac rr:predicate <http://data.usgs.gov/lod/topo/gnis_Name> .
+
+_:node1e587n8jox7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:GNIS_Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox7 .
+
+km-dev:PredicateObjectMap_ff2b550d-2a42-4574-b988-0a8957af9eac rr:objectMap _:node1e587n8jox7 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_ff2b550d-2a42-4574-b988-0a8957af9eac .
+
+km-dev:PredicateObjectMap_ff2b550d-2a42-4574-b988-0a8957af9eac a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ff2b550d-2a42-4574-b988-0a8957af9eac .
+
+km-dev:PredicateObjectMap_8fea1bdb-0692-4c6d-82fb-63ad4ba57549 rr:predicate <http://data.usgs.gov/lod/topo/nhdPlusID> .
+
+_:node1e587n8jox8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:NHDPlusID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox8 .
+
+km-dev:PredicateObjectMap_8fea1bdb-0692-4c6d-82fb-63ad4ba57549 rr:objectMap _:node1e587n8jox8 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_8fea1bdb-0692-4c6d-82fb-63ad4ba57549 .
+
+km-dev:PredicateObjectMap_8fea1bdb-0692-4c6d-82fb-63ad4ba57549 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8fea1bdb-0692-4c6d-82fb-63ad4ba57549 .
+
+km-dev:PredicateObjectMap_047f6645-72df-4018-95be-11089d9e88c8 rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e587n8jox9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:Permanent_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox9 .
+
+km-dev:PredicateObjectMap_047f6645-72df-4018-95be-11089d9e88c8 rr:objectMap _:node1e587n8jox9 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_047f6645-72df-4018-95be-11089d9e88c8 .
+
+km-dev:PredicateObjectMap_047f6645-72df-4018-95be-11089d9e88c8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_047f6645-72df-4018-95be-11089d9e88c8 .
+
+km-dev:PredicateObjectMap_21bf6cae-8f65-4daa-b5c2-f8109fe9447f rr:predicate <http://data.usgs.gov/lod/topo/resolution> .
+
+km-dev:RefObjectMap_e05f0cdd-b8aa-4057-aaa5-2dd814322adb a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_b62ff668-3cd2-42aa-b954-900d04663f67 ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap km-dev:RefObjectMap_e05f0cdd-b8aa-4057-aaa5-2dd814322adb .
+
+km-dev:PredicateObjectMap_21bf6cae-8f65-4daa-b5c2-f8109fe9447f rr:objectMap km-dev:RefObjectMap_e05f0cdd-b8aa-4057-aaa5-2dd814322adb .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_21bf6cae-8f65-4daa-b5c2-f8109fe9447f .
+
+km-dev:PredicateObjectMap_21bf6cae-8f65-4daa-b5c2-f8109fe9447f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_21bf6cae-8f65-4daa-b5c2-f8109fe9447f .
+
+km-dev:PredicateObjectMap_e3a4c482-e933-4963-95e7-10a11eb0b9d9 rr:predicate <http://data.usgs.gov/lod/topo/shape_Area> .
+
+_:node1e587n8jox10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:Shape_Area\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox10 .
+
+km-dev:PredicateObjectMap_e3a4c482-e933-4963-95e7-10a11eb0b9d9 rr:objectMap _:node1e587n8jox10 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_e3a4c482-e933-4963-95e7-10a11eb0b9d9 .
+
+km-dev:PredicateObjectMap_e3a4c482-e933-4963-95e7-10a11eb0b9d9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e3a4c482-e933-4963-95e7-10a11eb0b9d9 .
+
+km-dev:PredicateObjectMap_1d3dac1e-d815-4bd5-b5b8-f3aaaac2dc44 rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e587n8jox11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox11 .
+
+km-dev:PredicateObjectMap_1d3dac1e-d815-4bd5-b5b8-f3aaaac2dc44 rr:objectMap _:node1e587n8jox11 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_1d3dac1e-d815-4bd5-b5b8-f3aaaac2dc44 .
+
+km-dev:PredicateObjectMap_1d3dac1e-d815-4bd5-b5b8-f3aaaac2dc44 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1d3dac1e-d815-4bd5-b5b8-f3aaaac2dc44 .
+
+km-dev:PredicateObjectMap_eab67f25-bbe8-4f31-8c07-6c9151e20d49 rr:predicate <http://data.usgs.gov/lod/topo/visibilityFilter> .
+
+_:node1e587n8jox12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:Visibility\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox12 .
+
+km-dev:PredicateObjectMap_eab67f25-bbe8-4f31-8c07-6c9151e20d49 rr:objectMap _:node1e587n8jox12 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_eab67f25-bbe8-4f31-8c07-6c9151e20d49 .
+
+km-dev:PredicateObjectMap_eab67f25-bbe8-4f31-8c07-6c9151e20d49 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_eab67f25-bbe8-4f31-8c07-6c9151e20d49 .
+
+km-dev:PredicateObjectMap_97800ea8-84bb-4d13-b5ec-7990ef7fcc93 rr:predicate <http://data.usgs.gov/lod/topo/vpuID> .
+
+_:node1e587n8jox13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:VPUID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox13 .
+
+km-dev:PredicateObjectMap_97800ea8-84bb-4d13-b5ec-7990ef7fcc93 rr:objectMap _:node1e587n8jox13 .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_97800ea8-84bb-4d13-b5ec-7990ef7fcc93 .
+
+km-dev:PredicateObjectMap_97800ea8-84bb-4d13-b5ec-7990ef7fcc93 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_97800ea8-84bb-4d13-b5ec-7990ef7fcc93 .
+
+km-dev:PredicateObjectMap_97fe5c7e-3c6e-4925-b441-9ab477e058de rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_bfdd3da4-8c18-4263-b29b-40804239d75b a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap km-dev:RefObjectMap_bfdd3da4-8c18-4263-b29b-40804239d75b .
+
+km-dev:PredicateObjectMap_97fe5c7e-3c6e-4925-b441-9ab477e058de rr:objectMap km-dev:RefObjectMap_bfdd3da4-8c18-4263-b29b-40804239d75b .
+
+km-dev:TriplesMap_010ac8ad-834e-43fe-83d2-0998b7f66f1d rr:predicateObjectMap km-dev:PredicateObjectMap_97fe5c7e-3c6e-4925-b441-9ab477e058de .
+
+km-dev:PredicateObjectMap_97fe5c7e-3c6e-4925-b441-9ab477e058de a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_97fe5c7e-3c6e-4925-b441-9ab477e058de .
+
+km-dev:TriplesMap_1957f4e5-8102-414e-90c4-c3d309f63c53 a rr:TriplesMap .
+
+_:node1e587n8jox1 km-dev:hasTriplesMap km-dev:TriplesMap_1957f4e5-8102-414e-90c4-c3d309f63c53 .
+
+km-dev:TriplesMap_1957f4e5-8102-414e-90c4-c3d309f63c53 km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox14 rr:tableName "NHDArea" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasLogicalTable _:node1e587n8jox14 .
+
+km-dev:TriplesMap_1957f4e5-8102-414e-90c4-c3d309f63c53 rr:logicalTable _:node1e587n8jox14 ;
+	rr:subjectMap _:node1e587n8jox15 .
+
+_:node1e587n8jox1 km-dev:hasSubjectMap _:node1e587n8jox15 .
+
+_:node1e587n8jox15 km-dev:isPartOfMapping _:node1e587n8jox1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_ab430165-fa85-4ecc-9287-8dbbea9208b3 a rr:TriplesMap .
+
+_:node1e587n8jox1 km-dev:hasTriplesMap km-dev:TriplesMap_ab430165-fa85-4ecc-9287-8dbbea9208b3 .
+
+km-dev:TriplesMap_ab430165-fa85-4ecc-9287-8dbbea9208b3 km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox16 rr:tableName "NHDArea" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasLogicalTable _:node1e587n8jox16 .
+
+km-dev:TriplesMap_ab430165-fa85-4ecc-9287-8dbbea9208b3 rr:logicalTable _:node1e587n8jox16 ;
+	rr:subjectMap _:node1e587n8jox17 .
+
+_:node1e587n8jox1 km-dev:hasSubjectMap _:node1e587n8jox17 .
+
+_:node1e587n8jox17 km-dev:isPartOfMapping _:node1e587n8jox1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:FType\"]}" .
+
+km-dev:TriplesMap_b62ff668-3cd2-42aa-b954-900d04663f67 a rr:TriplesMap .
+
+_:node1e587n8jox1 km-dev:hasTriplesMap km-dev:TriplesMap_b62ff668-3cd2-42aa-b954-900d04663f67 .
+
+km-dev:TriplesMap_b62ff668-3cd2-42aa-b954-900d04663f67 km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox18 rr:tableName "NHDArea" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasLogicalTable _:node1e587n8jox18 .
+
+km-dev:TriplesMap_b62ff668-3cd2-42aa-b954-900d04663f67 rr:logicalTable _:node1e587n8jox18 ;
+	rr:subjectMap _:node1e587n8jox19 .
+
+_:node1e587n8jox1 km-dev:hasSubjectMap _:node1e587n8jox19 .
+
+_:node1e587n8jox19 km-dev:isPartOfMapping _:node1e587n8jox1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:Resolution\"]}" .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b a rr:TriplesMap .
+
+_:node1e587n8jox1 km-dev:hasTriplesMap km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox20 rr:tableName "NHDArea" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasLogicalTable _:node1e587n8jox20 .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b rr:logicalTable _:node1e587n8jox20 ;
+	rr:subjectMap _:node1e587n8jox21 .
+
+_:node1e587n8jox1 km-dev:hasSubjectMap _:node1e587n8jox21 .
+
+_:node1e587n8jox21 km-dev:isPartOfMapping _:node1e587n8jox1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_751b045e-798e-4f79-a05d-2bd9fc51d56a rr:predicate geo:asGML .
+
+_:node1e587n8jox22 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"gml:posList\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox22 .
+
+km-dev:PredicateObjectMap_751b045e-798e-4f79-a05d-2bd9fc51d56a rr:objectMap _:node1e587n8jox22 .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b rr:predicateObjectMap km-dev:PredicateObjectMap_751b045e-798e-4f79-a05d-2bd9fc51d56a .
+
+km-dev:PredicateObjectMap_751b045e-798e-4f79-a05d-2bd9fc51d56a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_751b045e-798e-4f79-a05d-2bd9fc51d56a .
+
+km-dev:PredicateObjectMap_3a321fc9-b572-4b5f-bfd4-796acd7b9c39 rr:predicate geo:asWKT .
+
+_:node1e587n8jox23 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"wkt1\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox23 .
+
+km-dev:PredicateObjectMap_3a321fc9-b572-4b5f-bfd4-796acd7b9c39 rr:objectMap _:node1e587n8jox23 .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b rr:predicateObjectMap km-dev:PredicateObjectMap_3a321fc9-b572-4b5f-bfd4-796acd7b9c39 .
+
+km-dev:PredicateObjectMap_3a321fc9-b572-4b5f-bfd4-796acd7b9c39 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3a321fc9-b572-4b5f-bfd4-796acd7b9c39 .
+
+km-dev:PredicateObjectMap_9800a421-983b-4821-9915-04951aab5175 rr:predicate geo:coordinateDimension .
+
+_:node1e587n8jox24 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDArea\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasObjectMap _:node1e587n8jox24 .
+
+km-dev:PredicateObjectMap_9800a421-983b-4821-9915-04951aab5175 rr:objectMap _:node1e587n8jox24 .
+
+km-dev:TriplesMap_b4ef1c7e-a493-4dc1-a220-21139ab4662b rr:predicateObjectMap km-dev:PredicateObjectMap_9800a421-983b-4821-9915-04951aab5175 .
+
+km-dev:PredicateObjectMap_9800a421-983b-4821-9915-04951aab5175 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e587n8jox1 .
+
+_:node1e587n8jox1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9800a421-983b-4821-9915-04951aab5175 .

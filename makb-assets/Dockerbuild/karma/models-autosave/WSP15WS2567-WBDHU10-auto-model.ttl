@@ -1,0 +1,1831 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e5fqcqovx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "WBDHU10" ;
+	km-dev:modelPublicationTime "1586447674143"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "WBDHU10" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return wbdhu10_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return wbdhu10_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_poly(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_polygon(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:AreaAcres\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/areaAcres\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:AreaAcres\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:AreaAcres\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:AreaSqKm\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/areaSqKm_WBDHU\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKm\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:HUC10\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/huc10\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUC10\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUC10\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:HUMod\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/huMod\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUMod\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUMod\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:HUType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/huType_HUC10\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:HUType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:LoadDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/loadDate_NHD\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:dateTime\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:MetaSource\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/metaSourceID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:MetaSource\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:MetaSource\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/name_NHD_10\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:SourceData\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceDataDesc_NHD\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceData\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceData\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:SourceFeat\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceFeatureID_NHD\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceFeat\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceFeat\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:SourceOrig\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceOriginator_NHD\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceOrig\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:SourceOrig\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:States\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/states\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:States\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:States\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:TNMID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/tnmID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:TNMID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:TNMID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:WBDHU10\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:WBDHU10\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU101\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/WBDHU10\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca a rr:TriplesMap .
+
+_:node1e5fqcqovx1 km-dev:hasTriplesMap km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx2 rr:tableName "WBDHU10" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasLogicalTable _:node1e5fqcqovx2 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:logicalTable _:node1e5fqcqovx2 ;
+	rr:subjectMap _:node1e5fqcqovx3 .
+
+_:node1e5fqcqovx1 km-dev:hasSubjectMap _:node1e5fqcqovx3 .
+
+_:node1e5fqcqovx3 km-dev:isPartOfMapping _:node1e5fqcqovx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Hydrography/WBDHU101" ;
+	rr:class <http://data.usgs.gov/lod/topo/Hydrography/WBDHU10> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_06af80dd-80d8-460d-ba6d-cb67bf74a5e0 rr:predicate <http://data.usgs.gov/lod/topo/areaAcres> .
+
+_:node1e5fqcqovx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:AreaAcres\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx4 .
+
+km-dev:PredicateObjectMap_06af80dd-80d8-460d-ba6d-cb67bf74a5e0 rr:objectMap _:node1e5fqcqovx4 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_06af80dd-80d8-460d-ba6d-cb67bf74a5e0 .
+
+km-dev:PredicateObjectMap_06af80dd-80d8-460d-ba6d-cb67bf74a5e0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_06af80dd-80d8-460d-ba6d-cb67bf74a5e0 .
+
+km-dev:PredicateObjectMap_13b848b8-38f9-4efb-b980-6df0a917805d rr:predicate <http://data.usgs.gov/lod/topo/areaSqKm_WBDHU> .
+
+_:node1e5fqcqovx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:AreaSqKm\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx5 .
+
+km-dev:PredicateObjectMap_13b848b8-38f9-4efb-b980-6df0a917805d rr:objectMap _:node1e5fqcqovx5 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_13b848b8-38f9-4efb-b980-6df0a917805d .
+
+km-dev:PredicateObjectMap_13b848b8-38f9-4efb-b980-6df0a917805d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_13b848b8-38f9-4efb-b980-6df0a917805d .
+
+km-dev:PredicateObjectMap_8f181f1f-5ac4-4c88-8797-d180ce5f8b9f rr:predicate <http://data.usgs.gov/lod/topo/huMod> .
+
+_:node1e5fqcqovx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:HUMod\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx6 .
+
+km-dev:PredicateObjectMap_8f181f1f-5ac4-4c88-8797-d180ce5f8b9f rr:objectMap _:node1e5fqcqovx6 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_8f181f1f-5ac4-4c88-8797-d180ce5f8b9f .
+
+km-dev:PredicateObjectMap_8f181f1f-5ac4-4c88-8797-d180ce5f8b9f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8f181f1f-5ac4-4c88-8797-d180ce5f8b9f .
+
+km-dev:PredicateObjectMap_4a910380-04d5-4576-b268-1abed3695a8e rr:predicate <http://data.usgs.gov/lod/topo/huType_HUC10> .
+
+_:node1e5fqcqovx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:HUType\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx7 .
+
+km-dev:PredicateObjectMap_4a910380-04d5-4576-b268-1abed3695a8e rr:objectMap _:node1e5fqcqovx7 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_4a910380-04d5-4576-b268-1abed3695a8e .
+
+km-dev:PredicateObjectMap_4a910380-04d5-4576-b268-1abed3695a8e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4a910380-04d5-4576-b268-1abed3695a8e .
+
+km-dev:PredicateObjectMap_a65ad527-951b-4bf6-ad79-a732d5c702f4 rr:predicate <http://data.usgs.gov/lod/topo/huc10> .
+
+_:node1e5fqcqovx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:HUC10\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx8 .
+
+km-dev:PredicateObjectMap_a65ad527-951b-4bf6-ad79-a732d5c702f4 rr:objectMap _:node1e5fqcqovx8 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_a65ad527-951b-4bf6-ad79-a732d5c702f4 .
+
+km-dev:PredicateObjectMap_a65ad527-951b-4bf6-ad79-a732d5c702f4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a65ad527-951b-4bf6-ad79-a732d5c702f4 .
+
+km-dev:PredicateObjectMap_7ea723a2-1da0-45db-b382-8d6f108da339 rr:predicate <http://data.usgs.gov/lod/topo/loadDate_NHD> .
+
+_:node1e5fqcqovx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:LoadDate\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#dateTime" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx9 .
+
+km-dev:PredicateObjectMap_7ea723a2-1da0-45db-b382-8d6f108da339 rr:objectMap _:node1e5fqcqovx9 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_7ea723a2-1da0-45db-b382-8d6f108da339 .
+
+km-dev:PredicateObjectMap_7ea723a2-1da0-45db-b382-8d6f108da339 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7ea723a2-1da0-45db-b382-8d6f108da339 .
+
+km-dev:PredicateObjectMap_221ce7ae-2134-42ea-b27a-fe00e3aed48c rr:predicate <http://data.usgs.gov/lod/topo/metaSourceID> .
+
+_:node1e5fqcqovx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:MetaSource\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx10 .
+
+km-dev:PredicateObjectMap_221ce7ae-2134-42ea-b27a-fe00e3aed48c rr:objectMap _:node1e5fqcqovx10 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_221ce7ae-2134-42ea-b27a-fe00e3aed48c .
+
+km-dev:PredicateObjectMap_221ce7ae-2134-42ea-b27a-fe00e3aed48c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_221ce7ae-2134-42ea-b27a-fe00e3aed48c .
+
+km-dev:PredicateObjectMap_492177c7-a179-4fec-8764-b0217dd76889 rr:predicate <http://data.usgs.gov/lod/topo/name_NHD_10> .
+
+_:node1e5fqcqovx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx11 .
+
+km-dev:PredicateObjectMap_492177c7-a179-4fec-8764-b0217dd76889 rr:objectMap _:node1e5fqcqovx11 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_492177c7-a179-4fec-8764-b0217dd76889 .
+
+km-dev:PredicateObjectMap_492177c7-a179-4fec-8764-b0217dd76889 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_492177c7-a179-4fec-8764-b0217dd76889 .
+
+km-dev:PredicateObjectMap_4736cc33-78f4-4e80-b1b4-6225c6b6aa90 rr:predicate <http://data.usgs.gov/lod/topo/sourceDataDesc_NHD> .
+
+_:node1e5fqcqovx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:SourceData\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx12 .
+
+km-dev:PredicateObjectMap_4736cc33-78f4-4e80-b1b4-6225c6b6aa90 rr:objectMap _:node1e5fqcqovx12 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_4736cc33-78f4-4e80-b1b4-6225c6b6aa90 .
+
+km-dev:PredicateObjectMap_4736cc33-78f4-4e80-b1b4-6225c6b6aa90 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4736cc33-78f4-4e80-b1b4-6225c6b6aa90 .
+
+km-dev:PredicateObjectMap_3df4e261-dc6f-46e6-83f9-d0bc251ba9c1 rr:predicate <http://data.usgs.gov/lod/topo/sourceFeatureID_NHD> .
+
+_:node1e5fqcqovx13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:SourceFeat\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx13 .
+
+km-dev:PredicateObjectMap_3df4e261-dc6f-46e6-83f9-d0bc251ba9c1 rr:objectMap _:node1e5fqcqovx13 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_3df4e261-dc6f-46e6-83f9-d0bc251ba9c1 .
+
+km-dev:PredicateObjectMap_3df4e261-dc6f-46e6-83f9-d0bc251ba9c1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3df4e261-dc6f-46e6-83f9-d0bc251ba9c1 .
+
+km-dev:PredicateObjectMap_d86307e9-aee4-4c7c-b155-c41667433c9b rr:predicate <http://data.usgs.gov/lod/topo/sourceOriginator_NHD> .
+
+_:node1e5fqcqovx14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:SourceOrig\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx14 .
+
+km-dev:PredicateObjectMap_d86307e9-aee4-4c7c-b155-c41667433c9b rr:objectMap _:node1e5fqcqovx14 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_d86307e9-aee4-4c7c-b155-c41667433c9b .
+
+km-dev:PredicateObjectMap_d86307e9-aee4-4c7c-b155-c41667433c9b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d86307e9-aee4-4c7c-b155-c41667433c9b .
+
+km-dev:PredicateObjectMap_b5bce9dc-de9c-4951-9b66-2cfe8b487a16 rr:predicate <http://data.usgs.gov/lod/topo/states> .
+
+_:node1e5fqcqovx15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:States\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx15 .
+
+km-dev:PredicateObjectMap_b5bce9dc-de9c-4951-9b66-2cfe8b487a16 rr:objectMap _:node1e5fqcqovx15 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_b5bce9dc-de9c-4951-9b66-2cfe8b487a16 .
+
+km-dev:PredicateObjectMap_b5bce9dc-de9c-4951-9b66-2cfe8b487a16 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b5bce9dc-de9c-4951-9b66-2cfe8b487a16 .
+
+km-dev:PredicateObjectMap_5c84d667-71f4-44cb-b5af-7a55a93115d2 rr:predicate <http://data.usgs.gov/lod/topo/tnmID> .
+
+_:node1e5fqcqovx16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:TNMID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx16 .
+
+km-dev:PredicateObjectMap_5c84d667-71f4-44cb-b5af-7a55a93115d2 rr:objectMap _:node1e5fqcqovx16 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_5c84d667-71f4-44cb-b5af-7a55a93115d2 .
+
+km-dev:PredicateObjectMap_5c84d667-71f4-44cb-b5af-7a55a93115d2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5c84d667-71f4-44cb-b5af-7a55a93115d2 .
+
+km-dev:PredicateObjectMap_ca819cce-7653-43e6-b548-0527ba8fcd67 rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_c2515e99-81a1-4976-a2c6-6f6a13952be1 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap km-dev:RefObjectMap_c2515e99-81a1-4976-a2c6-6f6a13952be1 .
+
+km-dev:PredicateObjectMap_ca819cce-7653-43e6-b548-0527ba8fcd67 rr:objectMap km-dev:RefObjectMap_c2515e99-81a1-4976-a2c6-6f6a13952be1 .
+
+km-dev:TriplesMap_525321c8-ead1-4673-acee-db7a3ad4c1ca rr:predicateObjectMap km-dev:PredicateObjectMap_ca819cce-7653-43e6-b548-0527ba8fcd67 .
+
+km-dev:PredicateObjectMap_ca819cce-7653-43e6-b548-0527ba8fcd67 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ca819cce-7653-43e6-b548-0527ba8fcd67 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 a rr:TriplesMap .
+
+_:node1e5fqcqovx1 km-dev:hasTriplesMap km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx17 rr:tableName "WBDHU10" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasLogicalTable _:node1e5fqcqovx17 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 rr:logicalTable _:node1e5fqcqovx17 ;
+	rr:subjectMap _:node1e5fqcqovx18 .
+
+_:node1e5fqcqovx1 km-dev:hasSubjectMap _:node1e5fqcqovx18 .
+
+_:node1e5fqcqovx18 km-dev:isPartOfMapping _:node1e5fqcqovx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_4a1cd1e2-0b8a-4756-a247-58a9d1891630 rr:predicate geo:asGML .
+
+_:node1e5fqcqovx19 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"gml:posList\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx19 .
+
+km-dev:PredicateObjectMap_4a1cd1e2-0b8a-4756-a247-58a9d1891630 rr:objectMap _:node1e5fqcqovx19 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 rr:predicateObjectMap km-dev:PredicateObjectMap_4a1cd1e2-0b8a-4756-a247-58a9d1891630 .
+
+km-dev:PredicateObjectMap_4a1cd1e2-0b8a-4756-a247-58a9d1891630 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4a1cd1e2-0b8a-4756-a247-58a9d1891630 .
+
+km-dev:PredicateObjectMap_8dbd93c3-2b60-4ad3-8e43-af33c3992c36 rr:predicate geo:asWKT .
+
+_:node1e5fqcqovx20 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx20 .
+
+km-dev:PredicateObjectMap_8dbd93c3-2b60-4ad3-8e43-af33c3992c36 rr:objectMap _:node1e5fqcqovx20 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 rr:predicateObjectMap km-dev:PredicateObjectMap_8dbd93c3-2b60-4ad3-8e43-af33c3992c36 .
+
+km-dev:PredicateObjectMap_8dbd93c3-2b60-4ad3-8e43-af33c3992c36 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8dbd93c3-2b60-4ad3-8e43-af33c3992c36 .
+
+km-dev:PredicateObjectMap_e19cabc5-6e6c-4508-ad4c-aad8bf45c6ec rr:predicate geo:coordinateDimension .
+
+_:node1e5fqcqovx21 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:WBDHU10\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasObjectMap _:node1e5fqcqovx21 .
+
+km-dev:PredicateObjectMap_e19cabc5-6e6c-4508-ad4c-aad8bf45c6ec rr:objectMap _:node1e5fqcqovx21 .
+
+km-dev:TriplesMap_aa06f2ca-806d-4300-b5f0-ebf93d9decd6 rr:predicateObjectMap km-dev:PredicateObjectMap_e19cabc5-6e6c-4508-ad4c-aad8bf45c6ec .
+
+km-dev:PredicateObjectMap_e19cabc5-6e6c-4508-ad4c-aad8bf45c6ec a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fqcqovx1 .
+
+_:node1e5fqcqovx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e19cabc5-6e6c-4508-ad4c-aad8bf45c6ec .

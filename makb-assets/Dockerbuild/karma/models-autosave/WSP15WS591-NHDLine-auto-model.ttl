@@ -1,0 +1,2088 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e4m4fq8vx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "NHDLine" ;
+	km-dev:modelPublicationTime "1585585842463"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdline_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fType_uri(getValue(\\\"usgsns:FType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Resolution\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return resolution_uri(getValue(\\\"usgsns:Resolution\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdline_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return make_line_3d(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_line(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:Resolution\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Resolution\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:FDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/fDate\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:date\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:FDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:GNIS_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_ID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:GNIS_Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:LengthKM\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/lengthKM\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:LengthKM\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:LengthKM\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:NHDPlusID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/nhdPlusID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:Permanent_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:VPUID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/vpuID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:Visibility\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/visibilityFilter\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:Visibility\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDLine\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDLine\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fCode\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/resolution\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDLine\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 a rr:TriplesMap .
+
+_:node1e4m4fq8vx1 km-dev:hasTriplesMap km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx2 rr:tableName "NHDLine" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasLogicalTable _:node1e4m4fq8vx2 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:logicalTable _:node1e4m4fq8vx2 ;
+	rr:subjectMap _:node1e4m4fq8vx3 .
+
+_:node1e4m4fq8vx1 km-dev:hasSubjectMap _:node1e4m4fq8vx3 .
+
+_:node1e4m4fq8vx3 km-dev:isPartOfMapping _:node1e4m4fq8vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Hydrography/NHDLine1" ;
+	rr:class <http://data.usgs.gov/lod/topo/Hydrography/NHDLine> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_6f0ffa8f-8494-479c-8c0f-a13a1674f4de rr:predicate <http://data.usgs.gov/lod/topo/fCode> .
+
+km-dev:RefObjectMap_fd7c6ad9-f390-4654-a1ef-7e79fdc83ac9 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_06f7481c-a976-4b1c-98d7-05e706f19d53 ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap km-dev:RefObjectMap_fd7c6ad9-f390-4654-a1ef-7e79fdc83ac9 .
+
+km-dev:PredicateObjectMap_6f0ffa8f-8494-479c-8c0f-a13a1674f4de rr:objectMap km-dev:RefObjectMap_fd7c6ad9-f390-4654-a1ef-7e79fdc83ac9 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_6f0ffa8f-8494-479c-8c0f-a13a1674f4de .
+
+km-dev:PredicateObjectMap_6f0ffa8f-8494-479c-8c0f-a13a1674f4de a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6f0ffa8f-8494-479c-8c0f-a13a1674f4de .
+
+km-dev:PredicateObjectMap_e441285f-bd66-43d5-ad4b-8d549320d898 rr:predicate <http://data.usgs.gov/lod/topo/fDate> .
+
+_:node1e4m4fq8vx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:FDate\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#date" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx4 .
+
+km-dev:PredicateObjectMap_e441285f-bd66-43d5-ad4b-8d549320d898 rr:objectMap _:node1e4m4fq8vx4 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_e441285f-bd66-43d5-ad4b-8d549320d898 .
+
+km-dev:PredicateObjectMap_e441285f-bd66-43d5-ad4b-8d549320d898 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e441285f-bd66-43d5-ad4b-8d549320d898 .
+
+km-dev:PredicateObjectMap_068bbcf6-65cc-4dcd-a0ca-6f44456439b4 rr:predicate <http://data.usgs.gov/lod/topo/fType> .
+
+km-dev:RefObjectMap_6233cd78-c744-41f6-b0c7-447b0cea9834 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_8e0e1e53-9c89-4582-82fb-04100c42ee6e ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap km-dev:RefObjectMap_6233cd78-c744-41f6-b0c7-447b0cea9834 .
+
+km-dev:PredicateObjectMap_068bbcf6-65cc-4dcd-a0ca-6f44456439b4 rr:objectMap km-dev:RefObjectMap_6233cd78-c744-41f6-b0c7-447b0cea9834 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_068bbcf6-65cc-4dcd-a0ca-6f44456439b4 .
+
+km-dev:PredicateObjectMap_068bbcf6-65cc-4dcd-a0ca-6f44456439b4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_068bbcf6-65cc-4dcd-a0ca-6f44456439b4 .
+
+km-dev:PredicateObjectMap_9dc6a5d5-ada6-43a2-a950-ae363588c335 rr:predicate <http://data.usgs.gov/lod/topo/gnis_ID> .
+
+_:node1e4m4fq8vx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:GNIS_ID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx5 .
+
+km-dev:PredicateObjectMap_9dc6a5d5-ada6-43a2-a950-ae363588c335 rr:objectMap _:node1e4m4fq8vx5 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_9dc6a5d5-ada6-43a2-a950-ae363588c335 .
+
+km-dev:PredicateObjectMap_9dc6a5d5-ada6-43a2-a950-ae363588c335 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9dc6a5d5-ada6-43a2-a950-ae363588c335 .
+
+km-dev:PredicateObjectMap_aea52c28-dddd-4482-be88-eb2bb46ac982 rr:predicate <http://data.usgs.gov/lod/topo/gnis_Name> .
+
+_:node1e4m4fq8vx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:GNIS_Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx6 .
+
+km-dev:PredicateObjectMap_aea52c28-dddd-4482-be88-eb2bb46ac982 rr:objectMap _:node1e4m4fq8vx6 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_aea52c28-dddd-4482-be88-eb2bb46ac982 .
+
+km-dev:PredicateObjectMap_aea52c28-dddd-4482-be88-eb2bb46ac982 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aea52c28-dddd-4482-be88-eb2bb46ac982 .
+
+km-dev:PredicateObjectMap_ec7cade3-7a7e-4e42-908d-480efe716d8e rr:predicate <http://data.usgs.gov/lod/topo/lengthKM> .
+
+_:node1e4m4fq8vx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:LengthKM\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx7 .
+
+km-dev:PredicateObjectMap_ec7cade3-7a7e-4e42-908d-480efe716d8e rr:objectMap _:node1e4m4fq8vx7 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_ec7cade3-7a7e-4e42-908d-480efe716d8e .
+
+km-dev:PredicateObjectMap_ec7cade3-7a7e-4e42-908d-480efe716d8e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ec7cade3-7a7e-4e42-908d-480efe716d8e .
+
+km-dev:PredicateObjectMap_e6ef0918-f4b7-4ac8-83b8-1a04862202fd rr:predicate <http://data.usgs.gov/lod/topo/nhdPlusID> .
+
+_:node1e4m4fq8vx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:NHDPlusID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx8 .
+
+km-dev:PredicateObjectMap_e6ef0918-f4b7-4ac8-83b8-1a04862202fd rr:objectMap _:node1e4m4fq8vx8 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_e6ef0918-f4b7-4ac8-83b8-1a04862202fd .
+
+km-dev:PredicateObjectMap_e6ef0918-f4b7-4ac8-83b8-1a04862202fd a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e6ef0918-f4b7-4ac8-83b8-1a04862202fd .
+
+km-dev:PredicateObjectMap_67eedb89-32cb-44b5-8ddc-ad93cb5dc19b rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e4m4fq8vx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:Permanent_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx9 .
+
+km-dev:PredicateObjectMap_67eedb89-32cb-44b5-8ddc-ad93cb5dc19b rr:objectMap _:node1e4m4fq8vx9 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_67eedb89-32cb-44b5-8ddc-ad93cb5dc19b .
+
+km-dev:PredicateObjectMap_67eedb89-32cb-44b5-8ddc-ad93cb5dc19b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_67eedb89-32cb-44b5-8ddc-ad93cb5dc19b .
+
+km-dev:PredicateObjectMap_638f5706-d84e-48ba-bd4e-92fe79c1e156 rr:predicate <http://data.usgs.gov/lod/topo/resolution> .
+
+km-dev:RefObjectMap_1b0f3bf7-d763-4f36-a229-27d1fb5e0870 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_2cb7e520-5c0b-4d6f-86bb-ca228243dd68 ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap km-dev:RefObjectMap_1b0f3bf7-d763-4f36-a229-27d1fb5e0870 .
+
+km-dev:PredicateObjectMap_638f5706-d84e-48ba-bd4e-92fe79c1e156 rr:objectMap km-dev:RefObjectMap_1b0f3bf7-d763-4f36-a229-27d1fb5e0870 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_638f5706-d84e-48ba-bd4e-92fe79c1e156 .
+
+km-dev:PredicateObjectMap_638f5706-d84e-48ba-bd4e-92fe79c1e156 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_638f5706-d84e-48ba-bd4e-92fe79c1e156 .
+
+km-dev:PredicateObjectMap_7b425b77-ff66-4ecd-a68d-856b8ededf55 rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e4m4fq8vx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx10 .
+
+km-dev:PredicateObjectMap_7b425b77-ff66-4ecd-a68d-856b8ededf55 rr:objectMap _:node1e4m4fq8vx10 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_7b425b77-ff66-4ecd-a68d-856b8ededf55 .
+
+km-dev:PredicateObjectMap_7b425b77-ff66-4ecd-a68d-856b8ededf55 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7b425b77-ff66-4ecd-a68d-856b8ededf55 .
+
+km-dev:PredicateObjectMap_dbe45089-09e0-4921-a217-50b8b0fdea9c rr:predicate <http://data.usgs.gov/lod/topo/visibilityFilter> .
+
+_:node1e4m4fq8vx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:Visibility\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx11 .
+
+km-dev:PredicateObjectMap_dbe45089-09e0-4921-a217-50b8b0fdea9c rr:objectMap _:node1e4m4fq8vx11 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_dbe45089-09e0-4921-a217-50b8b0fdea9c .
+
+km-dev:PredicateObjectMap_dbe45089-09e0-4921-a217-50b8b0fdea9c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_dbe45089-09e0-4921-a217-50b8b0fdea9c .
+
+km-dev:PredicateObjectMap_ee740693-c1e8-446e-ab8b-2340a8527bc8 rr:predicate <http://data.usgs.gov/lod/topo/vpuID> .
+
+_:node1e4m4fq8vx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:VPUID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx12 .
+
+km-dev:PredicateObjectMap_ee740693-c1e8-446e-ab8b-2340a8527bc8 rr:objectMap _:node1e4m4fq8vx12 .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_ee740693-c1e8-446e-ab8b-2340a8527bc8 .
+
+km-dev:PredicateObjectMap_ee740693-c1e8-446e-ab8b-2340a8527bc8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ee740693-c1e8-446e-ab8b-2340a8527bc8 .
+
+km-dev:PredicateObjectMap_af22973f-f98c-42de-95f4-8dac18854420 rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_60c94952-3484-4bfb-8d50-9c93d07dbe3e a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap km-dev:RefObjectMap_60c94952-3484-4bfb-8d50-9c93d07dbe3e .
+
+km-dev:PredicateObjectMap_af22973f-f98c-42de-95f4-8dac18854420 rr:objectMap km-dev:RefObjectMap_60c94952-3484-4bfb-8d50-9c93d07dbe3e .
+
+km-dev:TriplesMap_1739781d-dd5e-4687-807f-e7c70b24c8b0 rr:predicateObjectMap km-dev:PredicateObjectMap_af22973f-f98c-42de-95f4-8dac18854420 .
+
+km-dev:PredicateObjectMap_af22973f-f98c-42de-95f4-8dac18854420 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_af22973f-f98c-42de-95f4-8dac18854420 .
+
+km-dev:TriplesMap_06f7481c-a976-4b1c-98d7-05e706f19d53 a rr:TriplesMap .
+
+_:node1e4m4fq8vx1 km-dev:hasTriplesMap km-dev:TriplesMap_06f7481c-a976-4b1c-98d7-05e706f19d53 .
+
+km-dev:TriplesMap_06f7481c-a976-4b1c-98d7-05e706f19d53 km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx13 rr:tableName "NHDLine" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasLogicalTable _:node1e4m4fq8vx13 .
+
+km-dev:TriplesMap_06f7481c-a976-4b1c-98d7-05e706f19d53 rr:logicalTable _:node1e4m4fq8vx13 ;
+	rr:subjectMap _:node1e4m4fq8vx14 .
+
+_:node1e4m4fq8vx1 km-dev:hasSubjectMap _:node1e4m4fq8vx14 .
+
+_:node1e4m4fq8vx14 km-dev:isPartOfMapping _:node1e4m4fq8vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_8e0e1e53-9c89-4582-82fb-04100c42ee6e a rr:TriplesMap .
+
+_:node1e4m4fq8vx1 km-dev:hasTriplesMap km-dev:TriplesMap_8e0e1e53-9c89-4582-82fb-04100c42ee6e .
+
+km-dev:TriplesMap_8e0e1e53-9c89-4582-82fb-04100c42ee6e km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx15 rr:tableName "NHDLine" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasLogicalTable _:node1e4m4fq8vx15 .
+
+km-dev:TriplesMap_8e0e1e53-9c89-4582-82fb-04100c42ee6e rr:logicalTable _:node1e4m4fq8vx15 ;
+	rr:subjectMap _:node1e4m4fq8vx16 .
+
+_:node1e4m4fq8vx1 km-dev:hasSubjectMap _:node1e4m4fq8vx16 .
+
+_:node1e4m4fq8vx16 km-dev:isPartOfMapping _:node1e4m4fq8vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:FType\"]}" .
+
+km-dev:TriplesMap_2cb7e520-5c0b-4d6f-86bb-ca228243dd68 a rr:TriplesMap .
+
+_:node1e4m4fq8vx1 km-dev:hasTriplesMap km-dev:TriplesMap_2cb7e520-5c0b-4d6f-86bb-ca228243dd68 .
+
+km-dev:TriplesMap_2cb7e520-5c0b-4d6f-86bb-ca228243dd68 km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx17 rr:tableName "NHDLine" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasLogicalTable _:node1e4m4fq8vx17 .
+
+km-dev:TriplesMap_2cb7e520-5c0b-4d6f-86bb-ca228243dd68 rr:logicalTable _:node1e4m4fq8vx17 ;
+	rr:subjectMap _:node1e4m4fq8vx18 .
+
+_:node1e4m4fq8vx1 km-dev:hasSubjectMap _:node1e4m4fq8vx18 .
+
+_:node1e4m4fq8vx18 km-dev:isPartOfMapping _:node1e4m4fq8vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:Resolution\"]}" .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 a rr:TriplesMap .
+
+_:node1e4m4fq8vx1 km-dev:hasTriplesMap km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx19 rr:tableName "NHDLine" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasLogicalTable _:node1e4m4fq8vx19 .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 rr:logicalTable _:node1e4m4fq8vx19 ;
+	rr:subjectMap _:node1e4m4fq8vx20 .
+
+_:node1e4m4fq8vx1 km-dev:hasSubjectMap _:node1e4m4fq8vx20 .
+
+_:node1e4m4fq8vx20 km-dev:isPartOfMapping _:node1e4m4fq8vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_1169c2af-06a3-4dad-b953-88c5b43889a3 rr:predicate geo:asGML .
+
+_:node1e4m4fq8vx21 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"gml:posList\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx21 .
+
+km-dev:PredicateObjectMap_1169c2af-06a3-4dad-b953-88c5b43889a3 rr:objectMap _:node1e4m4fq8vx21 .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 rr:predicateObjectMap km-dev:PredicateObjectMap_1169c2af-06a3-4dad-b953-88c5b43889a3 .
+
+km-dev:PredicateObjectMap_1169c2af-06a3-4dad-b953-88c5b43889a3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1169c2af-06a3-4dad-b953-88c5b43889a3 .
+
+km-dev:PredicateObjectMap_5177c10b-5f56-4dcf-8c5f-39020f9f5cdc rr:predicate geo:asWKT .
+
+_:node1e4m4fq8vx22 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx22 .
+
+km-dev:PredicateObjectMap_5177c10b-5f56-4dcf-8c5f-39020f9f5cdc rr:objectMap _:node1e4m4fq8vx22 .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 rr:predicateObjectMap km-dev:PredicateObjectMap_5177c10b-5f56-4dcf-8c5f-39020f9f5cdc .
+
+km-dev:PredicateObjectMap_5177c10b-5f56-4dcf-8c5f-39020f9f5cdc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5177c10b-5f56-4dcf-8c5f-39020f9f5cdc .
+
+km-dev:PredicateObjectMap_fb99459a-8081-4c20-9f8d-2ef8c1ece929 rr:predicate geo:coordinateDimension .
+
+_:node1e4m4fq8vx23 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDLine\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasObjectMap _:node1e4m4fq8vx23 .
+
+km-dev:PredicateObjectMap_fb99459a-8081-4c20-9f8d-2ef8c1ece929 rr:objectMap _:node1e4m4fq8vx23 .
+
+km-dev:TriplesMap_744f2abc-9d27-454c-a37c-4ce03ae2e562 rr:predicateObjectMap km-dev:PredicateObjectMap_fb99459a-8081-4c20-9f8d-2ef8c1ece929 .
+
+km-dev:PredicateObjectMap_fb99459a-8081-4c20-9f8d-2ef8c1ece929 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4m4fq8vx1 .
+
+_:node1e4m4fq8vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fb99459a-8081-4c20-9f8d-2ef8c1ece929 .

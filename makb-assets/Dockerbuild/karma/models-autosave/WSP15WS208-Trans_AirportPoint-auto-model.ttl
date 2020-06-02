@@ -1,0 +1,1664 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e50rre0cx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "Trans_AirportPoint" ;
+	km-dev:modelPublicationTime "1585945884684"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "Trans_AirportPoint" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return transportation_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Data_Secur\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return data_Security_uri(getValue(\\\"usgsns:Data_Secur\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Distributi\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return distribution_Policy_uri(getValue(\\\"usgsns:Distributi\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Airport_Cl\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Airport_Cl\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return airport_Class_uri(getValue(\\\"usgsns:Airport_Cl\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Airport_Cl\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fType_uri(getValue(\\\"usgsns:FType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return transportation_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_pt(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:pos\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_point(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/AirportPoint1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Airport_Cl\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Airport_Cl\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Airport_Cl\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class4\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class5\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_AirportPoint_VA\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_AirportPoint_VA\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/airport_Class\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/data_Security\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/distribution_Policy\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class4\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fCode\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class5\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/AirportPoint1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/AirportPoint\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx2 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx2 .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:logicalTable _:node1e50rre0cx2 ;
+	rr:subjectMap _:node1e50rre0cx3 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx3 .
+
+_:node1e50rre0cx3 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/AirportPoint1" ;
+	rr:class <http://data.usgs.gov/lod/topo/AirportPoint> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_695699bc-db0d-4131-ae16-3b3491a73d4b rr:predicate <http://data.usgs.gov/lod/topo/airport_Class> .
+
+km-dev:RefObjectMap_fdef9a56-ecb0-4913-8e10-fc97c27782e1 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_736835e5-1253-4448-ba6d-2eda077ce2da ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_fdef9a56-ecb0-4913-8e10-fc97c27782e1 .
+
+km-dev:PredicateObjectMap_695699bc-db0d-4131-ae16-3b3491a73d4b rr:objectMap km-dev:RefObjectMap_fdef9a56-ecb0-4913-8e10-fc97c27782e1 .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_695699bc-db0d-4131-ae16-3b3491a73d4b .
+
+km-dev:PredicateObjectMap_695699bc-db0d-4131-ae16-3b3491a73d4b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_695699bc-db0d-4131-ae16-3b3491a73d4b .
+
+km-dev:PredicateObjectMap_8e97db16-36cc-42a3-a3b5-a067ee196ca6 rr:predicate <http://data.usgs.gov/lod/topo/data_Security> .
+
+km-dev:RefObjectMap_dfde6878-aae5-4205-8b25-ef1b12a081bf a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_be7f9d5e-2696-40b3-ac96-d6f1022b05ae ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_dfde6878-aae5-4205-8b25-ef1b12a081bf .
+
+km-dev:PredicateObjectMap_8e97db16-36cc-42a3-a3b5-a067ee196ca6 rr:objectMap km-dev:RefObjectMap_dfde6878-aae5-4205-8b25-ef1b12a081bf .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_8e97db16-36cc-42a3-a3b5-a067ee196ca6 .
+
+km-dev:PredicateObjectMap_8e97db16-36cc-42a3-a3b5-a067ee196ca6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8e97db16-36cc-42a3-a3b5-a067ee196ca6 .
+
+km-dev:PredicateObjectMap_b845fb0f-cf83-45c0-b953-9f53b891cd10 rr:predicate <http://data.usgs.gov/lod/topo/distribution_Policy> .
+
+km-dev:RefObjectMap_69857242-909e-4c75-b0cd-138ea5f5efea a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_3c1c0279-75f7-4d73-9b74-db50a3bd12b2 ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_69857242-909e-4c75-b0cd-138ea5f5efea .
+
+km-dev:PredicateObjectMap_b845fb0f-cf83-45c0-b953-9f53b891cd10 rr:objectMap km-dev:RefObjectMap_69857242-909e-4c75-b0cd-138ea5f5efea .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_b845fb0f-cf83-45c0-b953-9f53b891cd10 .
+
+km-dev:PredicateObjectMap_b845fb0f-cf83-45c0-b953-9f53b891cd10 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b845fb0f-cf83-45c0-b953-9f53b891cd10 .
+
+km-dev:PredicateObjectMap_2c68914b-ee4b-4034-b026-ffcbd593ecfe rr:predicate <http://data.usgs.gov/lod/topo/fCode> .
+
+km-dev:RefObjectMap_ec5d1a60-6f11-4e34-8928-a5f4216f504a a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_4a17a42c-3acb-48ae-b049-f02007343fea ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_ec5d1a60-6f11-4e34-8928-a5f4216f504a .
+
+km-dev:PredicateObjectMap_2c68914b-ee4b-4034-b026-ffcbd593ecfe rr:objectMap km-dev:RefObjectMap_ec5d1a60-6f11-4e34-8928-a5f4216f504a .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_2c68914b-ee4b-4034-b026-ffcbd593ecfe .
+
+km-dev:PredicateObjectMap_2c68914b-ee4b-4034-b026-ffcbd593ecfe a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2c68914b-ee4b-4034-b026-ffcbd593ecfe .
+
+km-dev:PredicateObjectMap_422d538b-f207-4538-89b5-678b8e2c97ab rr:predicate <http://data.usgs.gov/lod/topo/fType> .
+
+km-dev:RefObjectMap_3a62c497-118f-4fd6-9832-fa1011f7ab55 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_8ededac3-b286-4a52-9b1d-d307630a48b8 ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_3a62c497-118f-4fd6-9832-fa1011f7ab55 .
+
+km-dev:PredicateObjectMap_422d538b-f207-4538-89b5-678b8e2c97ab rr:objectMap km-dev:RefObjectMap_3a62c497-118f-4fd6-9832-fa1011f7ab55 .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_422d538b-f207-4538-89b5-678b8e2c97ab .
+
+km-dev:PredicateObjectMap_422d538b-f207-4538-89b5-678b8e2c97ab a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_422d538b-f207-4538-89b5-678b8e2c97ab .
+
+km-dev:PredicateObjectMap_269ab3cd-6e91-403d-b28b-996740984ca9 rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_5299178b-9c74-4394-8c3c-c29c5c7a9fa7 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap km-dev:RefObjectMap_5299178b-9c74-4394-8c3c-c29c5c7a9fa7 .
+
+km-dev:PredicateObjectMap_269ab3cd-6e91-403d-b28b-996740984ca9 rr:objectMap km-dev:RefObjectMap_5299178b-9c74-4394-8c3c-c29c5c7a9fa7 .
+
+km-dev:TriplesMap_9ab330f4-c36d-4083-ab71-0b053716675e rr:predicateObjectMap km-dev:PredicateObjectMap_269ab3cd-6e91-403d-b28b-996740984ca9 .
+
+km-dev:PredicateObjectMap_269ab3cd-6e91-403d-b28b-996740984ca9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_269ab3cd-6e91-403d-b28b-996740984ca9 .
+
+km-dev:TriplesMap_736835e5-1253-4448-ba6d-2eda077ce2da a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_736835e5-1253-4448-ba6d-2eda077ce2da .
+
+km-dev:TriplesMap_736835e5-1253-4448-ba6d-2eda077ce2da km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx4 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx4 .
+
+km-dev:TriplesMap_736835e5-1253-4448-ba6d-2eda077ce2da rr:logicalTable _:node1e50rre0cx4 ;
+	rr:subjectMap _:node1e50rre0cx5 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx5 .
+
+_:node1e50rre0cx5 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:Airport_Cl\"]}" .
+
+km-dev:TriplesMap_be7f9d5e-2696-40b3-ac96-d6f1022b05ae a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_be7f9d5e-2696-40b3-ac96-d6f1022b05ae .
+
+km-dev:TriplesMap_be7f9d5e-2696-40b3-ac96-d6f1022b05ae km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx6 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx6 .
+
+km-dev:TriplesMap_be7f9d5e-2696-40b3-ac96-d6f1022b05ae rr:logicalTable _:node1e50rre0cx6 ;
+	rr:subjectMap _:node1e50rre0cx7 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx7 .
+
+_:node1e50rre0cx7 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:Data_Secur\"]}" .
+
+km-dev:TriplesMap_3c1c0279-75f7-4d73-9b74-db50a3bd12b2 a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_3c1c0279-75f7-4d73-9b74-db50a3bd12b2 .
+
+km-dev:TriplesMap_3c1c0279-75f7-4d73-9b74-db50a3bd12b2 km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx8 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx8 .
+
+km-dev:TriplesMap_3c1c0279-75f7-4d73-9b74-db50a3bd12b2 rr:logicalTable _:node1e50rre0cx8 ;
+	rr:subjectMap _:node1e50rre0cx9 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx9 .
+
+_:node1e50rre0cx9 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:Distributi\"]}" .
+
+km-dev:TriplesMap_4a17a42c-3acb-48ae-b049-f02007343fea a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_4a17a42c-3acb-48ae-b049-f02007343fea .
+
+km-dev:TriplesMap_4a17a42c-3acb-48ae-b049-f02007343fea km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx10 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx10 .
+
+km-dev:TriplesMap_4a17a42c-3acb-48ae-b049-f02007343fea rr:logicalTable _:node1e50rre0cx10 ;
+	rr:subjectMap _:node1e50rre0cx11 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx11 .
+
+_:node1e50rre0cx11 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class4" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_8ededac3-b286-4a52-9b1d-d307630a48b8 a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_8ededac3-b286-4a52-9b1d-d307630a48b8 .
+
+km-dev:TriplesMap_8ededac3-b286-4a52-9b1d-d307630a48b8 km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx12 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx12 .
+
+km-dev:TriplesMap_8ededac3-b286-4a52-9b1d-d307630a48b8 rr:logicalTable _:node1e50rre0cx12 ;
+	rr:subjectMap _:node1e50rre0cx13 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx13 .
+
+_:node1e50rre0cx13 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class5" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:FType\"]}" .
+
+km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 a rr:TriplesMap .
+
+_:node1e50rre0cx1 km-dev:hasTriplesMap km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 .
+
+km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx14 rr:tableName "Trans_AirportPoint" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasLogicalTable _:node1e50rre0cx14 .
+
+km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 rr:logicalTable _:node1e50rre0cx14 ;
+	rr:subjectMap _:node1e50rre0cx15 .
+
+_:node1e50rre0cx1 km-dev:hasSubjectMap _:node1e50rre0cx15 .
+
+_:node1e50rre0cx15 km-dev:isPartOfMapping _:node1e50rre0cx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:the_geom\",\"gml:Point\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_f40101e7-5ec5-4282-93a7-f4c43731f739 rr:predicate geo:asGML .
+
+_:node1e50rre0cx16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:the_geom\",\"gml:Point\",\"gml:pos\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap _:node1e50rre0cx16 .
+
+km-dev:PredicateObjectMap_f40101e7-5ec5-4282-93a7-f4c43731f739 rr:objectMap _:node1e50rre0cx16 .
+
+km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 rr:predicateObjectMap km-dev:PredicateObjectMap_f40101e7-5ec5-4282-93a7-f4c43731f739 .
+
+km-dev:PredicateObjectMap_f40101e7-5ec5-4282-93a7-f4c43731f739 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f40101e7-5ec5-4282-93a7-f4c43731f739 .
+
+km-dev:PredicateObjectMap_39e8ced9-dea5-411d-9fb2-916d721e6244 rr:predicate geo:asWKT .
+
+_:node1e50rre0cx17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_AirportPoint_VA\",\"usgsns:the_geom\",\"gml:Point\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasObjectMap _:node1e50rre0cx17 .
+
+km-dev:PredicateObjectMap_39e8ced9-dea5-411d-9fb2-916d721e6244 rr:objectMap _:node1e50rre0cx17 .
+
+km-dev:TriplesMap_dbe7b153-7bd8-43d3-978e-2681265c1c42 rr:predicateObjectMap km-dev:PredicateObjectMap_39e8ced9-dea5-411d-9fb2-916d721e6244 .
+
+km-dev:PredicateObjectMap_39e8ced9-dea5-411d-9fb2-916d721e6244 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e50rre0cx1 .
+
+_:node1e50rre0cx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_39e8ced9-dea5-411d-9fb2-916d721e6244 .

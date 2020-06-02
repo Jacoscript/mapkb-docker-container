@@ -1,0 +1,1686 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e4mcfkkcx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "NHDPlusSink" ;
+	km-dev:modelPublicationTime "1585594225292"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdplussink_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return nhdplussink_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:StatusFlag\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:StatusFlag\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return statusflag_uri(getValue(\\\"usgsns:StatusFlag\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:StatusFlag\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:StatusFlag\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_pt(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:pos\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_point(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:StatusFlag\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:StatusFlag\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:StatusFlag\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:Burn\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/burn\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:Burn\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:Burn\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:Catchment\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/catchment\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:Catchment\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:Catchment\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:FeatureID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/featureID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:FeatureID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:GridCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gridCode\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:GridCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:GridCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:NHDPlusID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/nhdPlusID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:PurpCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/purpCode\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:PurpCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:PurpCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:RPUID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/rpuID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:RPUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:RPUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:SourceFC\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceFC\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:SourceFC\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:SourceFC\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:VPUID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/vpuID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:VPUID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:NHDPlusSink\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:NHDPlusSink\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/statusFlag\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 a rr:TriplesMap .
+
+_:node1e4mcfkkcx1 km-dev:hasTriplesMap km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx2 rr:tableName "NHDPlusSink" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasLogicalTable _:node1e4mcfkkcx2 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:logicalTable _:node1e4mcfkkcx2 ;
+	rr:subjectMap _:node1e4mcfkkcx3 .
+
+_:node1e4mcfkkcx1 km-dev:hasSubjectMap _:node1e4mcfkkcx3 .
+
+_:node1e4mcfkkcx3 km-dev:isPartOfMapping _:node1e4mcfkkcx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink1" ;
+	rr:class <http://data.usgs.gov/lod/topo/Hydrography/NHDPlusSink> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_2c5d0cce-8e18-41fb-833b-0b02cfc6e88c rr:predicate <http://data.usgs.gov/lod/topo/burn> .
+
+_:node1e4mcfkkcx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:Burn\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx4 .
+
+km-dev:PredicateObjectMap_2c5d0cce-8e18-41fb-833b-0b02cfc6e88c rr:objectMap _:node1e4mcfkkcx4 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_2c5d0cce-8e18-41fb-833b-0b02cfc6e88c .
+
+km-dev:PredicateObjectMap_2c5d0cce-8e18-41fb-833b-0b02cfc6e88c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2c5d0cce-8e18-41fb-833b-0b02cfc6e88c .
+
+km-dev:PredicateObjectMap_72203ca1-48c6-4731-ac45-fd2f605596ca rr:predicate <http://data.usgs.gov/lod/topo/catchment> .
+
+_:node1e4mcfkkcx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:Catchment\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx5 .
+
+km-dev:PredicateObjectMap_72203ca1-48c6-4731-ac45-fd2f605596ca rr:objectMap _:node1e4mcfkkcx5 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_72203ca1-48c6-4731-ac45-fd2f605596ca .
+
+km-dev:PredicateObjectMap_72203ca1-48c6-4731-ac45-fd2f605596ca a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_72203ca1-48c6-4731-ac45-fd2f605596ca .
+
+km-dev:PredicateObjectMap_a9ac8dd6-b5db-4e88-8151-bf3b27c69041 rr:predicate <http://data.usgs.gov/lod/topo/featureID> .
+
+_:node1e4mcfkkcx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:FeatureID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx6 .
+
+km-dev:PredicateObjectMap_a9ac8dd6-b5db-4e88-8151-bf3b27c69041 rr:objectMap _:node1e4mcfkkcx6 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_a9ac8dd6-b5db-4e88-8151-bf3b27c69041 .
+
+km-dev:PredicateObjectMap_a9ac8dd6-b5db-4e88-8151-bf3b27c69041 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a9ac8dd6-b5db-4e88-8151-bf3b27c69041 .
+
+km-dev:PredicateObjectMap_b055cf84-07d4-46dd-b73a-5ea77ac0990f rr:predicate <http://data.usgs.gov/lod/topo/gridCode> .
+
+_:node1e4mcfkkcx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:GridCode\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx7 .
+
+km-dev:PredicateObjectMap_b055cf84-07d4-46dd-b73a-5ea77ac0990f rr:objectMap _:node1e4mcfkkcx7 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_b055cf84-07d4-46dd-b73a-5ea77ac0990f .
+
+km-dev:PredicateObjectMap_b055cf84-07d4-46dd-b73a-5ea77ac0990f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b055cf84-07d4-46dd-b73a-5ea77ac0990f .
+
+km-dev:PredicateObjectMap_182de8c5-8288-4ca0-931f-04d64819dbf9 rr:predicate <http://data.usgs.gov/lod/topo/nhdPlusID> .
+
+_:node1e4mcfkkcx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:NHDPlusID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx8 .
+
+km-dev:PredicateObjectMap_182de8c5-8288-4ca0-931f-04d64819dbf9 rr:objectMap _:node1e4mcfkkcx8 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_182de8c5-8288-4ca0-931f-04d64819dbf9 .
+
+km-dev:PredicateObjectMap_182de8c5-8288-4ca0-931f-04d64819dbf9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_182de8c5-8288-4ca0-931f-04d64819dbf9 .
+
+km-dev:PredicateObjectMap_0fa08718-0e8c-44d2-9df6-fbcb84e331f9 rr:predicate <http://data.usgs.gov/lod/topo/purpCode> .
+
+_:node1e4mcfkkcx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:PurpCode\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx9 .
+
+km-dev:PredicateObjectMap_0fa08718-0e8c-44d2-9df6-fbcb84e331f9 rr:objectMap _:node1e4mcfkkcx9 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_0fa08718-0e8c-44d2-9df6-fbcb84e331f9 .
+
+km-dev:PredicateObjectMap_0fa08718-0e8c-44d2-9df6-fbcb84e331f9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0fa08718-0e8c-44d2-9df6-fbcb84e331f9 .
+
+km-dev:PredicateObjectMap_65ee57f2-34bd-4c84-b307-3d282b14dc2e rr:predicate <http://data.usgs.gov/lod/topo/rpuID> .
+
+_:node1e4mcfkkcx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:RPUID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx10 .
+
+km-dev:PredicateObjectMap_65ee57f2-34bd-4c84-b307-3d282b14dc2e rr:objectMap _:node1e4mcfkkcx10 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_65ee57f2-34bd-4c84-b307-3d282b14dc2e .
+
+km-dev:PredicateObjectMap_65ee57f2-34bd-4c84-b307-3d282b14dc2e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_65ee57f2-34bd-4c84-b307-3d282b14dc2e .
+
+km-dev:PredicateObjectMap_e2b0d673-579b-48b5-84a6-1aed4f910b0a rr:predicate <http://data.usgs.gov/lod/topo/sourceFC> .
+
+_:node1e4mcfkkcx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:SourceFC\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx11 .
+
+km-dev:PredicateObjectMap_e2b0d673-579b-48b5-84a6-1aed4f910b0a rr:objectMap _:node1e4mcfkkcx11 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_e2b0d673-579b-48b5-84a6-1aed4f910b0a .
+
+km-dev:PredicateObjectMap_e2b0d673-579b-48b5-84a6-1aed4f910b0a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e2b0d673-579b-48b5-84a6-1aed4f910b0a .
+
+km-dev:PredicateObjectMap_e88551ac-d6f2-4f00-8759-0e89893b24ee rr:predicate <http://data.usgs.gov/lod/topo/statusFlag> .
+
+km-dev:RefObjectMap_14702edc-58a9-49ed-94f1-5b6dde07e296 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_332e4c8a-5568-40f8-938f-ffec38d8e4bf ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap km-dev:RefObjectMap_14702edc-58a9-49ed-94f1-5b6dde07e296 .
+
+km-dev:PredicateObjectMap_e88551ac-d6f2-4f00-8759-0e89893b24ee rr:objectMap km-dev:RefObjectMap_14702edc-58a9-49ed-94f1-5b6dde07e296 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_e88551ac-d6f2-4f00-8759-0e89893b24ee .
+
+km-dev:PredicateObjectMap_e88551ac-d6f2-4f00-8759-0e89893b24ee a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e88551ac-d6f2-4f00-8759-0e89893b24ee .
+
+km-dev:PredicateObjectMap_6d692580-46f0-4124-a706-304978b3ee95 rr:predicate <http://data.usgs.gov/lod/topo/vpuID> .
+
+_:node1e4mcfkkcx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:VPUID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx12 .
+
+km-dev:PredicateObjectMap_6d692580-46f0-4124-a706-304978b3ee95 rr:objectMap _:node1e4mcfkkcx12 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_6d692580-46f0-4124-a706-304978b3ee95 .
+
+km-dev:PredicateObjectMap_6d692580-46f0-4124-a706-304978b3ee95 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6d692580-46f0-4124-a706-304978b3ee95 .
+
+km-dev:PredicateObjectMap_0341d681-745d-4dcb-93ae-33ec19dfc63d rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_cd7544d3-b3cb-43cc-8534-799f52d77339 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap km-dev:RefObjectMap_cd7544d3-b3cb-43cc-8534-799f52d77339 .
+
+km-dev:PredicateObjectMap_0341d681-745d-4dcb-93ae-33ec19dfc63d rr:objectMap km-dev:RefObjectMap_cd7544d3-b3cb-43cc-8534-799f52d77339 .
+
+km-dev:TriplesMap_aa8d4769-0c67-44a5-8ef7-99b4c805ec69 rr:predicateObjectMap km-dev:PredicateObjectMap_0341d681-745d-4dcb-93ae-33ec19dfc63d .
+
+km-dev:PredicateObjectMap_0341d681-745d-4dcb-93ae-33ec19dfc63d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0341d681-745d-4dcb-93ae-33ec19dfc63d .
+
+km-dev:TriplesMap_332e4c8a-5568-40f8-938f-ffec38d8e4bf a rr:TriplesMap .
+
+_:node1e4mcfkkcx1 km-dev:hasTriplesMap km-dev:TriplesMap_332e4c8a-5568-40f8-938f-ffec38d8e4bf .
+
+km-dev:TriplesMap_332e4c8a-5568-40f8-938f-ffec38d8e4bf km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx13 rr:tableName "NHDPlusSink" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasLogicalTable _:node1e4mcfkkcx13 .
+
+km-dev:TriplesMap_332e4c8a-5568-40f8-938f-ffec38d8e4bf rr:logicalTable _:node1e4mcfkkcx13 ;
+	rr:subjectMap _:node1e4mcfkkcx14 .
+
+_:node1e4mcfkkcx1 km-dev:hasSubjectMap _:node1e4mcfkkcx14 .
+
+_:node1e4mcfkkcx14 km-dev:isPartOfMapping _:node1e4mcfkkcx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:StatusFlag\"]}" .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 a rr:TriplesMap .
+
+_:node1e4mcfkkcx1 km-dev:hasTriplesMap km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx15 rr:tableName "NHDPlusSink" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasLogicalTable _:node1e4mcfkkcx15 .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 rr:logicalTable _:node1e4mcfkkcx15 ;
+	rr:subjectMap _:node1e4mcfkkcx16 .
+
+_:node1e4mcfkkcx1 km-dev:hasSubjectMap _:node1e4mcfkkcx16 .
+
+_:node1e4mcfkkcx16 km-dev:isPartOfMapping _:node1e4mcfkkcx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:the_geom\",\"gml:Point\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_ba064ba0-684d-44b5-9f64-24ccd5803d75 rr:predicate geo:asGML .
+
+_:node1e4mcfkkcx17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:the_geom\",\"gml:Point\",\"gml:pos\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx17 .
+
+km-dev:PredicateObjectMap_ba064ba0-684d-44b5-9f64-24ccd5803d75 rr:objectMap _:node1e4mcfkkcx17 .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 rr:predicateObjectMap km-dev:PredicateObjectMap_ba064ba0-684d-44b5-9f64-24ccd5803d75 .
+
+km-dev:PredicateObjectMap_ba064ba0-684d-44b5-9f64-24ccd5803d75 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ba064ba0-684d-44b5-9f64-24ccd5803d75 .
+
+km-dev:PredicateObjectMap_726d220c-5cc6-450d-bd5a-f893090eef72 rr:predicate geo:asWKT .
+
+_:node1e4mcfkkcx18 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:the_geom\",\"gml:Point\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx18 .
+
+km-dev:PredicateObjectMap_726d220c-5cc6-450d-bd5a-f893090eef72 rr:objectMap _:node1e4mcfkkcx18 .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 rr:predicateObjectMap km-dev:PredicateObjectMap_726d220c-5cc6-450d-bd5a-f893090eef72 .
+
+km-dev:PredicateObjectMap_726d220c-5cc6-450d-bd5a-f893090eef72 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_726d220c-5cc6-450d-bd5a-f893090eef72 .
+
+km-dev:PredicateObjectMap_20836b64-fa7a-4bce-98ce-403f45787f4a rr:predicate geo:coordinateDimension .
+
+_:node1e4mcfkkcx19 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:NHDPlusSink\",\"usgsns:the_geom\",\"gml:Point\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasObjectMap _:node1e4mcfkkcx19 .
+
+km-dev:PredicateObjectMap_20836b64-fa7a-4bce-98ce-403f45787f4a rr:objectMap _:node1e4mcfkkcx19 .
+
+km-dev:TriplesMap_d4f34f95-d1be-4aa7-8151-3525804a3be9 rr:predicateObjectMap km-dev:PredicateObjectMap_20836b64-fa7a-4bce-98ce-403f45787f4a .
+
+km-dev:PredicateObjectMap_20836b64-fa7a-4bce-98ce-403f45787f4a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4mcfkkcx1 .
+
+_:node1e4mcfkkcx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_20836b64-fa7a-4bce-98ce-403f45787f4a .

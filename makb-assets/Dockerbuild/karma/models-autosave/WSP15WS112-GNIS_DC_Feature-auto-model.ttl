@@ -1,0 +1,2494 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e7g6he7tx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "GNIS_DC_Feature" ;
+	km-dev:modelPublicationTime "1588607891710"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "GNIS_DC_Feature" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return concise_feature_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:FEATURE_CL\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FEATURE_CL\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return feature_class_uri(getValue(\\\"usgsns:FEATURE_CL\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_CL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_CL\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return concise_feature_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_point(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:pos\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_pt(getValue(\\\"gml:pos\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:pos\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:FEATURE_CL\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_CL\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_CL\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:COUNTY_NAM\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/county_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_NAM\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_NAM\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:COUNTY_NUM\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/county_Numeric\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_NUM\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_NUM\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:DATE_CREAT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/date_Created\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:date\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:DATE_CREAT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:DATE_CREAT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:DATE_EDITE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/date_Edited\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:date\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:DATE_EDITE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:DATE_EDITE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:ELEV_IN_FT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/elevation_Feet\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:ELEV_IN_FT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:ELEV_IN_FT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:ELEV_IN_M\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/elevation_Meters\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:ELEV_IN_M\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:ELEV_IN_M\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:FEATURE_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/feature_ID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:FEATURE_NA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/feature_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_NA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:FEATURE_NA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:MAP_NAME\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/map_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:MAP_NAME\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:MAP_NAME\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:PRIMARY_LA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/primary_Latitude_DMS\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIMARY_LA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIMARY_LA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:PRIM_LAT_D\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/primary_Latitude_DEC\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:decimal\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LAT_D\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LAT_D\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:PRIM_LONG_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/primary_Longitude_DMS\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LONG_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LONG_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:PRIM_LON_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/primary_Longitude_DEC\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:decimal\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LON_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:PRIM_LON_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:SOURCE_LAT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/source_Latitude_DMS\",
+                    \"DomainLabel\": \"Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_LAT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_LAT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:SOURCE_LON\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/source_Longitude_DMS\",
+                    \"DomainLabel\": \"Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_LON\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_LON\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:SOURCE_L_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/source_Latitude_DEC\",
+                    \"DomainLabel\": \"Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_L_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_L_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:SOURCE_L_2\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/source_Longitude_DEC\",
+                    \"DomainLabel\": \"Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_L_2\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_L_2\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:STATE_ALPH\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/state_Alpha\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_ALPH\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_ALPH\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:STATE_NUME\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/GNIS/state_Numeric\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_NUME\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_NUME\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:Point\"},
+                    {\"columnName\": \"gml\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:Point\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/feature_Class\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/GNIS/Concise_Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 a rr:TriplesMap .
+
+_:node1e7g6he7tx1 km-dev:hasTriplesMap km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx2 rr:tableName "GNIS_DC_Feature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasLogicalTable _:node1e7g6he7tx2 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:logicalTable _:node1e7g6he7tx2 ;
+	rr:subjectMap _:node1e7g6he7tx3 .
+
+_:node1e7g6he7tx1 km-dev:hasSubjectMap _:node1e7g6he7tx3 .
+
+_:node1e7g6he7tx3 km-dev:isPartOfMapping _:node1e7g6he7tx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/GNIS/Concise_Feature1" ;
+	rr:class <http://data.usgs.gov/lod/topo/GNIS/Concise_Feature> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_f0cb2646-5ae5-4d27-834c-bb1601994869 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/county_Name> .
+
+_:node1e7g6he7tx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:COUNTY_NAM\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx4 .
+
+km-dev:PredicateObjectMap_f0cb2646-5ae5-4d27-834c-bb1601994869 rr:objectMap _:node1e7g6he7tx4 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_f0cb2646-5ae5-4d27-834c-bb1601994869 .
+
+km-dev:PredicateObjectMap_f0cb2646-5ae5-4d27-834c-bb1601994869 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f0cb2646-5ae5-4d27-834c-bb1601994869 .
+
+km-dev:PredicateObjectMap_15502466-40b6-478e-b947-54eee368d4b3 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/county_Numeric> .
+
+_:node1e7g6he7tx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:COUNTY_NUM\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx5 .
+
+km-dev:PredicateObjectMap_15502466-40b6-478e-b947-54eee368d4b3 rr:objectMap _:node1e7g6he7tx5 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_15502466-40b6-478e-b947-54eee368d4b3 .
+
+km-dev:PredicateObjectMap_15502466-40b6-478e-b947-54eee368d4b3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_15502466-40b6-478e-b947-54eee368d4b3 .
+
+km-dev:PredicateObjectMap_452feb68-96e9-40e9-9516-3a50a0cdc846 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/date_Created> .
+
+_:node1e7g6he7tx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:DATE_CREAT\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#date" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx6 .
+
+km-dev:PredicateObjectMap_452feb68-96e9-40e9-9516-3a50a0cdc846 rr:objectMap _:node1e7g6he7tx6 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_452feb68-96e9-40e9-9516-3a50a0cdc846 .
+
+km-dev:PredicateObjectMap_452feb68-96e9-40e9-9516-3a50a0cdc846 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_452feb68-96e9-40e9-9516-3a50a0cdc846 .
+
+km-dev:PredicateObjectMap_bfa0da0a-e38d-4016-8fee-3c37409bbead rr:predicate <http://data.usgs.gov/lod/topo/GNIS/date_Edited> .
+
+_:node1e7g6he7tx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:DATE_EDITE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#date" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx7 .
+
+km-dev:PredicateObjectMap_bfa0da0a-e38d-4016-8fee-3c37409bbead rr:objectMap _:node1e7g6he7tx7 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_bfa0da0a-e38d-4016-8fee-3c37409bbead .
+
+km-dev:PredicateObjectMap_bfa0da0a-e38d-4016-8fee-3c37409bbead a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bfa0da0a-e38d-4016-8fee-3c37409bbead .
+
+km-dev:PredicateObjectMap_7e3367ac-8428-467f-8458-8769f7021e81 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/elevation_Feet> .
+
+_:node1e7g6he7tx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:ELEV_IN_FT\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx8 .
+
+km-dev:PredicateObjectMap_7e3367ac-8428-467f-8458-8769f7021e81 rr:objectMap _:node1e7g6he7tx8 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_7e3367ac-8428-467f-8458-8769f7021e81 .
+
+km-dev:PredicateObjectMap_7e3367ac-8428-467f-8458-8769f7021e81 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7e3367ac-8428-467f-8458-8769f7021e81 .
+
+km-dev:PredicateObjectMap_d9fc5db2-eefc-4e3e-873d-05bb8d069d00 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/elevation_Meters> .
+
+_:node1e7g6he7tx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:ELEV_IN_M\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx9 .
+
+km-dev:PredicateObjectMap_d9fc5db2-eefc-4e3e-873d-05bb8d069d00 rr:objectMap _:node1e7g6he7tx9 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_d9fc5db2-eefc-4e3e-873d-05bb8d069d00 .
+
+km-dev:PredicateObjectMap_d9fc5db2-eefc-4e3e-873d-05bb8d069d00 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d9fc5db2-eefc-4e3e-873d-05bb8d069d00 .
+
+km-dev:PredicateObjectMap_97e46625-cb95-4a90-9dd4-229e93104a66 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/feature_ID> .
+
+_:node1e7g6he7tx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:FEATURE_ID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx10 .
+
+km-dev:PredicateObjectMap_97e46625-cb95-4a90-9dd4-229e93104a66 rr:objectMap _:node1e7g6he7tx10 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_97e46625-cb95-4a90-9dd4-229e93104a66 .
+
+km-dev:PredicateObjectMap_97e46625-cb95-4a90-9dd4-229e93104a66 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_97e46625-cb95-4a90-9dd4-229e93104a66 .
+
+km-dev:PredicateObjectMap_67cc005d-1b4a-4929-b31e-442a5768bf49 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/feature_Name> .
+
+_:node1e7g6he7tx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:FEATURE_NA\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx11 .
+
+km-dev:PredicateObjectMap_67cc005d-1b4a-4929-b31e-442a5768bf49 rr:objectMap _:node1e7g6he7tx11 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_67cc005d-1b4a-4929-b31e-442a5768bf49 .
+
+km-dev:PredicateObjectMap_67cc005d-1b4a-4929-b31e-442a5768bf49 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_67cc005d-1b4a-4929-b31e-442a5768bf49 .
+
+km-dev:PredicateObjectMap_5043d4da-53c6-4f7f-852f-61f286a8d61f rr:predicate <http://data.usgs.gov/lod/topo/GNIS/map_Name> .
+
+_:node1e7g6he7tx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:MAP_NAME\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx12 .
+
+km-dev:PredicateObjectMap_5043d4da-53c6-4f7f-852f-61f286a8d61f rr:objectMap _:node1e7g6he7tx12 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_5043d4da-53c6-4f7f-852f-61f286a8d61f .
+
+km-dev:PredicateObjectMap_5043d4da-53c6-4f7f-852f-61f286a8d61f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5043d4da-53c6-4f7f-852f-61f286a8d61f .
+
+km-dev:PredicateObjectMap_6a3f9f20-f5f5-43f4-a1d6-8eb1ddea3621 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/primary_Latitude_DEC> .
+
+_:node1e7g6he7tx13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:PRIM_LAT_D\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#decimal" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx13 .
+
+km-dev:PredicateObjectMap_6a3f9f20-f5f5-43f4-a1d6-8eb1ddea3621 rr:objectMap _:node1e7g6he7tx13 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_6a3f9f20-f5f5-43f4-a1d6-8eb1ddea3621 .
+
+km-dev:PredicateObjectMap_6a3f9f20-f5f5-43f4-a1d6-8eb1ddea3621 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6a3f9f20-f5f5-43f4-a1d6-8eb1ddea3621 .
+
+km-dev:PredicateObjectMap_2977b3a0-4d98-4095-a539-de78538c860b rr:predicate <http://data.usgs.gov/lod/topo/GNIS/primary_Latitude_DMS> .
+
+_:node1e7g6he7tx14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:PRIMARY_LA\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx14 .
+
+km-dev:PredicateObjectMap_2977b3a0-4d98-4095-a539-de78538c860b rr:objectMap _:node1e7g6he7tx14 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_2977b3a0-4d98-4095-a539-de78538c860b .
+
+km-dev:PredicateObjectMap_2977b3a0-4d98-4095-a539-de78538c860b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2977b3a0-4d98-4095-a539-de78538c860b .
+
+km-dev:PredicateObjectMap_a032d582-3042-4055-86ee-16f9e6132cfe rr:predicate <http://data.usgs.gov/lod/topo/GNIS/primary_Longitude_DEC> .
+
+_:node1e7g6he7tx15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:PRIM_LON_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#decimal" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx15 .
+
+km-dev:PredicateObjectMap_a032d582-3042-4055-86ee-16f9e6132cfe rr:objectMap _:node1e7g6he7tx15 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_a032d582-3042-4055-86ee-16f9e6132cfe .
+
+km-dev:PredicateObjectMap_a032d582-3042-4055-86ee-16f9e6132cfe a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a032d582-3042-4055-86ee-16f9e6132cfe .
+
+km-dev:PredicateObjectMap_17975a6c-e3e7-4ebc-95a3-964d93b7612c rr:predicate <http://data.usgs.gov/lod/topo/GNIS/primary_Longitude_DMS> .
+
+_:node1e7g6he7tx16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:PRIM_LONG_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx16 .
+
+km-dev:PredicateObjectMap_17975a6c-e3e7-4ebc-95a3-964d93b7612c rr:objectMap _:node1e7g6he7tx16 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_17975a6c-e3e7-4ebc-95a3-964d93b7612c .
+
+km-dev:PredicateObjectMap_17975a6c-e3e7-4ebc-95a3-964d93b7612c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_17975a6c-e3e7-4ebc-95a3-964d93b7612c .
+
+km-dev:PredicateObjectMap_9410426a-513a-458b-bf85-95f462d6d768 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/source_Latitude_DEC> .
+
+_:node1e7g6he7tx17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:SOURCE_L_1\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx17 .
+
+km-dev:PredicateObjectMap_9410426a-513a-458b-bf85-95f462d6d768 rr:objectMap _:node1e7g6he7tx17 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_9410426a-513a-458b-bf85-95f462d6d768 .
+
+km-dev:PredicateObjectMap_9410426a-513a-458b-bf85-95f462d6d768 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9410426a-513a-458b-bf85-95f462d6d768 .
+
+km-dev:PredicateObjectMap_86b25137-a41d-4ee7-95cf-15571e12be16 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/source_Latitude_DMS> .
+
+_:node1e7g6he7tx18 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:SOURCE_LAT\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx18 .
+
+km-dev:PredicateObjectMap_86b25137-a41d-4ee7-95cf-15571e12be16 rr:objectMap _:node1e7g6he7tx18 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_86b25137-a41d-4ee7-95cf-15571e12be16 .
+
+km-dev:PredicateObjectMap_86b25137-a41d-4ee7-95cf-15571e12be16 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_86b25137-a41d-4ee7-95cf-15571e12be16 .
+
+km-dev:PredicateObjectMap_ccc0bff4-36cc-499c-a2ca-8fa69b2ffda9 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/source_Longitude_DEC> .
+
+_:node1e7g6he7tx19 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:SOURCE_L_2\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx19 .
+
+km-dev:PredicateObjectMap_ccc0bff4-36cc-499c-a2ca-8fa69b2ffda9 rr:objectMap _:node1e7g6he7tx19 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_ccc0bff4-36cc-499c-a2ca-8fa69b2ffda9 .
+
+km-dev:PredicateObjectMap_ccc0bff4-36cc-499c-a2ca-8fa69b2ffda9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ccc0bff4-36cc-499c-a2ca-8fa69b2ffda9 .
+
+km-dev:PredicateObjectMap_49b7c7f6-2d87-4f45-9564-dd94531f1268 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/source_Longitude_DMS> .
+
+_:node1e7g6he7tx20 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:SOURCE_LON\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx20 .
+
+km-dev:PredicateObjectMap_49b7c7f6-2d87-4f45-9564-dd94531f1268 rr:objectMap _:node1e7g6he7tx20 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_49b7c7f6-2d87-4f45-9564-dd94531f1268 .
+
+km-dev:PredicateObjectMap_49b7c7f6-2d87-4f45-9564-dd94531f1268 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_49b7c7f6-2d87-4f45-9564-dd94531f1268 .
+
+km-dev:PredicateObjectMap_cd2dbeed-b473-4ca3-b56e-1b8f43c42cd6 rr:predicate <http://data.usgs.gov/lod/topo/GNIS/state_Alpha> .
+
+_:node1e7g6he7tx21 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:STATE_ALPH\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx21 .
+
+km-dev:PredicateObjectMap_cd2dbeed-b473-4ca3-b56e-1b8f43c42cd6 rr:objectMap _:node1e7g6he7tx21 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_cd2dbeed-b473-4ca3-b56e-1b8f43c42cd6 .
+
+km-dev:PredicateObjectMap_cd2dbeed-b473-4ca3-b56e-1b8f43c42cd6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_cd2dbeed-b473-4ca3-b56e-1b8f43c42cd6 .
+
+km-dev:PredicateObjectMap_3f21af12-3a7e-427e-9756-ded4361524eb rr:predicate <http://data.usgs.gov/lod/topo/GNIS/state_Numeric> .
+
+_:node1e7g6he7tx22 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:STATE_NUME\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx22 .
+
+km-dev:PredicateObjectMap_3f21af12-3a7e-427e-9756-ded4361524eb rr:objectMap _:node1e7g6he7tx22 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_3f21af12-3a7e-427e-9756-ded4361524eb .
+
+km-dev:PredicateObjectMap_3f21af12-3a7e-427e-9756-ded4361524eb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3f21af12-3a7e-427e-9756-ded4361524eb .
+
+km-dev:PredicateObjectMap_0b522cd9-70f2-4fe9-b201-778f49243d6e rr:predicate <http://data.usgs.gov/lod/topo/feature_Class> .
+
+km-dev:RefObjectMap_aec38a64-a78e-4046-a521-b75f84b4c03c a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_9a816994-5f9d-4286-bd67-b773ce5e49be ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap km-dev:RefObjectMap_aec38a64-a78e-4046-a521-b75f84b4c03c .
+
+km-dev:PredicateObjectMap_0b522cd9-70f2-4fe9-b201-778f49243d6e rr:objectMap km-dev:RefObjectMap_aec38a64-a78e-4046-a521-b75f84b4c03c .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_0b522cd9-70f2-4fe9-b201-778f49243d6e .
+
+km-dev:PredicateObjectMap_0b522cd9-70f2-4fe9-b201-778f49243d6e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0b522cd9-70f2-4fe9-b201-778f49243d6e .
+
+km-dev:PredicateObjectMap_bf357494-251c-49c5-8e25-7d9fa242531c rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_30def96a-9e57-4cbf-ac63-08ca7e42f355 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap km-dev:RefObjectMap_30def96a-9e57-4cbf-ac63-08ca7e42f355 .
+
+km-dev:PredicateObjectMap_bf357494-251c-49c5-8e25-7d9fa242531c rr:objectMap km-dev:RefObjectMap_30def96a-9e57-4cbf-ac63-08ca7e42f355 .
+
+km-dev:TriplesMap_9233c599-173e-4997-8397-01a6841941b4 rr:predicateObjectMap km-dev:PredicateObjectMap_bf357494-251c-49c5-8e25-7d9fa242531c .
+
+km-dev:PredicateObjectMap_bf357494-251c-49c5-8e25-7d9fa242531c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bf357494-251c-49c5-8e25-7d9fa242531c .
+
+km-dev:TriplesMap_9a816994-5f9d-4286-bd67-b773ce5e49be a rr:TriplesMap .
+
+_:node1e7g6he7tx1 km-dev:hasTriplesMap km-dev:TriplesMap_9a816994-5f9d-4286-bd67-b773ce5e49be .
+
+km-dev:TriplesMap_9a816994-5f9d-4286-bd67-b773ce5e49be km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx23 rr:tableName "GNIS_DC_Feature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasLogicalTable _:node1e7g6he7tx23 .
+
+km-dev:TriplesMap_9a816994-5f9d-4286-bd67-b773ce5e49be rr:logicalTable _:node1e7g6he7tx23 ;
+	rr:subjectMap _:node1e7g6he7tx24 .
+
+_:node1e7g6he7tx1 km-dev:hasSubjectMap _:node1e7g6he7tx24 .
+
+_:node1e7g6he7tx24 km-dev:isPartOfMapping _:node1e7g6he7tx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:FEATURE_CL\"]}" .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb a rr:TriplesMap .
+
+_:node1e7g6he7tx1 km-dev:hasTriplesMap km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx25 rr:tableName "GNIS_DC_Feature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasLogicalTable _:node1e7g6he7tx25 .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb rr:logicalTable _:node1e7g6he7tx25 ;
+	rr:subjectMap _:node1e7g6he7tx26 .
+
+_:node1e7g6he7tx1 km-dev:hasSubjectMap _:node1e7g6he7tx26 .
+
+_:node1e7g6he7tx26 km-dev:isPartOfMapping _:node1e7g6he7tx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:the_geom\",\"gml:Point\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_a0a228ed-f4d9-49df-8e8e-c990a0311e5f rr:predicate geo:asGML .
+
+_:node1e7g6he7tx27 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:the_geom\",\"gml:Point\",\"gml\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx27 .
+
+km-dev:PredicateObjectMap_a0a228ed-f4d9-49df-8e8e-c990a0311e5f rr:objectMap _:node1e7g6he7tx27 .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb rr:predicateObjectMap km-dev:PredicateObjectMap_a0a228ed-f4d9-49df-8e8e-c990a0311e5f .
+
+km-dev:PredicateObjectMap_a0a228ed-f4d9-49df-8e8e-c990a0311e5f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a0a228ed-f4d9-49df-8e8e-c990a0311e5f .
+
+km-dev:PredicateObjectMap_03cdf3bb-f4e7-4a86-8be6-26f6c2b23856 rr:predicate geo:asWKT .
+
+_:node1e7g6he7tx28 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:the_geom\",\"gml:Point\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx28 .
+
+km-dev:PredicateObjectMap_03cdf3bb-f4e7-4a86-8be6-26f6c2b23856 rr:objectMap _:node1e7g6he7tx28 .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb rr:predicateObjectMap km-dev:PredicateObjectMap_03cdf3bb-f4e7-4a86-8be6-26f6c2b23856 .
+
+km-dev:PredicateObjectMap_03cdf3bb-f4e7-4a86-8be6-26f6c2b23856 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_03cdf3bb-f4e7-4a86-8be6-26f6c2b23856 .
+
+km-dev:PredicateObjectMap_294b35a5-e67a-4ce7-9363-f13c2f1a81a1 rr:predicate geo:coordinateDimension .
+
+_:node1e7g6he7tx29 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GNIS_DC_Features\",\"usgsns:the_geom\",\"gml:Point\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasObjectMap _:node1e7g6he7tx29 .
+
+km-dev:PredicateObjectMap_294b35a5-e67a-4ce7-9363-f13c2f1a81a1 rr:objectMap _:node1e7g6he7tx29 .
+
+km-dev:TriplesMap_5c86941e-61f7-47f1-8bbf-f7538ac258bb rr:predicateObjectMap km-dev:PredicateObjectMap_294b35a5-e67a-4ce7-9363-f13c2f1a81a1 .
+
+km-dev:PredicateObjectMap_294b35a5-e67a-4ce7-9363-f13c2f1a81a1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e7g6he7tx1 .
+
+_:node1e7g6he7tx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_294b35a5-e67a-4ce7-9363-f13c2f1a81a1 .

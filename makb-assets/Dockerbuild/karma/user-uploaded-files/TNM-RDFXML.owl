@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://data.usgs.gov/lod/topo#"
+     xml:base="http://data.usgs.gov/lod/topo"
+     xmlns:ogc="http://www.opengeospatial.org/standards/sfa#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gnis="http://data.usgs.gov/lod/gnis/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:topo="http://data.usgs.gov/lod/topo#"
+     xmlns:w3cgeo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:ontology="http://www.geonames.org/ontology#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+    <owl:Ontology rdf:about="http://data.usgs.gov/lod/topo">
+        <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Topographic feature data of The National Map of the U.S. Geological Survey</dcterms:description>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spec-X Data Dictionary Report. https://usgs-mrs.cr.usgs.gov/SPECX/lookup/lookupQuery</rdfs:isDefinedBy>
+        <owl:versionInfo>February 2020</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasPart"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/isPartOf -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/isPartOf"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#nearby -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geonames.org/ontology#nearby"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#asWKT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#fCode -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#fCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://data.usgs.gov/lod/topo#FCode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#fType -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#fType">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#subType"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://data.usgs.gov/lod/topo#FType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#gnis_ID -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#gnis_ID">
+        <rdfs:domain rdf:resource="http://data.usgs.gov/lod/topo#Name"/>
+        <rdfs:range rdf:resource="http://data.usgs.gov/lod/topo#GNIS_ID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#name -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#name">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://data.usgs.gov/lod/topo#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#objectID -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#objectID">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://data.usgs.gov/lod/topo#OBJECTID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#sf-spatial-relations -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#subType -->
+
+    <owl:ObjectProperty rdf:about="http://data.usgs.gov/lod/topo#subType">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#fType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#contains">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#crosses -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#crosses">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#disjoin -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#disjoin">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#equals -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#equals">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#intersects -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#intersects">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#overlaps -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#overlaps">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#touches -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#touches">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengeospatial.org/standards/sfa#within -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengeospatial.org/standards/sfa#within">
+        <rdfs:subPropertyOf rdf:resource="http://data.usgs.gov/lod/topo#sf-spatial-relations"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asGML -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asGML">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasSerialization"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasSerialization"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasSerialization -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#hasSerialization"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#Code -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#Code"/>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#FCode -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#FCode">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#FType"/>
+        <rdfs:comment>Feature Code. Numeric value that encodes a set of characteristics for a type of feature. This five-digit code has two parts: the first three digits encode the feature type (FType); the last two digits encode values for a unique set of characteristics associated with the feature type. The set of characteristics may be single valued or multi-valued.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#FType -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#FType">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#Code"/>
+        <rdfs:comment>Feature Type. Numeric value that encodes a type of feature, represented as a three-digit code. For further refinement of the feature type classification, see FCode.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#FeatureClass -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#FeatureClass">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#TNMKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#GNIS_ID -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#GNIS_ID">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#Code"/>
+        <rdfs:comment>A permanent, unique number assigned by the Geographic Names Information System (GNIS) to a geographic feature name for the sole purpose of uniquely identifying that name application as a record in any information system database, dataset, file, or document</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#Name -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#Name">
+        <rdfs:comment>The official name of the feature.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#OBJECTID -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#OBJECTID">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#Code"/>
+        <rdfs:comment>Internal feature or event number.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#Permanent_Identifier -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#Permanent_Identifier">
+        <rdfs:subClassOf rdf:resource="http://data.usgs.gov/lod/topo#Code"/>
+        <rdfs:comment>A 40-character globally unique ID (GUID) value that uniquely identifies the occurrence of each feature or event in The National Map.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.usgs.gov/lod/topo#TNMKB -->
+
+    <owl:Class rdf:about="http://data.usgs.gov/lod/topo#TNMKB">
+        <rdfs:comment>The data models inherent to The National Map themes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <owl:disjointWith rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156, and it is superclass of all feature types.</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.opengis.net/spec/geosparql/1.0</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#SpatialObject -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#SpatialObject">
+        <rdfs:comment>The class Spatial Object represents everything that can have a spatial representation. It is superclass of Feature and Geometry.</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.opengis.net/spec/geosparql/1.0</rdfs:isDefinedBy>
+        <rdfs:label>Spatial Object</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

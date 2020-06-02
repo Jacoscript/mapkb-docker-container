@@ -1,0 +1,2727 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e4bv1g78x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "Trans_RailFeature" ;
+	km-dev:modelPublicationTime "1585244586216"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "Trans_RailFeature" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return transportation_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Data_Secur\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return data_Security_uri(getValue(\\\"usgsns:Data_Secur\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Distributi\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return distribution_Policy_uri(getValue(\\\"usgsns:Distributi\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Rail_Usage\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Rail_Usage\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return railUsage_uri(getValue(\\\"usgsns:Rail_Usage\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Usage\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Usage\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Rail_Class\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Rail_Class\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return railClassification_uri(getValue(\\\"usgsns:Rail_Class\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Class\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Class\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return transportation_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_poly(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_line(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Rail_Class\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class4\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Class\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Class\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Rail_Usage\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class5\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Usage\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Rail_Usage\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:GNIS_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_ID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:LengthKM\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/lengthKM\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:LengthKM\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:LengthKM\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:LoadDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/loadDate_Standard\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:date\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/name_120\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:OBJECTID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/objectID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"objectID\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Owner\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/railOwner\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Owner\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Owner\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Permanent_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Source_D_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DataDesc\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_D_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_D_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Source_Dat\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DatasetID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Dat\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Dat\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Source_Fea\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_FeatureID_100\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Fea\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Fea\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:Source_Ori\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RailFeature\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_Originator\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RailFeature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Ori\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Ori\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RailFeature\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RailFeature\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/data_Security\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/distribution_Policy\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fCode\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class4\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/railClassification\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class5\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/railUsage\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RailFeature1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RailFeature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x2 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x2 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:logicalTable _:node1e4bv1g78x2 ;
+	rr:subjectMap _:node1e4bv1g78x3 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x3 .
+
+_:node1e4bv1g78x3 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/RailFeature1" ;
+	rr:class <http://data.usgs.gov/lod/topo/RailFeature> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_51ad3d2c-d6d3-44c3-b5a9-cd3057816f43 rr:predicate <http://data.usgs.gov/lod/topo/data_Security> .
+
+km-dev:RefObjectMap_04af846d-4371-4243-a8cb-12d678453693 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_78deaa9e-8bd7-4cff-864d-954e67a9457a ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_04af846d-4371-4243-a8cb-12d678453693 .
+
+km-dev:PredicateObjectMap_51ad3d2c-d6d3-44c3-b5a9-cd3057816f43 rr:objectMap km-dev:RefObjectMap_04af846d-4371-4243-a8cb-12d678453693 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_51ad3d2c-d6d3-44c3-b5a9-cd3057816f43 .
+
+km-dev:PredicateObjectMap_51ad3d2c-d6d3-44c3-b5a9-cd3057816f43 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_51ad3d2c-d6d3-44c3-b5a9-cd3057816f43 .
+
+km-dev:PredicateObjectMap_307bd62d-0b4f-435b-abc2-1a69accfa740 rr:predicate <http://data.usgs.gov/lod/topo/distribution_Policy> .
+
+km-dev:RefObjectMap_2d9ef9d4-a57c-409a-ba87-1a138c7340d4 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_ce6ff4d1-dcde-45e1-a731-dbbd7e3d7014 ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_2d9ef9d4-a57c-409a-ba87-1a138c7340d4 .
+
+km-dev:PredicateObjectMap_307bd62d-0b4f-435b-abc2-1a69accfa740 rr:objectMap km-dev:RefObjectMap_2d9ef9d4-a57c-409a-ba87-1a138c7340d4 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_307bd62d-0b4f-435b-abc2-1a69accfa740 .
+
+km-dev:PredicateObjectMap_307bd62d-0b4f-435b-abc2-1a69accfa740 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_307bd62d-0b4f-435b-abc2-1a69accfa740 .
+
+km-dev:PredicateObjectMap_c8dd6881-e9ed-4abf-971b-632c25eb7041 rr:predicate <http://data.usgs.gov/lod/topo/fCode> .
+
+km-dev:RefObjectMap_9bc6a3c0-2dbe-4b93-bbc7-7562a2bfcf8b a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_bda30e21-f221-4ce3-a0da-ea4990d57bba ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_9bc6a3c0-2dbe-4b93-bbc7-7562a2bfcf8b .
+
+km-dev:PredicateObjectMap_c8dd6881-e9ed-4abf-971b-632c25eb7041 rr:objectMap km-dev:RefObjectMap_9bc6a3c0-2dbe-4b93-bbc7-7562a2bfcf8b .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_c8dd6881-e9ed-4abf-971b-632c25eb7041 .
+
+km-dev:PredicateObjectMap_c8dd6881-e9ed-4abf-971b-632c25eb7041 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c8dd6881-e9ed-4abf-971b-632c25eb7041 .
+
+km-dev:PredicateObjectMap_e69e2460-43ac-4d43-9dc6-c74b5300c156 rr:predicate <http://data.usgs.gov/lod/topo/gnis_ID> .
+
+_:node1e4bv1g78x4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:GNIS_ID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x4 .
+
+km-dev:PredicateObjectMap_e69e2460-43ac-4d43-9dc6-c74b5300c156 rr:objectMap _:node1e4bv1g78x4 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_e69e2460-43ac-4d43-9dc6-c74b5300c156 .
+
+km-dev:PredicateObjectMap_e69e2460-43ac-4d43-9dc6-c74b5300c156 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e69e2460-43ac-4d43-9dc6-c74b5300c156 .
+
+km-dev:PredicateObjectMap_62946211-ae19-48a2-bad1-5612ddcf329c rr:predicate <http://data.usgs.gov/lod/topo/lengthKM> .
+
+_:node1e4bv1g78x5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:LengthKM\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x5 .
+
+km-dev:PredicateObjectMap_62946211-ae19-48a2-bad1-5612ddcf329c rr:objectMap _:node1e4bv1g78x5 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_62946211-ae19-48a2-bad1-5612ddcf329c .
+
+km-dev:PredicateObjectMap_62946211-ae19-48a2-bad1-5612ddcf329c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_62946211-ae19-48a2-bad1-5612ddcf329c .
+
+km-dev:PredicateObjectMap_e6d3a708-eb26-46d5-acec-e15aaa509b43 rr:predicate <http://data.usgs.gov/lod/topo/loadDate_Standard> .
+
+_:node1e4bv1g78x6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:LoadDate\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#date" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x6 .
+
+km-dev:PredicateObjectMap_e6d3a708-eb26-46d5-acec-e15aaa509b43 rr:objectMap _:node1e4bv1g78x6 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_e6d3a708-eb26-46d5-acec-e15aaa509b43 .
+
+km-dev:PredicateObjectMap_e6d3a708-eb26-46d5-acec-e15aaa509b43 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e6d3a708-eb26-46d5-acec-e15aaa509b43 .
+
+km-dev:PredicateObjectMap_fe949d5a-601f-4ac1-bd4a-cb5acffb4ba2 rr:predicate <http://data.usgs.gov/lod/topo/name_120> .
+
+_:node1e4bv1g78x7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x7 .
+
+km-dev:PredicateObjectMap_fe949d5a-601f-4ac1-bd4a-cb5acffb4ba2 rr:objectMap _:node1e4bv1g78x7 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_fe949d5a-601f-4ac1-bd4a-cb5acffb4ba2 .
+
+km-dev:PredicateObjectMap_fe949d5a-601f-4ac1-bd4a-cb5acffb4ba2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fe949d5a-601f-4ac1-bd4a-cb5acffb4ba2 .
+
+km-dev:PredicateObjectMap_bfb2c713-c110-4120-85ab-e1c3dfa625ad rr:predicate <http://data.usgs.gov/lod/topo/objectID> .
+
+_:node1e4bv1g78x8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:OBJECTID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "objectID" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x8 .
+
+km-dev:PredicateObjectMap_bfb2c713-c110-4120-85ab-e1c3dfa625ad rr:objectMap _:node1e4bv1g78x8 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_bfb2c713-c110-4120-85ab-e1c3dfa625ad .
+
+km-dev:PredicateObjectMap_bfb2c713-c110-4120-85ab-e1c3dfa625ad a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bfb2c713-c110-4120-85ab-e1c3dfa625ad .
+
+km-dev:PredicateObjectMap_82c8e2e5-7910-4f7a-8533-95d4452db535 rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e4bv1g78x9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Permanent_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x9 .
+
+km-dev:PredicateObjectMap_82c8e2e5-7910-4f7a-8533-95d4452db535 rr:objectMap _:node1e4bv1g78x9 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_82c8e2e5-7910-4f7a-8533-95d4452db535 .
+
+km-dev:PredicateObjectMap_82c8e2e5-7910-4f7a-8533-95d4452db535 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_82c8e2e5-7910-4f7a-8533-95d4452db535 .
+
+km-dev:PredicateObjectMap_2b206c25-1756-473e-b0f8-3a8f141962f9 rr:predicate <http://data.usgs.gov/lod/topo/railClassification> .
+
+km-dev:RefObjectMap_5aa2d840-b37a-4c60-9755-63808a38db1d a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_19540c6b-d24d-40db-91fc-29c055f5609c ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_5aa2d840-b37a-4c60-9755-63808a38db1d .
+
+km-dev:PredicateObjectMap_2b206c25-1756-473e-b0f8-3a8f141962f9 rr:objectMap km-dev:RefObjectMap_5aa2d840-b37a-4c60-9755-63808a38db1d .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_2b206c25-1756-473e-b0f8-3a8f141962f9 .
+
+km-dev:PredicateObjectMap_2b206c25-1756-473e-b0f8-3a8f141962f9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2b206c25-1756-473e-b0f8-3a8f141962f9 .
+
+km-dev:PredicateObjectMap_b611dd92-5af4-422e-be5c-bd9ef99109f9 rr:predicate <http://data.usgs.gov/lod/topo/railOwner> .
+
+_:node1e4bv1g78x10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Owner\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x10 .
+
+km-dev:PredicateObjectMap_b611dd92-5af4-422e-be5c-bd9ef99109f9 rr:objectMap _:node1e4bv1g78x10 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_b611dd92-5af4-422e-be5c-bd9ef99109f9 .
+
+km-dev:PredicateObjectMap_b611dd92-5af4-422e-be5c-bd9ef99109f9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b611dd92-5af4-422e-be5c-bd9ef99109f9 .
+
+km-dev:PredicateObjectMap_a4dade38-263d-4cf1-85b5-248c44159152 rr:predicate <http://data.usgs.gov/lod/topo/railUsage> .
+
+km-dev:RefObjectMap_c18fc7b3-2c3c-40ec-b227-03f86f0757bd a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_b3b47ba4-3c1a-4b8e-b5fd-7a783513b78b ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_c18fc7b3-2c3c-40ec-b227-03f86f0757bd .
+
+km-dev:PredicateObjectMap_a4dade38-263d-4cf1-85b5-248c44159152 rr:objectMap km-dev:RefObjectMap_c18fc7b3-2c3c-40ec-b227-03f86f0757bd .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_a4dade38-263d-4cf1-85b5-248c44159152 .
+
+km-dev:PredicateObjectMap_a4dade38-263d-4cf1-85b5-248c44159152 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a4dade38-263d-4cf1-85b5-248c44159152 .
+
+km-dev:PredicateObjectMap_58d88887-41d1-439b-95aa-96135c87dd55 rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e4bv1g78x11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x11 .
+
+km-dev:PredicateObjectMap_58d88887-41d1-439b-95aa-96135c87dd55 rr:objectMap _:node1e4bv1g78x11 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_58d88887-41d1-439b-95aa-96135c87dd55 .
+
+km-dev:PredicateObjectMap_58d88887-41d1-439b-95aa-96135c87dd55 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_58d88887-41d1-439b-95aa-96135c87dd55 .
+
+km-dev:PredicateObjectMap_29b78025-c90e-4343-9f8b-8e6dc20a56e3 rr:predicate <http://data.usgs.gov/lod/topo/source_DataDesc> .
+
+_:node1e4bv1g78x12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Source_D_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x12 .
+
+km-dev:PredicateObjectMap_29b78025-c90e-4343-9f8b-8e6dc20a56e3 rr:objectMap _:node1e4bv1g78x12 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_29b78025-c90e-4343-9f8b-8e6dc20a56e3 .
+
+km-dev:PredicateObjectMap_29b78025-c90e-4343-9f8b-8e6dc20a56e3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_29b78025-c90e-4343-9f8b-8e6dc20a56e3 .
+
+km-dev:PredicateObjectMap_06b7cfb4-57f9-4237-8120-fac5f71e3973 rr:predicate <http://data.usgs.gov/lod/topo/source_DatasetID> .
+
+_:node1e4bv1g78x13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Source_Dat\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x13 .
+
+km-dev:PredicateObjectMap_06b7cfb4-57f9-4237-8120-fac5f71e3973 rr:objectMap _:node1e4bv1g78x13 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_06b7cfb4-57f9-4237-8120-fac5f71e3973 .
+
+km-dev:PredicateObjectMap_06b7cfb4-57f9-4237-8120-fac5f71e3973 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_06b7cfb4-57f9-4237-8120-fac5f71e3973 .
+
+km-dev:PredicateObjectMap_6b1ddd84-7fda-4470-8363-0c5c78f4a0d8 rr:predicate <http://data.usgs.gov/lod/topo/source_FeatureID_100> .
+
+_:node1e4bv1g78x14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Source_Fea\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x14 .
+
+km-dev:PredicateObjectMap_6b1ddd84-7fda-4470-8363-0c5c78f4a0d8 rr:objectMap _:node1e4bv1g78x14 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_6b1ddd84-7fda-4470-8363-0c5c78f4a0d8 .
+
+km-dev:PredicateObjectMap_6b1ddd84-7fda-4470-8363-0c5c78f4a0d8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6b1ddd84-7fda-4470-8363-0c5c78f4a0d8 .
+
+km-dev:PredicateObjectMap_3c9fb1c5-cd6f-42ee-ae3e-6eaf8c9a8c3e rr:predicate <http://data.usgs.gov/lod/topo/source_Originator> .
+
+_:node1e4bv1g78x15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Source_Ori\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x15 .
+
+km-dev:PredicateObjectMap_3c9fb1c5-cd6f-42ee-ae3e-6eaf8c9a8c3e rr:objectMap _:node1e4bv1g78x15 .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_3c9fb1c5-cd6f-42ee-ae3e-6eaf8c9a8c3e .
+
+km-dev:PredicateObjectMap_3c9fb1c5-cd6f-42ee-ae3e-6eaf8c9a8c3e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3c9fb1c5-cd6f-42ee-ae3e-6eaf8c9a8c3e .
+
+km-dev:PredicateObjectMap_176aa12b-e753-40f9-85fe-7c3d4b340e66 rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_9a6612cc-107b-4ad2-8428-55ec028c4fff a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap km-dev:RefObjectMap_9a6612cc-107b-4ad2-8428-55ec028c4fff .
+
+km-dev:PredicateObjectMap_176aa12b-e753-40f9-85fe-7c3d4b340e66 rr:objectMap km-dev:RefObjectMap_9a6612cc-107b-4ad2-8428-55ec028c4fff .
+
+km-dev:TriplesMap_10a53a01-0f2b-4e13-abb5-c18d86d33adc rr:predicateObjectMap km-dev:PredicateObjectMap_176aa12b-e753-40f9-85fe-7c3d4b340e66 .
+
+km-dev:PredicateObjectMap_176aa12b-e753-40f9-85fe-7c3d4b340e66 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_176aa12b-e753-40f9-85fe-7c3d4b340e66 .
+
+km-dev:TriplesMap_78deaa9e-8bd7-4cff-864d-954e67a9457a a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_78deaa9e-8bd7-4cff-864d-954e67a9457a .
+
+km-dev:TriplesMap_78deaa9e-8bd7-4cff-864d-954e67a9457a km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x16 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x16 .
+
+km-dev:TriplesMap_78deaa9e-8bd7-4cff-864d-954e67a9457a rr:logicalTable _:node1e4bv1g78x16 ;
+	rr:subjectMap _:node1e4bv1g78x17 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x17 .
+
+_:node1e4bv1g78x17 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Data_Secur\"]}" .
+
+km-dev:TriplesMap_ce6ff4d1-dcde-45e1-a731-dbbd7e3d7014 a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_ce6ff4d1-dcde-45e1-a731-dbbd7e3d7014 .
+
+km-dev:TriplesMap_ce6ff4d1-dcde-45e1-a731-dbbd7e3d7014 km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x18 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x18 .
+
+km-dev:TriplesMap_ce6ff4d1-dcde-45e1-a731-dbbd7e3d7014 rr:logicalTable _:node1e4bv1g78x18 ;
+	rr:subjectMap _:node1e4bv1g78x19 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x19 .
+
+_:node1e4bv1g78x19 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Distributi\"]}" .
+
+km-dev:TriplesMap_bda30e21-f221-4ce3-a0da-ea4990d57bba a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_bda30e21-f221-4ce3-a0da-ea4990d57bba .
+
+km-dev:TriplesMap_bda30e21-f221-4ce3-a0da-ea4990d57bba km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x20 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x20 .
+
+km-dev:TriplesMap_bda30e21-f221-4ce3-a0da-ea4990d57bba rr:logicalTable _:node1e4bv1g78x20 ;
+	rr:subjectMap _:node1e4bv1g78x21 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x21 .
+
+_:node1e4bv1g78x21 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_19540c6b-d24d-40db-91fc-29c055f5609c a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_19540c6b-d24d-40db-91fc-29c055f5609c .
+
+km-dev:TriplesMap_19540c6b-d24d-40db-91fc-29c055f5609c km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x22 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x22 .
+
+km-dev:TriplesMap_19540c6b-d24d-40db-91fc-29c055f5609c rr:logicalTable _:node1e4bv1g78x22 ;
+	rr:subjectMap _:node1e4bv1g78x23 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x23 .
+
+_:node1e4bv1g78x23 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class4" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Rail_Class\"]}" .
+
+km-dev:TriplesMap_b3b47ba4-3c1a-4b8e-b5fd-7a783513b78b a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_b3b47ba4-3c1a-4b8e-b5fd-7a783513b78b .
+
+km-dev:TriplesMap_b3b47ba4-3c1a-4b8e-b5fd-7a783513b78b km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x24 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x24 .
+
+km-dev:TriplesMap_b3b47ba4-3c1a-4b8e-b5fd-7a783513b78b rr:logicalTable _:node1e4bv1g78x24 ;
+	rr:subjectMap _:node1e4bv1g78x25 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x25 .
+
+_:node1e4bv1g78x25 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class5" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:Rail_Usage\"]}" .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 a rr:TriplesMap .
+
+_:node1e4bv1g78x1 km-dev:hasTriplesMap km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x26 rr:tableName "Trans_RailFeature" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasLogicalTable _:node1e4bv1g78x26 .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 rr:logicalTable _:node1e4bv1g78x26 ;
+	rr:subjectMap _:node1e4bv1g78x27 .
+
+_:node1e4bv1g78x1 km-dev:hasSubjectMap _:node1e4bv1g78x27 .
+
+_:node1e4bv1g78x27 km-dev:isPartOfMapping _:node1e4bv1g78x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_5ac62312-8aa8-428b-b941-02478111d0e4 rr:predicate geo:asGML .
+
+_:node1e4bv1g78x28 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"gml:posList\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x28 .
+
+km-dev:PredicateObjectMap_5ac62312-8aa8-428b-b941-02478111d0e4 rr:objectMap _:node1e4bv1g78x28 .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 rr:predicateObjectMap km-dev:PredicateObjectMap_5ac62312-8aa8-428b-b941-02478111d0e4 .
+
+km-dev:PredicateObjectMap_5ac62312-8aa8-428b-b941-02478111d0e4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5ac62312-8aa8-428b-b941-02478111d0e4 .
+
+km-dev:PredicateObjectMap_f1e41330-02e6-4f8f-b94f-be75f513c901 rr:predicate geo:asWKT .
+
+_:node1e4bv1g78x29 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x29 .
+
+km-dev:PredicateObjectMap_f1e41330-02e6-4f8f-b94f-be75f513c901 rr:objectMap _:node1e4bv1g78x29 .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 rr:predicateObjectMap km-dev:PredicateObjectMap_f1e41330-02e6-4f8f-b94f-be75f513c901 .
+
+km-dev:PredicateObjectMap_f1e41330-02e6-4f8f-b94f-be75f513c901 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f1e41330-02e6-4f8f-b94f-be75f513c901 .
+
+km-dev:PredicateObjectMap_2f296401-aa19-46c0-bafd-d04e27aaed47 rr:predicate geo:coordinateDimension .
+
+_:node1e4bv1g78x30 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RailFeature\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasObjectMap _:node1e4bv1g78x30 .
+
+km-dev:PredicateObjectMap_2f296401-aa19-46c0-bafd-d04e27aaed47 rr:objectMap _:node1e4bv1g78x30 .
+
+km-dev:TriplesMap_73907566-4a31-4f02-91d9-fa53b46bf2b7 rr:predicateObjectMap km-dev:PredicateObjectMap_2f296401-aa19-46c0-bafd-d04e27aaed47 .
+
+km-dev:PredicateObjectMap_2f296401-aa19-46c0-bafd-d04e27aaed47 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4bv1g78x1 .
+
+_:node1e4bv1g78x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2f296401-aa19-46c0-bafd-d04e27aaed47 .

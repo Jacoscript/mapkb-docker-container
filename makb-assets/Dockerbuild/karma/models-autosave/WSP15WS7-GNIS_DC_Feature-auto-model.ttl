@@ -1,0 +1,101 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e7g3iltnx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "GNIS_DC_Feature" ;
+	km-dev:modelPublicationTime "1588604786616"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "GNIS_DC_Feature" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[{
+    \"commandName\": \"SubmitPythonTransformationCommand\",
+    \"model\": \"new\",
+    \"inputParameters\": [
+        {
+            \"name\": \"hNodeId\",
+            \"type\": \"hNodeId\",
+            \"value\": [
+                {\"columnName\": \"wfs:FeatureCollection\"},
+                {\"columnName\": \"wfs:member\"},
+                {\"columnName\": \"usgsns:GNIS_DC_Features\"},
+                {\"columnName\": \"gml:id\"}
+            ]
+        },
+        {
+            \"name\": \"worksheetId\",
+            \"type\": \"worksheetId\",
+            \"value\": \"W\"
+        },
+        {
+            \"name\": \"selectionName\",
+            \"type\": \"other\",
+            \"value\": \"DEFAULT_TEST\"
+        },
+        {
+            \"name\": \"newColumnName\",
+            \"type\": \"other\",
+            \"value\": \"gml:id\"
+        },
+        {
+            \"name\": \"transformationCode\",
+            \"type\": \"other\",
+            \"value\": \"return gnis_uri(getValue(\\\"gml:id\\\"))\"
+        },
+        {
+            \"name\": \"errorDefaultValue\",
+            \"type\": \"other\",
+            \"value\": \"\"
+        },
+        {
+            \"name\": \"isJSONOutput\",
+            \"type\": \"other\",
+            \"value\": \"false\"
+        },
+        {
+            \"name\": \"inputColumns\",
+            \"type\": \"hNodeIdList\",
+            \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+        },
+        {
+            \"name\": \"outputColumns\",
+            \"type\": \"hNodeIdList\",
+            \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_DC_Features\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+        }
+    ],
+    \"tags\": [\"Transformation\"]
+}]""" .

@@ -55,6 +55,15 @@ def get_wkt_line(gmlpos):
 
 "This function get creates a wkt representation of a polygon"
 def get_wkt_poly(gmlpos):
+    exterior = getValue("gml:exterior")
+    if exterior != '':
+        exterior = exterior.split("\"")
+        exteriorPos =  exterior[5]
+    interior = getValue("gml:interior")
+    if interior != '':
+        interior = interior.split("\"")
+        interiorPos = interior[5]
+
         nums = gmlpos.split()
         count = 0
         x = ''

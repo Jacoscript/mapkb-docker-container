@@ -1,0 +1,31 @@
+digraph n0 {
+fontcolor="blue"
+remincross="true"
+label="WBDLine"
+subgraph cluster {
+label="model"
+n2[style="filled",color="white",fillcolor="lightgray",label="WBDLine1"];
+n3[style="filled",color="white",fillcolor="lightgray",label="Class1"];
+n4[shape="plaintext",style="filled",fillcolor="gold",label="usgsns:LineSource"];
+n5[shape="plaintext",style="filled",fillcolor="gold",label="usgsns:LoadDate"];
+n6[shape="plaintext",style="filled",fillcolor="gold",label="usgsns:TNMID"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="gml:id"];
+n8[style="filled",color="white",fillcolor="lightgray",label="Geometry1"];
+n9[shape="plaintext",style="filled",fillcolor="gold",label="gml:id"];
+n10[shape="plaintext",style="filled",fillcolor="gold",label="gml:posList"];
+n11[shape="plaintext",style="filled",fillcolor="gold",label="wkt1"];
+n12[shape="plaintext",style="filled",fillcolor="gold",label="srsDimension"];
+n13[shape="plaintext",style="filled",fillcolor="gold",label="usgsns:HUMod"];
+}
+n2 -> n3[color="brown",fontcolor="black",label="huMod"]
+n2 -> n4[color="brown",fontcolor="black",label="lineSource"]
+n2 -> n5[color="brown",fontcolor="black",label="loadDate_NHD"]
+n2 -> n6[color="brown",fontcolor="black",label="tnmID"]
+n2 -> n7[color="brown",fontcolor="black",label="classLink"]
+n2 -> n8[color="brown",fontcolor="black",label="hasGeometry"]
+n8 -> n9[color="brown",fontcolor="black",label="classLink"]
+n8 -> n10[color="brown",fontcolor="black",label="asGML"]
+n8 -> n11[color="brown",fontcolor="black",label="asWKT"]
+n8 -> n12[color="brown",fontcolor="black",label="coordinateDimension"]
+n3 -> n13[color="brown",fontcolor="black",label="classLink"]
+}

@@ -1,0 +1,3175 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e75qvk30x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "GU_Jurisdictional" ;
+	km-dev:modelPublicationTime "1588260229217"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "GU_Jurisdictional" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return gu_jurisdictional_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:AdminType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:AdminType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return adminType_uri(getValue(\\\"usgsns:AdminType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AdminType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AdminType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Data_Secur\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return data_Security_uri(getValue(\\\"usgsns:Data_Secur\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:Distributi\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return distribution_Policy_uri(getValue(\\\"usgsns:Distributi\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FCode\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fCode_uri(getValue(\\\"usgsns:FCode\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:FType\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return fType_uri(getValue(\\\"usgsns:FType\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return gu_jurisdictional_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:OwnerOrMan\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:OwnerOrMan\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return ownerormanagingagency_uri(getValue(\\\"usgsns:OwnerOrMan\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OwnerOrMan\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OwnerOrMan\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_poly(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_polygon(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:AdminType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AdminType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AdminType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Data_Secur\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Data_Secur\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Distributi\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Distributi\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:FCode\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class4\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FCode\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:FType\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class5\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:FType\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:AreaSqKM\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/areaSqKm_Standard\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKM\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:AreaSqKM\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Designatio\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/designation\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Designatio\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Designatio\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:GNIS_ID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/gnis_ID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:GNIS_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:LoadDate\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/loadDate\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:dateTime\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:LoadDate\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/name_120\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:OBJECTID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/objectID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"objectID\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:OwnerOrMan\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class6\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OwnerOrMan\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:OwnerOrMan\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Permanent_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Permanent_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Shape_Area\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Area\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Area\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Source_D_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DataDesc\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_D_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_D_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Source_Dat\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DatasetID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Dat\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Dat\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Source_Fea\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_FeatureID_100\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Fea\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Fea\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:Source_Ori\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_Originator\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Ori\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:Source_Ori\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:State_FIPS\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_FIPSCode\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:State_FIPS\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:State_FIPS\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:State_Name\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:State_Name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:State_Name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"gml\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"gml\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:GU_Jurisdictional\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiSurface\"},
+                    {\"columnName\": \"gml:surfaceMember\"},
+                    {\"columnName\": \"gml:Polygon\"},
+                    {\"columnName\": \"gml:exterior\"},
+                    {\"columnName\": \"gml:LinearRing\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:GU_Jurisdictional\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiSurface\\\"},{\\\"columnName\\\":\\\"gml:surfaceMember\\\"},{\\\"columnName\\\":\\\"gml:Polygon\\\"},{\\\"columnName\\\":\\\"gml:exterior\\\"},{\\\"columnName\\\":\\\"gml:LinearRing\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/adminType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/data_Security\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/distribution_Policy\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class4\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fCode\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class5\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/fType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class6\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/ownerOrManagingAgency\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x2 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x2 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:logicalTable _:node1e75qvk30x2 ;
+	rr:subjectMap _:node1e75qvk30x3 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x3 .
+
+_:node1e75qvk30x3 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional1" ;
+	rr:class <http://data.usgs.gov/lod/topo/Boundary/GU_Jurisdictional> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_a628e529-7a83-40c3-860f-442c778b7fb8 rr:predicate <http://data.usgs.gov/lod/topo/adminType> .
+
+km-dev:RefObjectMap_13fd68b6-a2d0-47ec-bafd-16cacf7e4bc2 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_cff4de17-5921-4010-8b96-351adba15bec ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_13fd68b6-a2d0-47ec-bafd-16cacf7e4bc2 .
+
+km-dev:PredicateObjectMap_a628e529-7a83-40c3-860f-442c778b7fb8 rr:objectMap km-dev:RefObjectMap_13fd68b6-a2d0-47ec-bafd-16cacf7e4bc2 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_a628e529-7a83-40c3-860f-442c778b7fb8 .
+
+km-dev:PredicateObjectMap_a628e529-7a83-40c3-860f-442c778b7fb8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a628e529-7a83-40c3-860f-442c778b7fb8 .
+
+km-dev:PredicateObjectMap_1afc3673-e73d-4585-bec5-efa94d4edb8c rr:predicate <http://data.usgs.gov/lod/topo/areaSqKm_Standard> .
+
+_:node1e75qvk30x4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:AreaSqKM\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x4 .
+
+km-dev:PredicateObjectMap_1afc3673-e73d-4585-bec5-efa94d4edb8c rr:objectMap _:node1e75qvk30x4 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_1afc3673-e73d-4585-bec5-efa94d4edb8c .
+
+km-dev:PredicateObjectMap_1afc3673-e73d-4585-bec5-efa94d4edb8c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1afc3673-e73d-4585-bec5-efa94d4edb8c .
+
+km-dev:PredicateObjectMap_48ff7ae8-4d0f-4df5-ae81-e263fc13f807 rr:predicate <http://data.usgs.gov/lod/topo/data_Security> .
+
+km-dev:RefObjectMap_4667d1e6-cd3b-4af4-a7f2-29488058ce0e a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_e474dc0b-816e-4fe9-b4ff-32577ec92c00 ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_4667d1e6-cd3b-4af4-a7f2-29488058ce0e .
+
+km-dev:PredicateObjectMap_48ff7ae8-4d0f-4df5-ae81-e263fc13f807 rr:objectMap km-dev:RefObjectMap_4667d1e6-cd3b-4af4-a7f2-29488058ce0e .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_48ff7ae8-4d0f-4df5-ae81-e263fc13f807 .
+
+km-dev:PredicateObjectMap_48ff7ae8-4d0f-4df5-ae81-e263fc13f807 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_48ff7ae8-4d0f-4df5-ae81-e263fc13f807 .
+
+km-dev:PredicateObjectMap_b70f5692-d6a8-40f0-a95c-f16c42f233a9 rr:predicate <http://data.usgs.gov/lod/topo/designation> .
+
+_:node1e75qvk30x5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Designatio\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x5 .
+
+km-dev:PredicateObjectMap_b70f5692-d6a8-40f0-a95c-f16c42f233a9 rr:objectMap _:node1e75qvk30x5 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_b70f5692-d6a8-40f0-a95c-f16c42f233a9 .
+
+km-dev:PredicateObjectMap_b70f5692-d6a8-40f0-a95c-f16c42f233a9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b70f5692-d6a8-40f0-a95c-f16c42f233a9 .
+
+km-dev:PredicateObjectMap_88b71549-5144-4f5a-b42e-492ad368f004 rr:predicate <http://data.usgs.gov/lod/topo/distribution_Policy> .
+
+km-dev:RefObjectMap_e6143f98-1c64-49e6-9641-f294a042f89c a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_12953d3f-3dc9-4368-9b35-4bea38cb5e5a ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_e6143f98-1c64-49e6-9641-f294a042f89c .
+
+km-dev:PredicateObjectMap_88b71549-5144-4f5a-b42e-492ad368f004 rr:objectMap km-dev:RefObjectMap_e6143f98-1c64-49e6-9641-f294a042f89c .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_88b71549-5144-4f5a-b42e-492ad368f004 .
+
+km-dev:PredicateObjectMap_88b71549-5144-4f5a-b42e-492ad368f004 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_88b71549-5144-4f5a-b42e-492ad368f004 .
+
+km-dev:PredicateObjectMap_32bd4c0f-667a-49c9-b5d9-1ace400a96d7 rr:predicate <http://data.usgs.gov/lod/topo/fCode> .
+
+km-dev:RefObjectMap_e6f1e399-1b90-4612-b674-b030891991d4 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_ee21ad2b-70b2-4d6f-9c3b-2ca4a125910d ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_e6f1e399-1b90-4612-b674-b030891991d4 .
+
+km-dev:PredicateObjectMap_32bd4c0f-667a-49c9-b5d9-1ace400a96d7 rr:objectMap km-dev:RefObjectMap_e6f1e399-1b90-4612-b674-b030891991d4 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_32bd4c0f-667a-49c9-b5d9-1ace400a96d7 .
+
+km-dev:PredicateObjectMap_32bd4c0f-667a-49c9-b5d9-1ace400a96d7 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_32bd4c0f-667a-49c9-b5d9-1ace400a96d7 .
+
+km-dev:PredicateObjectMap_ab7f5077-823d-469e-adb6-e4a771ae0012 rr:predicate <http://data.usgs.gov/lod/topo/fType> .
+
+km-dev:RefObjectMap_353425ec-1f3f-4ca9-b008-d6b3d84b6a0c a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_2ecf7972-4278-4711-be4d-751400d540a3 ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_353425ec-1f3f-4ca9-b008-d6b3d84b6a0c .
+
+km-dev:PredicateObjectMap_ab7f5077-823d-469e-adb6-e4a771ae0012 rr:objectMap km-dev:RefObjectMap_353425ec-1f3f-4ca9-b008-d6b3d84b6a0c .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_ab7f5077-823d-469e-adb6-e4a771ae0012 .
+
+km-dev:PredicateObjectMap_ab7f5077-823d-469e-adb6-e4a771ae0012 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ab7f5077-823d-469e-adb6-e4a771ae0012 .
+
+km-dev:PredicateObjectMap_ccd2bfd2-62b7-47a3-9120-a68507e8a6e3 rr:predicate <http://data.usgs.gov/lod/topo/gnis_ID> .
+
+_:node1e75qvk30x6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:GNIS_ID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x6 .
+
+km-dev:PredicateObjectMap_ccd2bfd2-62b7-47a3-9120-a68507e8a6e3 rr:objectMap _:node1e75qvk30x6 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_ccd2bfd2-62b7-47a3-9120-a68507e8a6e3 .
+
+km-dev:PredicateObjectMap_ccd2bfd2-62b7-47a3-9120-a68507e8a6e3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ccd2bfd2-62b7-47a3-9120-a68507e8a6e3 .
+
+km-dev:PredicateObjectMap_9f7c1209-454b-44e2-a0b1-a26b1bf6cb8e rr:predicate <http://data.usgs.gov/lod/topo/loadDate> .
+
+_:node1e75qvk30x7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:LoadDate\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#dateTime" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x7 .
+
+km-dev:PredicateObjectMap_9f7c1209-454b-44e2-a0b1-a26b1bf6cb8e rr:objectMap _:node1e75qvk30x7 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_9f7c1209-454b-44e2-a0b1-a26b1bf6cb8e .
+
+km-dev:PredicateObjectMap_9f7c1209-454b-44e2-a0b1-a26b1bf6cb8e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9f7c1209-454b-44e2-a0b1-a26b1bf6cb8e .
+
+km-dev:PredicateObjectMap_0db541ef-d4e2-483c-a1dc-823e16bf8753 rr:predicate <http://data.usgs.gov/lod/topo/name_120> .
+
+_:node1e75qvk30x8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x8 .
+
+km-dev:PredicateObjectMap_0db541ef-d4e2-483c-a1dc-823e16bf8753 rr:objectMap _:node1e75qvk30x8 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_0db541ef-d4e2-483c-a1dc-823e16bf8753 .
+
+km-dev:PredicateObjectMap_0db541ef-d4e2-483c-a1dc-823e16bf8753 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0db541ef-d4e2-483c-a1dc-823e16bf8753 .
+
+km-dev:PredicateObjectMap_796bcb0f-a52e-4a4b-af57-bde5956c87cf rr:predicate <http://data.usgs.gov/lod/topo/objectID> .
+
+_:node1e75qvk30x9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:OBJECTID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "objectID" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x9 .
+
+km-dev:PredicateObjectMap_796bcb0f-a52e-4a4b-af57-bde5956c87cf rr:objectMap _:node1e75qvk30x9 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_796bcb0f-a52e-4a4b-af57-bde5956c87cf .
+
+km-dev:PredicateObjectMap_796bcb0f-a52e-4a4b-af57-bde5956c87cf a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_796bcb0f-a52e-4a4b-af57-bde5956c87cf .
+
+km-dev:PredicateObjectMap_8be2e6e5-4a7d-4c8e-800e-eea9dc13a832 rr:predicate <http://data.usgs.gov/lod/topo/ownerOrManagingAgency> .
+
+km-dev:RefObjectMap_ec9363d0-3a67-40dc-a7d0-6530e67a54bf a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_7577d822-a049-4fc9-a8e7-eb4bd4cfe9d6 ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_ec9363d0-3a67-40dc-a7d0-6530e67a54bf .
+
+km-dev:PredicateObjectMap_8be2e6e5-4a7d-4c8e-800e-eea9dc13a832 rr:objectMap km-dev:RefObjectMap_ec9363d0-3a67-40dc-a7d0-6530e67a54bf .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_8be2e6e5-4a7d-4c8e-800e-eea9dc13a832 .
+
+km-dev:PredicateObjectMap_8be2e6e5-4a7d-4c8e-800e-eea9dc13a832 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8be2e6e5-4a7d-4c8e-800e-eea9dc13a832 .
+
+km-dev:PredicateObjectMap_724a1bd1-7e8d-4a44-a366-ec7a689c5fe8 rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e75qvk30x10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Permanent_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x10 .
+
+km-dev:PredicateObjectMap_724a1bd1-7e8d-4a44-a366-ec7a689c5fe8 rr:objectMap _:node1e75qvk30x10 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_724a1bd1-7e8d-4a44-a366-ec7a689c5fe8 .
+
+km-dev:PredicateObjectMap_724a1bd1-7e8d-4a44-a366-ec7a689c5fe8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_724a1bd1-7e8d-4a44-a366-ec7a689c5fe8 .
+
+km-dev:PredicateObjectMap_a5321251-ef5c-40d7-803b-56e449d0940e rr:predicate <http://data.usgs.gov/lod/topo/shape_Area> .
+
+_:node1e75qvk30x11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Shape_Area\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x11 .
+
+km-dev:PredicateObjectMap_a5321251-ef5c-40d7-803b-56e449d0940e rr:objectMap _:node1e75qvk30x11 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_a5321251-ef5c-40d7-803b-56e449d0940e .
+
+km-dev:PredicateObjectMap_a5321251-ef5c-40d7-803b-56e449d0940e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a5321251-ef5c-40d7-803b-56e449d0940e .
+
+km-dev:PredicateObjectMap_19c99e26-9138-48c0-947a-041c2b3aa403 rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e75qvk30x12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x12 .
+
+km-dev:PredicateObjectMap_19c99e26-9138-48c0-947a-041c2b3aa403 rr:objectMap _:node1e75qvk30x12 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_19c99e26-9138-48c0-947a-041c2b3aa403 .
+
+km-dev:PredicateObjectMap_19c99e26-9138-48c0-947a-041c2b3aa403 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_19c99e26-9138-48c0-947a-041c2b3aa403 .
+
+km-dev:PredicateObjectMap_2fa503ef-530d-4ec0-b1b3-ac4e7a82463d rr:predicate <http://data.usgs.gov/lod/topo/source_DataDesc> .
+
+_:node1e75qvk30x13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Source_D_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x13 .
+
+km-dev:PredicateObjectMap_2fa503ef-530d-4ec0-b1b3-ac4e7a82463d rr:objectMap _:node1e75qvk30x13 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_2fa503ef-530d-4ec0-b1b3-ac4e7a82463d .
+
+km-dev:PredicateObjectMap_2fa503ef-530d-4ec0-b1b3-ac4e7a82463d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2fa503ef-530d-4ec0-b1b3-ac4e7a82463d .
+
+km-dev:PredicateObjectMap_bd0ec946-0421-46e7-9aed-8e8fd21d1858 rr:predicate <http://data.usgs.gov/lod/topo/source_DatasetID> .
+
+_:node1e75qvk30x14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Source_Dat\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x14 .
+
+km-dev:PredicateObjectMap_bd0ec946-0421-46e7-9aed-8e8fd21d1858 rr:objectMap _:node1e75qvk30x14 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_bd0ec946-0421-46e7-9aed-8e8fd21d1858 .
+
+km-dev:PredicateObjectMap_bd0ec946-0421-46e7-9aed-8e8fd21d1858 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bd0ec946-0421-46e7-9aed-8e8fd21d1858 .
+
+km-dev:PredicateObjectMap_63802846-7f4f-4a2d-9b77-0b4211276496 rr:predicate <http://data.usgs.gov/lod/topo/source_FeatureID_100> .
+
+_:node1e75qvk30x15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Source_Fea\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x15 .
+
+km-dev:PredicateObjectMap_63802846-7f4f-4a2d-9b77-0b4211276496 rr:objectMap _:node1e75qvk30x15 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_63802846-7f4f-4a2d-9b77-0b4211276496 .
+
+km-dev:PredicateObjectMap_63802846-7f4f-4a2d-9b77-0b4211276496 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_63802846-7f4f-4a2d-9b77-0b4211276496 .
+
+km-dev:PredicateObjectMap_806e904c-a6db-4efe-8ddd-a809c404765f rr:predicate <http://data.usgs.gov/lod/topo/source_Originator> .
+
+_:node1e75qvk30x16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Source_Ori\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x16 .
+
+km-dev:PredicateObjectMap_806e904c-a6db-4efe-8ddd-a809c404765f rr:objectMap _:node1e75qvk30x16 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_806e904c-a6db-4efe-8ddd-a809c404765f .
+
+km-dev:PredicateObjectMap_806e904c-a6db-4efe-8ddd-a809c404765f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_806e904c-a6db-4efe-8ddd-a809c404765f .
+
+km-dev:PredicateObjectMap_f3606654-9ff3-49fe-9d33-1215de515bff rr:predicate <http://data.usgs.gov/lod/topo/state_FIPSCode> .
+
+_:node1e75qvk30x17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:State_FIPS\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x17 .
+
+km-dev:PredicateObjectMap_f3606654-9ff3-49fe-9d33-1215de515bff rr:objectMap _:node1e75qvk30x17 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_f3606654-9ff3-49fe-9d33-1215de515bff .
+
+km-dev:PredicateObjectMap_f3606654-9ff3-49fe-9d33-1215de515bff a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f3606654-9ff3-49fe-9d33-1215de515bff .
+
+km-dev:PredicateObjectMap_67e2ac39-7df8-48ba-9b3a-767ce38c1a2e rr:predicate <http://data.usgs.gov/lod/topo/state_Name> .
+
+_:node1e75qvk30x18 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:State_Name\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x18 .
+
+km-dev:PredicateObjectMap_67e2ac39-7df8-48ba-9b3a-767ce38c1a2e rr:objectMap _:node1e75qvk30x18 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_67e2ac39-7df8-48ba-9b3a-767ce38c1a2e .
+
+km-dev:PredicateObjectMap_67e2ac39-7df8-48ba-9b3a-767ce38c1a2e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_67e2ac39-7df8-48ba-9b3a-767ce38c1a2e .
+
+km-dev:PredicateObjectMap_2d274c01-9ac5-4895-a5ef-c1f038abfead rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_9e7237c7-097a-4bde-99a7-f151dfef2356 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap km-dev:RefObjectMap_9e7237c7-097a-4bde-99a7-f151dfef2356 .
+
+km-dev:PredicateObjectMap_2d274c01-9ac5-4895-a5ef-c1f038abfead rr:objectMap km-dev:RefObjectMap_9e7237c7-097a-4bde-99a7-f151dfef2356 .
+
+km-dev:TriplesMap_1855be14-4e79-4c09-b267-ea48fd4410d4 rr:predicateObjectMap km-dev:PredicateObjectMap_2d274c01-9ac5-4895-a5ef-c1f038abfead .
+
+km-dev:PredicateObjectMap_2d274c01-9ac5-4895-a5ef-c1f038abfead a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2d274c01-9ac5-4895-a5ef-c1f038abfead .
+
+km-dev:TriplesMap_cff4de17-5921-4010-8b96-351adba15bec a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_cff4de17-5921-4010-8b96-351adba15bec .
+
+km-dev:TriplesMap_cff4de17-5921-4010-8b96-351adba15bec km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x19 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x19 .
+
+km-dev:TriplesMap_cff4de17-5921-4010-8b96-351adba15bec rr:logicalTable _:node1e75qvk30x19 ;
+	rr:subjectMap _:node1e75qvk30x20 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x20 .
+
+_:node1e75qvk30x20 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:AdminType\"]}" .
+
+km-dev:TriplesMap_e474dc0b-816e-4fe9-b4ff-32577ec92c00 a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_e474dc0b-816e-4fe9-b4ff-32577ec92c00 .
+
+km-dev:TriplesMap_e474dc0b-816e-4fe9-b4ff-32577ec92c00 km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x21 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x21 .
+
+km-dev:TriplesMap_e474dc0b-816e-4fe9-b4ff-32577ec92c00 rr:logicalTable _:node1e75qvk30x21 ;
+	rr:subjectMap _:node1e75qvk30x22 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x22 .
+
+_:node1e75qvk30x22 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Data_Secur\"]}" .
+
+km-dev:TriplesMap_12953d3f-3dc9-4368-9b35-4bea38cb5e5a a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_12953d3f-3dc9-4368-9b35-4bea38cb5e5a .
+
+km-dev:TriplesMap_12953d3f-3dc9-4368-9b35-4bea38cb5e5a km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x23 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x23 .
+
+km-dev:TriplesMap_12953d3f-3dc9-4368-9b35-4bea38cb5e5a rr:logicalTable _:node1e75qvk30x23 ;
+	rr:subjectMap _:node1e75qvk30x24 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x24 .
+
+_:node1e75qvk30x24 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:Distributi\"]}" .
+
+km-dev:TriplesMap_ee21ad2b-70b2-4d6f-9c3b-2ca4a125910d a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_ee21ad2b-70b2-4d6f-9c3b-2ca4a125910d .
+
+km-dev:TriplesMap_ee21ad2b-70b2-4d6f-9c3b-2ca4a125910d km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x25 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x25 .
+
+km-dev:TriplesMap_ee21ad2b-70b2-4d6f-9c3b-2ca4a125910d rr:logicalTable _:node1e75qvk30x25 ;
+	rr:subjectMap _:node1e75qvk30x26 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x26 .
+
+_:node1e75qvk30x26 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class4" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:FCode\"]}" .
+
+km-dev:TriplesMap_2ecf7972-4278-4711-be4d-751400d540a3 a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_2ecf7972-4278-4711-be4d-751400d540a3 .
+
+km-dev:TriplesMap_2ecf7972-4278-4711-be4d-751400d540a3 km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x27 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x27 .
+
+km-dev:TriplesMap_2ecf7972-4278-4711-be4d-751400d540a3 rr:logicalTable _:node1e75qvk30x27 ;
+	rr:subjectMap _:node1e75qvk30x28 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x28 .
+
+_:node1e75qvk30x28 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class5" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:FType\"]}" .
+
+km-dev:TriplesMap_7577d822-a049-4fc9-a8e7-eb4bd4cfe9d6 a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_7577d822-a049-4fc9-a8e7-eb4bd4cfe9d6 .
+
+km-dev:TriplesMap_7577d822-a049-4fc9-a8e7-eb4bd4cfe9d6 km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x29 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x29 .
+
+km-dev:TriplesMap_7577d822-a049-4fc9-a8e7-eb4bd4cfe9d6 rr:logicalTable _:node1e75qvk30x29 ;
+	rr:subjectMap _:node1e75qvk30x30 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x30 .
+
+_:node1e75qvk30x30 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class6" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:OwnerOrMan\"]}" .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 a rr:TriplesMap .
+
+_:node1e75qvk30x1 km-dev:hasTriplesMap km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x31 rr:tableName "GU_Jurisdictional" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasLogicalTable _:node1e75qvk30x31 .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 rr:logicalTable _:node1e75qvk30x31 ;
+	rr:subjectMap _:node1e75qvk30x32 .
+
+_:node1e75qvk30x1 km-dev:hasSubjectMap _:node1e75qvk30x32 .
+
+_:node1e75qvk30x32 km-dev:isPartOfMapping _:node1e75qvk30x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_f3aca81a-7774-447e-969a-fa60031897d1 rr:predicate geo:asGML .
+
+_:node1e75qvk30x33 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"gml\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x33 .
+
+km-dev:PredicateObjectMap_f3aca81a-7774-447e-969a-fa60031897d1 rr:objectMap _:node1e75qvk30x33 .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 rr:predicateObjectMap km-dev:PredicateObjectMap_f3aca81a-7774-447e-969a-fa60031897d1 .
+
+km-dev:PredicateObjectMap_f3aca81a-7774-447e-969a-fa60031897d1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f3aca81a-7774-447e-969a-fa60031897d1 .
+
+km-dev:PredicateObjectMap_c12e453c-865e-42c8-842b-73185eeac462 rr:predicate geo:asWKT .
+
+_:node1e75qvk30x34 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"gml:surfaceMember\",\"gml:Polygon\",\"gml:exterior\",\"gml:LinearRing\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x34 .
+
+km-dev:PredicateObjectMap_c12e453c-865e-42c8-842b-73185eeac462 rr:objectMap _:node1e75qvk30x34 .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 rr:predicateObjectMap km-dev:PredicateObjectMap_c12e453c-865e-42c8-842b-73185eeac462 .
+
+km-dev:PredicateObjectMap_c12e453c-865e-42c8-842b-73185eeac462 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c12e453c-865e-42c8-842b-73185eeac462 .
+
+km-dev:PredicateObjectMap_a6b8e260-1f25-4925-b985-0d9e857c17f3 rr:predicate geo:coordinateDimension .
+
+_:node1e75qvk30x35 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:GU_Jurisdictional\",\"usgsns:the_geom\",\"gml:MultiSurface\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasObjectMap _:node1e75qvk30x35 .
+
+km-dev:PredicateObjectMap_a6b8e260-1f25-4925-b985-0d9e857c17f3 rr:objectMap _:node1e75qvk30x35 .
+
+km-dev:TriplesMap_55889ed6-7317-409d-b0c9-99741f613db6 rr:predicateObjectMap km-dev:PredicateObjectMap_a6b8e260-1f25-4925-b985-0d9e857c17f3 .
+
+km-dev:PredicateObjectMap_a6b8e260-1f25-4925-b985-0d9e857c17f3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e75qvk30x1 .
+
+_:node1e75qvk30x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a6b8e260-1f25-4925-b985-0d9e857c17f3 .

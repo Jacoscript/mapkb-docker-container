@@ -1,0 +1,3804 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e4elqjtfx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "Trans_TrailSegment" ;
+	km-dev:modelPublicationTime "1585335586735"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "Trans_TrailSegment" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_line(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/TrailSegment1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:ATV\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:ATV\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:ATV\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:BICYCLE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class4\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:BICYCLE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:BICYCLE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:CROSSCOUNT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class10\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:CROSSCOUNT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:CROSSCOUNT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:DOGSLED\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class11\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:DOGSLED\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:DOGSLED\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/TrailSegment1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:NATIONALTR\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NATIONALTR\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NATIONALTR\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:TRAILTYPE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class2\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILTYPE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILTYPE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:PRIMARYTRA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class3\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PRIMARYTRA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PRIMARYTRA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:MOTORCYCLE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class5\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:MOTORCYCLE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:MOTORCYCLE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:OHVOVER50I\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class6\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:OHVOVER50I\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:OHVOVER50I\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SNOWMOBILE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class7\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SNOWMOBILE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SNOWMOBILE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SNOWSHOE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class8\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SNOWSHOE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SNOWSHOE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:ATV\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class9\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:ATV\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:ATV\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:HIKERPEDES\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class12\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:HIKERPEDES\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:HIKERPEDES\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:PACKSADDLE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.w3.org/2000/01/rdf-schema#Class13\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PACKSADDLE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PACKSADDLE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:LENGTHMILE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/lengthMiles\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:LENGTHMILE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:LENGTHMILE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:NAME\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/name_120_trails\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NAME\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NAME\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:NAMEALTERN\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/nameAlternate\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NAMEALTERN\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NAMEALTERN\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:OBJECTID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/objectID\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:PERMANENTI\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PERMANENTI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:PERMANENTI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SOURCEDATA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceDatasetID\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEDATA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEDATA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SOURCEDA_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceDataDescription\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEDA_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEDA_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SOURCEFEAT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceFeatureID\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEFEAT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEFEAT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:SOURCEORIG\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/sourceOriginator\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEORIG\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCEORIG\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:Shape_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:Shape_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:TRAILNUMBE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/trailNumber\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILNUMBE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILNUMBE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:TRAILNUM_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/trailNumberAlternate\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILNUM_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:TRAILNUM_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:GLOBALID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/globalID\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:GLOBALID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:GLOBALID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:LOADDATE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/loadDate_Standard\",
+                    \"DomainLabel\": \"TrailSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:LOADDATE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:LOADDATE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:MOTORIZEDW\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"DomainId\": \"http://www.w3.org/2000/01/rdf-schema#Class14\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://schema.org/name\",
+                    \"DomainLabel\": \"rdfs:Class14 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:MOTORIZEDW\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:MOTORIZEDW\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_TrailSegment_Updated\"},
+                    {\"columnName\": \"usgsns:NONMOTORIZ\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"DomainId\": \"http://www.w3.org/2000/01/rdf-schema#Class15\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://schema.org/name\",
+                    \"DomainLabel\": \"rdfs:Class15 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NONMOTORIZ\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_TrailSegment_Updated\\\"},{\\\"columnName\\\":\\\"usgsns:NONMOTORIZ\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class4\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/bicycle\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class5\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/motorcycle\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/nationalTrailDesignation\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class6\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/ohvOver50In\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class3\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/primaryTrailMaintainer\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class7\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/snowmobile\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class8\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/snowshoe\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class2\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/trailType\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class9\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/atv\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class10\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/crossCountrySki\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class11\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/dog_Sled\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class12\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/hikerPedestrian\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class14\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/motorizedWaterCraft\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class15\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/nonMotorizedWaterCraft\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.w3.org/2000/01/rdf-schema#Class13\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/packSaddle\",
+                    \"edgeTargetUri\": \"http://www.w3.org/2000/01/rdf-schema#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/TrailSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/TrailSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx2 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx2 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:logicalTable _:node1e4elqjtfx2 ;
+	rr:subjectMap _:node1e4elqjtfx3 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx3 .
+
+_:node1e4elqjtfx3 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/TrailSegment1" ;
+	rr:class <http://data.usgs.gov/lod/topo/TrailSegment> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_00389142-6ae0-491d-85b2-d438787076ff rr:predicate <http://data.usgs.gov/lod/topo/atv> .
+
+km-dev:RefObjectMap_8315e2ab-5d1a-47fa-8b56-d9f185d205fc a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_41352b80-0d58-4355-a8ff-67df328d209b ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_8315e2ab-5d1a-47fa-8b56-d9f185d205fc .
+
+km-dev:PredicateObjectMap_00389142-6ae0-491d-85b2-d438787076ff rr:objectMap km-dev:RefObjectMap_8315e2ab-5d1a-47fa-8b56-d9f185d205fc .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_00389142-6ae0-491d-85b2-d438787076ff .
+
+km-dev:PredicateObjectMap_00389142-6ae0-491d-85b2-d438787076ff a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_00389142-6ae0-491d-85b2-d438787076ff .
+
+km-dev:PredicateObjectMap_42048469-ba9f-40b7-a797-5d3639dceabb rr:predicate <http://data.usgs.gov/lod/topo/bicycle> .
+
+km-dev:RefObjectMap_14d59961-173b-480d-90fe-2956e704a1d2 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_4de3af45-e092-4477-bf66-c38fe7253e74 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_14d59961-173b-480d-90fe-2956e704a1d2 .
+
+km-dev:PredicateObjectMap_42048469-ba9f-40b7-a797-5d3639dceabb rr:objectMap km-dev:RefObjectMap_14d59961-173b-480d-90fe-2956e704a1d2 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_42048469-ba9f-40b7-a797-5d3639dceabb .
+
+km-dev:PredicateObjectMap_42048469-ba9f-40b7-a797-5d3639dceabb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_42048469-ba9f-40b7-a797-5d3639dceabb .
+
+km-dev:PredicateObjectMap_74194652-5ed4-4e87-aab5-dd92062f86db rr:predicate <http://data.usgs.gov/lod/topo/crossCountrySki> .
+
+km-dev:RefObjectMap_ee33d3b5-cc4f-465e-9d39-f82de39e1f7a a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_980d1462-4d75-4314-9135-e455ae788298 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_ee33d3b5-cc4f-465e-9d39-f82de39e1f7a .
+
+km-dev:PredicateObjectMap_74194652-5ed4-4e87-aab5-dd92062f86db rr:objectMap km-dev:RefObjectMap_ee33d3b5-cc4f-465e-9d39-f82de39e1f7a .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_74194652-5ed4-4e87-aab5-dd92062f86db .
+
+km-dev:PredicateObjectMap_74194652-5ed4-4e87-aab5-dd92062f86db a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_74194652-5ed4-4e87-aab5-dd92062f86db .
+
+km-dev:PredicateObjectMap_a48ffa6a-5580-493b-b0f6-0c103b75c28c rr:predicate <http://data.usgs.gov/lod/topo/dog_Sled> .
+
+km-dev:RefObjectMap_63b769e0-74fd-47b5-8d7a-14970613b567 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_e910f165-eaf9-4219-9bd4-77af2cc35efc ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_63b769e0-74fd-47b5-8d7a-14970613b567 .
+
+km-dev:PredicateObjectMap_a48ffa6a-5580-493b-b0f6-0c103b75c28c rr:objectMap km-dev:RefObjectMap_63b769e0-74fd-47b5-8d7a-14970613b567 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_a48ffa6a-5580-493b-b0f6-0c103b75c28c .
+
+km-dev:PredicateObjectMap_a48ffa6a-5580-493b-b0f6-0c103b75c28c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a48ffa6a-5580-493b-b0f6-0c103b75c28c .
+
+km-dev:PredicateObjectMap_54327152-51f2-4506-ad89-c0bd1af80285 rr:predicate <http://data.usgs.gov/lod/topo/globalID> .
+
+_:node1e4elqjtfx4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:GLOBALID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx4 .
+
+km-dev:PredicateObjectMap_54327152-51f2-4506-ad89-c0bd1af80285 rr:objectMap _:node1e4elqjtfx4 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_54327152-51f2-4506-ad89-c0bd1af80285 .
+
+km-dev:PredicateObjectMap_54327152-51f2-4506-ad89-c0bd1af80285 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_54327152-51f2-4506-ad89-c0bd1af80285 .
+
+km-dev:PredicateObjectMap_9f9722f7-5463-42f9-950e-6aa00813be36 rr:predicate <http://data.usgs.gov/lod/topo/hikerPedestrian> .
+
+km-dev:RefObjectMap_dac05140-7cf1-48d8-a541-fa280b2c3979 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_493e0ded-1440-495c-a9e3-92f688abb954 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_dac05140-7cf1-48d8-a541-fa280b2c3979 .
+
+km-dev:PredicateObjectMap_9f9722f7-5463-42f9-950e-6aa00813be36 rr:objectMap km-dev:RefObjectMap_dac05140-7cf1-48d8-a541-fa280b2c3979 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_9f9722f7-5463-42f9-950e-6aa00813be36 .
+
+km-dev:PredicateObjectMap_9f9722f7-5463-42f9-950e-6aa00813be36 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9f9722f7-5463-42f9-950e-6aa00813be36 .
+
+km-dev:PredicateObjectMap_9b1eacbd-5d89-474d-9757-14f3fd1afcaf rr:predicate <http://data.usgs.gov/lod/topo/lengthMiles> .
+
+_:node1e4elqjtfx5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:LENGTHMILE\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx5 .
+
+km-dev:PredicateObjectMap_9b1eacbd-5d89-474d-9757-14f3fd1afcaf rr:objectMap _:node1e4elqjtfx5 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_9b1eacbd-5d89-474d-9757-14f3fd1afcaf .
+
+km-dev:PredicateObjectMap_9b1eacbd-5d89-474d-9757-14f3fd1afcaf a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9b1eacbd-5d89-474d-9757-14f3fd1afcaf .
+
+km-dev:PredicateObjectMap_7c1b977d-fe17-479a-953b-6e6f62864668 rr:predicate <http://data.usgs.gov/lod/topo/loadDate_Standard> .
+
+_:node1e4elqjtfx6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:LOADDATE\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx6 .
+
+km-dev:PredicateObjectMap_7c1b977d-fe17-479a-953b-6e6f62864668 rr:objectMap _:node1e4elqjtfx6 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_7c1b977d-fe17-479a-953b-6e6f62864668 .
+
+km-dev:PredicateObjectMap_7c1b977d-fe17-479a-953b-6e6f62864668 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7c1b977d-fe17-479a-953b-6e6f62864668 .
+
+km-dev:PredicateObjectMap_f9e3a174-3146-456f-a927-1e83dfd2702d rr:predicate <http://data.usgs.gov/lod/topo/motorcycle> .
+
+km-dev:RefObjectMap_b36095e7-2beb-4027-b071-bf80f677ed5a a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_62716b8f-08c0-43e1-9dfd-05abc6cc1957 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_b36095e7-2beb-4027-b071-bf80f677ed5a .
+
+km-dev:PredicateObjectMap_f9e3a174-3146-456f-a927-1e83dfd2702d rr:objectMap km-dev:RefObjectMap_b36095e7-2beb-4027-b071-bf80f677ed5a .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_f9e3a174-3146-456f-a927-1e83dfd2702d .
+
+km-dev:PredicateObjectMap_f9e3a174-3146-456f-a927-1e83dfd2702d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f9e3a174-3146-456f-a927-1e83dfd2702d .
+
+km-dev:PredicateObjectMap_789733c2-90a8-40b3-811e-8ad0f62fd1a0 rr:predicate <http://data.usgs.gov/lod/topo/motorizedWaterCraft> .
+
+km-dev:RefObjectMap_dc8652ec-992f-451e-8174-61e52075f7f7 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_dc8652ec-992f-451e-8174-61e52075f7f7 .
+
+km-dev:PredicateObjectMap_789733c2-90a8-40b3-811e-8ad0f62fd1a0 rr:objectMap km-dev:RefObjectMap_dc8652ec-992f-451e-8174-61e52075f7f7 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_789733c2-90a8-40b3-811e-8ad0f62fd1a0 .
+
+km-dev:PredicateObjectMap_789733c2-90a8-40b3-811e-8ad0f62fd1a0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_789733c2-90a8-40b3-811e-8ad0f62fd1a0 .
+
+km-dev:PredicateObjectMap_a1bc921f-46d3-425c-bd45-546c778f0a91 rr:predicate <http://data.usgs.gov/lod/topo/nameAlternate> .
+
+_:node1e4elqjtfx7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:NAMEALTERN\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx7 .
+
+km-dev:PredicateObjectMap_a1bc921f-46d3-425c-bd45-546c778f0a91 rr:objectMap _:node1e4elqjtfx7 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_a1bc921f-46d3-425c-bd45-546c778f0a91 .
+
+km-dev:PredicateObjectMap_a1bc921f-46d3-425c-bd45-546c778f0a91 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a1bc921f-46d3-425c-bd45-546c778f0a91 .
+
+km-dev:PredicateObjectMap_84a27eba-6009-431a-98ba-e294b3a7c62c rr:predicate <http://data.usgs.gov/lod/topo/name_120_trails> .
+
+_:node1e4elqjtfx8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:NAME\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx8 .
+
+km-dev:PredicateObjectMap_84a27eba-6009-431a-98ba-e294b3a7c62c rr:objectMap _:node1e4elqjtfx8 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_84a27eba-6009-431a-98ba-e294b3a7c62c .
+
+km-dev:PredicateObjectMap_84a27eba-6009-431a-98ba-e294b3a7c62c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_84a27eba-6009-431a-98ba-e294b3a7c62c .
+
+km-dev:PredicateObjectMap_d073888f-5dfc-4959-abf2-debf110221c7 rr:predicate <http://data.usgs.gov/lod/topo/nationalTrailDesignation> .
+
+km-dev:RefObjectMap_99195b53-a05d-480c-9d54-bec0f95b2342 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_fb4de607-baed-413d-a3c2-13e36ab5f433 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_99195b53-a05d-480c-9d54-bec0f95b2342 .
+
+km-dev:PredicateObjectMap_d073888f-5dfc-4959-abf2-debf110221c7 rr:objectMap km-dev:RefObjectMap_99195b53-a05d-480c-9d54-bec0f95b2342 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_d073888f-5dfc-4959-abf2-debf110221c7 .
+
+km-dev:PredicateObjectMap_d073888f-5dfc-4959-abf2-debf110221c7 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d073888f-5dfc-4959-abf2-debf110221c7 .
+
+km-dev:PredicateObjectMap_88e5638c-2e85-44f9-8537-b36be9d79da5 rr:predicate <http://data.usgs.gov/lod/topo/nonMotorizedWaterCraft> .
+
+km-dev:RefObjectMap_e0010182-6e27-485c-a448-83ad5f2e51c4 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_e0010182-6e27-485c-a448-83ad5f2e51c4 .
+
+km-dev:PredicateObjectMap_88e5638c-2e85-44f9-8537-b36be9d79da5 rr:objectMap km-dev:RefObjectMap_e0010182-6e27-485c-a448-83ad5f2e51c4 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_88e5638c-2e85-44f9-8537-b36be9d79da5 .
+
+km-dev:PredicateObjectMap_88e5638c-2e85-44f9-8537-b36be9d79da5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_88e5638c-2e85-44f9-8537-b36be9d79da5 .
+
+km-dev:PredicateObjectMap_0bb0617b-29ee-48e7-ba74-b3ed00a0b18d rr:predicate <http://data.usgs.gov/lod/topo/objectID> .
+
+_:node1e4elqjtfx9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:OBJECTID\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx9 .
+
+km-dev:PredicateObjectMap_0bb0617b-29ee-48e7-ba74-b3ed00a0b18d rr:objectMap _:node1e4elqjtfx9 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_0bb0617b-29ee-48e7-ba74-b3ed00a0b18d .
+
+km-dev:PredicateObjectMap_0bb0617b-29ee-48e7-ba74-b3ed00a0b18d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0bb0617b-29ee-48e7-ba74-b3ed00a0b18d .
+
+km-dev:PredicateObjectMap_1b1409f2-aaf0-4a3a-9d7c-8148e629ce40 rr:predicate <http://data.usgs.gov/lod/topo/ohvOver50In> .
+
+km-dev:RefObjectMap_c2a4b07d-29f2-45c7-85a1-331bc77e6ce3 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_253fd5d3-b190-4886-8bf7-dd2490857612 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_c2a4b07d-29f2-45c7-85a1-331bc77e6ce3 .
+
+km-dev:PredicateObjectMap_1b1409f2-aaf0-4a3a-9d7c-8148e629ce40 rr:objectMap km-dev:RefObjectMap_c2a4b07d-29f2-45c7-85a1-331bc77e6ce3 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_1b1409f2-aaf0-4a3a-9d7c-8148e629ce40 .
+
+km-dev:PredicateObjectMap_1b1409f2-aaf0-4a3a-9d7c-8148e629ce40 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1b1409f2-aaf0-4a3a-9d7c-8148e629ce40 .
+
+km-dev:PredicateObjectMap_9cc79e68-1f94-4213-aa31-a722c8745f65 rr:predicate <http://data.usgs.gov/lod/topo/packSaddle> .
+
+km-dev:RefObjectMap_e8ea9b7f-53c2-4652-9f43-17bf48f684bd a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_ca2f0906-b8bb-4ab7-acf0-d77e2426f379 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_e8ea9b7f-53c2-4652-9f43-17bf48f684bd .
+
+km-dev:PredicateObjectMap_9cc79e68-1f94-4213-aa31-a722c8745f65 rr:objectMap km-dev:RefObjectMap_e8ea9b7f-53c2-4652-9f43-17bf48f684bd .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_9cc79e68-1f94-4213-aa31-a722c8745f65 .
+
+km-dev:PredicateObjectMap_9cc79e68-1f94-4213-aa31-a722c8745f65 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9cc79e68-1f94-4213-aa31-a722c8745f65 .
+
+km-dev:PredicateObjectMap_35da5bea-c1fd-416d-a9fb-2f476bcc7539 rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e4elqjtfx10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:PERMANENTI\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx10 .
+
+km-dev:PredicateObjectMap_35da5bea-c1fd-416d-a9fb-2f476bcc7539 rr:objectMap _:node1e4elqjtfx10 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_35da5bea-c1fd-416d-a9fb-2f476bcc7539 .
+
+km-dev:PredicateObjectMap_35da5bea-c1fd-416d-a9fb-2f476bcc7539 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_35da5bea-c1fd-416d-a9fb-2f476bcc7539 .
+
+km-dev:PredicateObjectMap_10cca7b6-8237-4859-b78c-f3203bca4ebf rr:predicate <http://data.usgs.gov/lod/topo/primaryTrailMaintainer> .
+
+km-dev:RefObjectMap_e892a4cf-baf3-4764-a7df-d36a55f58351 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_2b0a1ee6-d3e9-4919-9dd1-606c78da2d30 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_e892a4cf-baf3-4764-a7df-d36a55f58351 .
+
+km-dev:PredicateObjectMap_10cca7b6-8237-4859-b78c-f3203bca4ebf rr:objectMap km-dev:RefObjectMap_e892a4cf-baf3-4764-a7df-d36a55f58351 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_10cca7b6-8237-4859-b78c-f3203bca4ebf .
+
+km-dev:PredicateObjectMap_10cca7b6-8237-4859-b78c-f3203bca4ebf a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_10cca7b6-8237-4859-b78c-f3203bca4ebf .
+
+km-dev:PredicateObjectMap_7a96e8ca-8349-475b-88a9-aade7c7b1072 rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e4elqjtfx11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:Shape_Leng\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx11 .
+
+km-dev:PredicateObjectMap_7a96e8ca-8349-475b-88a9-aade7c7b1072 rr:objectMap _:node1e4elqjtfx11 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_7a96e8ca-8349-475b-88a9-aade7c7b1072 .
+
+km-dev:PredicateObjectMap_7a96e8ca-8349-475b-88a9-aade7c7b1072 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7a96e8ca-8349-475b-88a9-aade7c7b1072 .
+
+km-dev:PredicateObjectMap_233cceb7-4d18-42a5-b2e2-9b0126c8579b rr:predicate <http://data.usgs.gov/lod/topo/snowmobile> .
+
+km-dev:RefObjectMap_250c0d6c-53ec-4d89-8c1b-88a7b766f928 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_cbdcd9ee-8e59-4ab0-a4a1-ca445d1cbb7e ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_250c0d6c-53ec-4d89-8c1b-88a7b766f928 .
+
+km-dev:PredicateObjectMap_233cceb7-4d18-42a5-b2e2-9b0126c8579b rr:objectMap km-dev:RefObjectMap_250c0d6c-53ec-4d89-8c1b-88a7b766f928 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_233cceb7-4d18-42a5-b2e2-9b0126c8579b .
+
+km-dev:PredicateObjectMap_233cceb7-4d18-42a5-b2e2-9b0126c8579b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_233cceb7-4d18-42a5-b2e2-9b0126c8579b .
+
+km-dev:PredicateObjectMap_f53f8c0e-e9f2-49f3-b8d4-8fe8dddf5823 rr:predicate <http://data.usgs.gov/lod/topo/snowshoe> .
+
+km-dev:RefObjectMap_5dfa782b-0b57-40a3-9153-657ffa796fc8 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_91438990-4674-45b3-92f1-f775a73ec769 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_5dfa782b-0b57-40a3-9153-657ffa796fc8 .
+
+km-dev:PredicateObjectMap_f53f8c0e-e9f2-49f3-b8d4-8fe8dddf5823 rr:objectMap km-dev:RefObjectMap_5dfa782b-0b57-40a3-9153-657ffa796fc8 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_f53f8c0e-e9f2-49f3-b8d4-8fe8dddf5823 .
+
+km-dev:PredicateObjectMap_f53f8c0e-e9f2-49f3-b8d4-8fe8dddf5823 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f53f8c0e-e9f2-49f3-b8d4-8fe8dddf5823 .
+
+km-dev:PredicateObjectMap_8c3f5c6d-5790-47be-96a7-061419474294 rr:predicate <http://data.usgs.gov/lod/topo/sourceDataDescription> .
+
+_:node1e4elqjtfx12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SOURCEDA_1\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx12 .
+
+km-dev:PredicateObjectMap_8c3f5c6d-5790-47be-96a7-061419474294 rr:objectMap _:node1e4elqjtfx12 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_8c3f5c6d-5790-47be-96a7-061419474294 .
+
+km-dev:PredicateObjectMap_8c3f5c6d-5790-47be-96a7-061419474294 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8c3f5c6d-5790-47be-96a7-061419474294 .
+
+km-dev:PredicateObjectMap_52afda42-445d-437d-bab3-df79bb9dc08f rr:predicate <http://data.usgs.gov/lod/topo/sourceDatasetID> .
+
+_:node1e4elqjtfx13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SOURCEDATA\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx13 .
+
+km-dev:PredicateObjectMap_52afda42-445d-437d-bab3-df79bb9dc08f rr:objectMap _:node1e4elqjtfx13 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_52afda42-445d-437d-bab3-df79bb9dc08f .
+
+km-dev:PredicateObjectMap_52afda42-445d-437d-bab3-df79bb9dc08f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_52afda42-445d-437d-bab3-df79bb9dc08f .
+
+km-dev:PredicateObjectMap_0505050f-c9ee-4108-b36a-f90a3cd9f274 rr:predicate <http://data.usgs.gov/lod/topo/sourceFeatureID> .
+
+_:node1e4elqjtfx14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SOURCEFEAT\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx14 .
+
+km-dev:PredicateObjectMap_0505050f-c9ee-4108-b36a-f90a3cd9f274 rr:objectMap _:node1e4elqjtfx14 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_0505050f-c9ee-4108-b36a-f90a3cd9f274 .
+
+km-dev:PredicateObjectMap_0505050f-c9ee-4108-b36a-f90a3cd9f274 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0505050f-c9ee-4108-b36a-f90a3cd9f274 .
+
+km-dev:PredicateObjectMap_fd6f0156-c3d6-4d30-8896-7a11ee6f3afb rr:predicate <http://data.usgs.gov/lod/topo/sourceOriginator> .
+
+_:node1e4elqjtfx15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SOURCEORIG\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx15 .
+
+km-dev:PredicateObjectMap_fd6f0156-c3d6-4d30-8896-7a11ee6f3afb rr:objectMap _:node1e4elqjtfx15 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_fd6f0156-c3d6-4d30-8896-7a11ee6f3afb .
+
+km-dev:PredicateObjectMap_fd6f0156-c3d6-4d30-8896-7a11ee6f3afb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_fd6f0156-c3d6-4d30-8896-7a11ee6f3afb .
+
+km-dev:PredicateObjectMap_459ab825-40d3-463c-bb03-8ad93db73594 rr:predicate <http://data.usgs.gov/lod/topo/trailNumber> .
+
+_:node1e4elqjtfx16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:TRAILNUMBE\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx16 .
+
+km-dev:PredicateObjectMap_459ab825-40d3-463c-bb03-8ad93db73594 rr:objectMap _:node1e4elqjtfx16 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_459ab825-40d3-463c-bb03-8ad93db73594 .
+
+km-dev:PredicateObjectMap_459ab825-40d3-463c-bb03-8ad93db73594 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_459ab825-40d3-463c-bb03-8ad93db73594 .
+
+km-dev:PredicateObjectMap_0baa179a-c6f0-4d94-a20b-a21a497ceb22 rr:predicate <http://data.usgs.gov/lod/topo/trailNumberAlternate> .
+
+_:node1e4elqjtfx17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:TRAILNUM_1\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx17 .
+
+km-dev:PredicateObjectMap_0baa179a-c6f0-4d94-a20b-a21a497ceb22 rr:objectMap _:node1e4elqjtfx17 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_0baa179a-c6f0-4d94-a20b-a21a497ceb22 .
+
+km-dev:PredicateObjectMap_0baa179a-c6f0-4d94-a20b-a21a497ceb22 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0baa179a-c6f0-4d94-a20b-a21a497ceb22 .
+
+km-dev:PredicateObjectMap_ad72c717-a41b-48f0-a84e-cd1239f837ad rr:predicate <http://data.usgs.gov/lod/topo/trailType> .
+
+km-dev:RefObjectMap_fd25bc20-109c-4f25-8a31-f91c515b8fc5 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_54a517f9-6e84-4b87-bd2f-beec396db09d ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_fd25bc20-109c-4f25-8a31-f91c515b8fc5 .
+
+km-dev:PredicateObjectMap_ad72c717-a41b-48f0-a84e-cd1239f837ad rr:objectMap km-dev:RefObjectMap_fd25bc20-109c-4f25-8a31-f91c515b8fc5 .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_ad72c717-a41b-48f0-a84e-cd1239f837ad .
+
+km-dev:PredicateObjectMap_ad72c717-a41b-48f0-a84e-cd1239f837ad a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ad72c717-a41b-48f0-a84e-cd1239f837ad .
+
+km-dev:PredicateObjectMap_06e20341-07ca-4a74-8b36-122788e700f6 rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_44255b0d-0539-429b-bc59-fbb457b29fdd a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap km-dev:RefObjectMap_44255b0d-0539-429b-bc59-fbb457b29fdd .
+
+km-dev:PredicateObjectMap_06e20341-07ca-4a74-8b36-122788e700f6 rr:objectMap km-dev:RefObjectMap_44255b0d-0539-429b-bc59-fbb457b29fdd .
+
+km-dev:TriplesMap_2f87a088-4c68-4f64-a5d3-ad3527eb62e3 rr:predicateObjectMap km-dev:PredicateObjectMap_06e20341-07ca-4a74-8b36-122788e700f6 .
+
+km-dev:PredicateObjectMap_06e20341-07ca-4a74-8b36-122788e700f6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_06e20341-07ca-4a74-8b36-122788e700f6 .
+
+km-dev:TriplesMap_41352b80-0d58-4355-a8ff-67df328d209b a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_41352b80-0d58-4355-a8ff-67df328d209b .
+
+km-dev:TriplesMap_41352b80-0d58-4355-a8ff-67df328d209b km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx18 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx18 .
+
+km-dev:TriplesMap_41352b80-0d58-4355-a8ff-67df328d209b rr:logicalTable _:node1e4elqjtfx18 ;
+	rr:subjectMap _:node1e4elqjtfx19 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx19 .
+
+_:node1e4elqjtfx19 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class9" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:ATV\"]}" .
+
+km-dev:TriplesMap_4de3af45-e092-4477-bf66-c38fe7253e74 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_4de3af45-e092-4477-bf66-c38fe7253e74 .
+
+km-dev:TriplesMap_4de3af45-e092-4477-bf66-c38fe7253e74 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx20 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx20 .
+
+km-dev:TriplesMap_4de3af45-e092-4477-bf66-c38fe7253e74 rr:logicalTable _:node1e4elqjtfx20 ;
+	rr:subjectMap _:node1e4elqjtfx21 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx21 .
+
+_:node1e4elqjtfx21 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class4" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:BICYCLE\"]}" .
+
+km-dev:TriplesMap_980d1462-4d75-4314-9135-e455ae788298 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_980d1462-4d75-4314-9135-e455ae788298 .
+
+km-dev:TriplesMap_980d1462-4d75-4314-9135-e455ae788298 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx22 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx22 .
+
+km-dev:TriplesMap_980d1462-4d75-4314-9135-e455ae788298 rr:logicalTable _:node1e4elqjtfx22 ;
+	rr:subjectMap _:node1e4elqjtfx23 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx23 .
+
+_:node1e4elqjtfx23 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class10" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:CROSSCOUNT\"]}" .
+
+km-dev:TriplesMap_e910f165-eaf9-4219-9bd4-77af2cc35efc a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_e910f165-eaf9-4219-9bd4-77af2cc35efc .
+
+km-dev:TriplesMap_e910f165-eaf9-4219-9bd4-77af2cc35efc km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx24 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx24 .
+
+km-dev:TriplesMap_e910f165-eaf9-4219-9bd4-77af2cc35efc rr:logicalTable _:node1e4elqjtfx24 ;
+	rr:subjectMap _:node1e4elqjtfx25 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx25 .
+
+_:node1e4elqjtfx25 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class11" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:DOGSLED\"]}" .
+
+km-dev:TriplesMap_493e0ded-1440-495c-a9e3-92f688abb954 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_493e0ded-1440-495c-a9e3-92f688abb954 .
+
+km-dev:TriplesMap_493e0ded-1440-495c-a9e3-92f688abb954 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx26 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx26 .
+
+km-dev:TriplesMap_493e0ded-1440-495c-a9e3-92f688abb954 rr:logicalTable _:node1e4elqjtfx26 ;
+	rr:subjectMap _:node1e4elqjtfx27 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx27 .
+
+_:node1e4elqjtfx27 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class12" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:HIKERPEDES\"]}" .
+
+km-dev:TriplesMap_62716b8f-08c0-43e1-9dfd-05abc6cc1957 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_62716b8f-08c0-43e1-9dfd-05abc6cc1957 .
+
+km-dev:TriplesMap_62716b8f-08c0-43e1-9dfd-05abc6cc1957 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx28 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx28 .
+
+km-dev:TriplesMap_62716b8f-08c0-43e1-9dfd-05abc6cc1957 rr:logicalTable _:node1e4elqjtfx28 ;
+	rr:subjectMap _:node1e4elqjtfx29 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx29 .
+
+_:node1e4elqjtfx29 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class5" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:MOTORCYCLE\"]}" .
+
+km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d .
+
+km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx30 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx30 .
+
+km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d rr:logicalTable _:node1e4elqjtfx30 ;
+	rr:subjectMap _:node1e4elqjtfx31 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx31 .
+
+_:node1e4elqjtfx31 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class14" ;
+	rr:class rdfs:Class ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "rdfs:Class14" .
+
+km-dev:PredicateObjectMap_1bd5a8dc-5df8-44e1-8c8f-c9a225230ddd rr:predicate schema:name .
+
+_:node1e4elqjtfx32 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:MOTORIZEDW\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx32 .
+
+km-dev:PredicateObjectMap_1bd5a8dc-5df8-44e1-8c8f-c9a225230ddd rr:objectMap _:node1e4elqjtfx32 .
+
+km-dev:TriplesMap_2fb4c4e3-6155-4bc8-951f-34b9fe6b708d rr:predicateObjectMap km-dev:PredicateObjectMap_1bd5a8dc-5df8-44e1-8c8f-c9a225230ddd .
+
+km-dev:PredicateObjectMap_1bd5a8dc-5df8-44e1-8c8f-c9a225230ddd a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1bd5a8dc-5df8-44e1-8c8f-c9a225230ddd .
+
+km-dev:TriplesMap_fb4de607-baed-413d-a3c2-13e36ab5f433 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_fb4de607-baed-413d-a3c2-13e36ab5f433 .
+
+km-dev:TriplesMap_fb4de607-baed-413d-a3c2-13e36ab5f433 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx33 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx33 .
+
+km-dev:TriplesMap_fb4de607-baed-413d-a3c2-13e36ab5f433 rr:logicalTable _:node1e4elqjtfx33 ;
+	rr:subjectMap _:node1e4elqjtfx34 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx34 .
+
+_:node1e4elqjtfx34 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class1" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:NATIONALTR\"]}" .
+
+km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f .
+
+km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx35 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx35 .
+
+km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f rr:logicalTable _:node1e4elqjtfx35 ;
+	rr:subjectMap _:node1e4elqjtfx36 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx36 .
+
+_:node1e4elqjtfx36 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class15" ;
+	rr:class rdfs:Class ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "rdfs:Class15" .
+
+km-dev:PredicateObjectMap_36d25bd8-84d0-4c11-a436-c2a09cc07845 rr:predicate schema:name .
+
+_:node1e4elqjtfx37 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:NONMOTORIZ\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx37 .
+
+km-dev:PredicateObjectMap_36d25bd8-84d0-4c11-a436-c2a09cc07845 rr:objectMap _:node1e4elqjtfx37 .
+
+km-dev:TriplesMap_7a9dcbb6-c529-43c7-b1ba-d59d2491079f rr:predicateObjectMap km-dev:PredicateObjectMap_36d25bd8-84d0-4c11-a436-c2a09cc07845 .
+
+km-dev:PredicateObjectMap_36d25bd8-84d0-4c11-a436-c2a09cc07845 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_36d25bd8-84d0-4c11-a436-c2a09cc07845 .
+
+km-dev:TriplesMap_253fd5d3-b190-4886-8bf7-dd2490857612 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_253fd5d3-b190-4886-8bf7-dd2490857612 .
+
+km-dev:TriplesMap_253fd5d3-b190-4886-8bf7-dd2490857612 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx38 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx38 .
+
+km-dev:TriplesMap_253fd5d3-b190-4886-8bf7-dd2490857612 rr:logicalTable _:node1e4elqjtfx38 ;
+	rr:subjectMap _:node1e4elqjtfx39 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx39 .
+
+_:node1e4elqjtfx39 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class6" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:OHVOVER50I\"]}" .
+
+km-dev:TriplesMap_ca2f0906-b8bb-4ab7-acf0-d77e2426f379 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_ca2f0906-b8bb-4ab7-acf0-d77e2426f379 .
+
+km-dev:TriplesMap_ca2f0906-b8bb-4ab7-acf0-d77e2426f379 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx40 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx40 .
+
+km-dev:TriplesMap_ca2f0906-b8bb-4ab7-acf0-d77e2426f379 rr:logicalTable _:node1e4elqjtfx40 ;
+	rr:subjectMap _:node1e4elqjtfx41 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx41 .
+
+_:node1e4elqjtfx41 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class13" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:PACKSADDLE\"]}" .
+
+km-dev:TriplesMap_2b0a1ee6-d3e9-4919-9dd1-606c78da2d30 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_2b0a1ee6-d3e9-4919-9dd1-606c78da2d30 .
+
+km-dev:TriplesMap_2b0a1ee6-d3e9-4919-9dd1-606c78da2d30 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx42 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx42 .
+
+km-dev:TriplesMap_2b0a1ee6-d3e9-4919-9dd1-606c78da2d30 rr:logicalTable _:node1e4elqjtfx42 ;
+	rr:subjectMap _:node1e4elqjtfx43 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx43 .
+
+_:node1e4elqjtfx43 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class3" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:PRIMARYTRA\"]}" .
+
+km-dev:TriplesMap_cbdcd9ee-8e59-4ab0-a4a1-ca445d1cbb7e a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_cbdcd9ee-8e59-4ab0-a4a1-ca445d1cbb7e .
+
+km-dev:TriplesMap_cbdcd9ee-8e59-4ab0-a4a1-ca445d1cbb7e km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx44 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx44 .
+
+km-dev:TriplesMap_cbdcd9ee-8e59-4ab0-a4a1-ca445d1cbb7e rr:logicalTable _:node1e4elqjtfx44 ;
+	rr:subjectMap _:node1e4elqjtfx45 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx45 .
+
+_:node1e4elqjtfx45 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class7" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SNOWMOBILE\"]}" .
+
+km-dev:TriplesMap_91438990-4674-45b3-92f1-f775a73ec769 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_91438990-4674-45b3-92f1-f775a73ec769 .
+
+km-dev:TriplesMap_91438990-4674-45b3-92f1-f775a73ec769 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx46 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx46 .
+
+km-dev:TriplesMap_91438990-4674-45b3-92f1-f775a73ec769 rr:logicalTable _:node1e4elqjtfx46 ;
+	rr:subjectMap _:node1e4elqjtfx47 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx47 .
+
+_:node1e4elqjtfx47 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class8" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:SNOWSHOE\"]}" .
+
+km-dev:TriplesMap_54a517f9-6e84-4b87-bd2f-beec396db09d a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_54a517f9-6e84-4b87-bd2f-beec396db09d .
+
+km-dev:TriplesMap_54a517f9-6e84-4b87-bd2f-beec396db09d km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx48 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx48 .
+
+km-dev:TriplesMap_54a517f9-6e84-4b87-bd2f-beec396db09d rr:logicalTable _:node1e4elqjtfx48 ;
+	rr:subjectMap _:node1e4elqjtfx49 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx49 .
+
+_:node1e4elqjtfx49 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.w3.org/2000/01/rdf-schema#Class2" ;
+	rr:class rdfs:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:TRAILTYPE\"]}" .
+
+km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 a rr:TriplesMap .
+
+_:node1e4elqjtfx1 km-dev:hasTriplesMap km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 .
+
+km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx50 rr:tableName "Trans_TrailSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasLogicalTable _:node1e4elqjtfx50 .
+
+km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 rr:logicalTable _:node1e4elqjtfx50 ;
+	rr:subjectMap _:node1e4elqjtfx51 .
+
+_:node1e4elqjtfx1 km-dev:hasSubjectMap _:node1e4elqjtfx51 .
+
+_:node1e4elqjtfx51 km-dev:isPartOfMapping _:node1e4elqjtfx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_ef77c7b8-556c-4d30-a169-71b9f37eb395 rr:predicate geo:coordinateDimension .
+
+_:node1e4elqjtfx52 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_TrailSegment_Updated\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasObjectMap _:node1e4elqjtfx52 .
+
+km-dev:PredicateObjectMap_ef77c7b8-556c-4d30-a169-71b9f37eb395 rr:objectMap _:node1e4elqjtfx52 .
+
+km-dev:TriplesMap_a70b748a-0794-41ae-95eb-857f1ae55407 rr:predicateObjectMap km-dev:PredicateObjectMap_ef77c7b8-556c-4d30-a169-71b9f37eb395 .
+
+km-dev:PredicateObjectMap_ef77c7b8-556c-4d30-a169-71b9f37eb395 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e4elqjtfx1 .
+
+_:node1e4elqjtfx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ef77c7b8-556c-4d30-a169-71b9f37eb395 .

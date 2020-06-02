@@ -1,0 +1,3070 @@
+@prefix topo: <http://data.usgs.gov/lod/topo#> .
+@prefix wgs84pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wikidata: <http://www.wikidata.org/entity/> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix gnis: <http://data.usgs.gov/lod/gnis/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix cidoccrm: <http://purl.org/NET/cidoc-crm/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix d0: <http://www.ontologydesignpatterns.org/ont/d0.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1e5fp7aiix1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "Trans_RoadSegment" ;
+	km-dev:modelPublicationTime "1586446445138"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasModelLabel "Trans_RoadSegment" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:TNMFRC\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"usgsns:TNMFRC\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return tnmFRC_uri(getValue(\\\"usgsns:TNMFRC\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"wkt\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_wkt_line(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:posList\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return get_gml_line(getValue(\\\"gml:posList\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"xmlns:gml\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsName\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return trans_roadsegment_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"gml:id\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return trans_roadsegment_uri(getValue(\\\"gml:id\\\"))\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.opengis.net/ont/geosparql#Geometry1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"gml:id\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/RoadSegment\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"gml:id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:TNMFRC\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class1\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:COUNTY_ROU\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/county_Route\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_ROU\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:COUNTY_ROU\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:FEDERAL_LA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/federal_Lands_Route\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:FEDERAL_LA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:FEDERAL_LA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:FULL_STREE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/full_Street_Name\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:FULL_STREE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:FULL_STREE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:INTERSTATE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/interstate\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTATE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTATE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:INTERSTA_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/interstate_A\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:INTERSTA_2\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/interstate_B\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_2\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_2\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:INTERSTA_3\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/interstate_C\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_3\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:INTERSTA_3\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:LOADDATE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/loadDate_Standard\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:dateTime\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:LOADDATE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:LOADDATE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:MTFCC_CODE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/mtfcc_Code\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:MTFCC_CODE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:MTFCC_CODE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:OBJECTID\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/objectID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"objectID\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:OBJECTID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:PERMANENT_\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/permanent_Identifier\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:PERMANENT_\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:PERMANENT_\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:SHAPE_Leng\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/shape_Length\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:double\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SHAPE_Leng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SHAPE_Leng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:SOURCE_DAT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DatasetID\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_DAT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_DAT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:SOURCE_D_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_DataDesc\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_D_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_D_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:SOURCE_FEA\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_FeatureID_100\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_FEA\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_FEA\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:SOURCE_ORI\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/source_Originator\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_ORI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:SOURCE_ORI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:STATE_ROUT\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_Route\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_ROUT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_ROUT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:STATE_RO_1\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_ROUTE_A\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_1\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_1\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:STATE_RO_2\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_ROUTE_B\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_2\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_2\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:STATE_RO_3\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/state_ROUTE_C\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_3\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STATE_RO_3\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:STCO_FIPSC\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/stco_FIPSCode\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STCO_FIPSC\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:STCO_FIPSC\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:US_ROUTE\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/us_Route\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:US_ROUTE_A\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/us_ROUTE_A\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_A\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_A\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:US_ROUTE_B\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/us_ROUTE_B\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_B\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_B\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:US_ROUTE_C\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\",
+                    \"DomainId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://data.usgs.gov/lod/topo/us_ROUTE_C\",
+                    \"DomainLabel\": \"http://data.usgs.gov/lod/topo/RoadSegment1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:string\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_C\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:US_ROUTE_C\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"wkt\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asWKT\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:wktLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"wkt\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"gml:curveMember\"},
+                    {\"columnName\": \"gml:LineString\"},
+                    {\"columnName\": \"gml:posList\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#asGML\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"geo:gmlLiteral\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"gml:curveMember\\\"},{\\\"columnName\\\":\\\"gml:LineString\\\"},{\\\"columnName\\\":\\\"gml:posList\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:the_geom\"},
+                    {\"columnName\": \"gml:MultiCurve\"},
+                    {\"columnName\": \"srsDimension\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"DomainId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.opengis.net/ont/geosparql#coordinateDimension\",
+                    \"DomainLabel\": \"geosparql:Geometry1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:integer\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:the_geom\\\"},{\\\"columnName\\\":\\\"gml:MultiCurve\\\"},{\\\"columnName\\\":\\\"srsDimension\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"wfs:FeatureCollection\"},
+                    {\"columnName\": \"wfs:member\"},
+                    {\"columnName\": \"usgsns:Trans_RoadSegment\"},
+                    {\"columnName\": \"usgsns:TNMFRC\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Class\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Class1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Class1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"xsd:long\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wfs:FeatureCollection\\\"},{\\\"columnName\\\":\\\"wfs:member\\\"},{\\\"columnName\\\":\\\"usgsns:Trans_RoadSegment\\\"},{\\\"columnName\\\":\\\"usgsns:TNMFRC\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Class1\",
+                    \"edgeId\": \"http://data.usgs.gov/lod/topo/tnmFRC\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Class\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.opengis.net/ont/geosparql#Geometry1\",
+                    \"edgeId\": \"http://www.opengis.net/ont/geosparql#hasGeometry\",
+                    \"edgeTargetUri\": \"http://www.opengis.net/ont/geosparql#Geometry\",
+                    \"edgeSourceId\": \"http://data.usgs.gov/lod/topo/RoadSegment1\",
+                    \"edgeSourceUri\": \"http://data.usgs.gov/lod/topo/RoadSegment\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da a rr:TriplesMap .
+
+_:node1e5fp7aiix1 km-dev:hasTriplesMap km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix2 rr:tableName "Trans_RoadSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasLogicalTable _:node1e5fp7aiix2 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:logicalTable _:node1e5fp7aiix2 ;
+	rr:subjectMap _:node1e5fp7aiix3 .
+
+_:node1e5fp7aiix1 km-dev:hasSubjectMap _:node1e5fp7aiix3 .
+
+_:node1e5fp7aiix3 km-dev:isPartOfMapping _:node1e5fp7aiix1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://data.usgs.gov/lod/topo/RoadSegment1" ;
+	rr:class <http://data.usgs.gov/lod/topo/RoadSegment> ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"gml:id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_aea45b76-8a05-4680-b447-7130d030f460 rr:predicate <http://data.usgs.gov/lod/topo/county_Route> .
+
+_:node1e5fp7aiix4 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:COUNTY_ROU\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix4 .
+
+km-dev:PredicateObjectMap_aea45b76-8a05-4680-b447-7130d030f460 rr:objectMap _:node1e5fp7aiix4 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_aea45b76-8a05-4680-b447-7130d030f460 .
+
+km-dev:PredicateObjectMap_aea45b76-8a05-4680-b447-7130d030f460 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aea45b76-8a05-4680-b447-7130d030f460 .
+
+km-dev:PredicateObjectMap_09585626-bc14-4118-b3f9-b028838e6334 rr:predicate <http://data.usgs.gov/lod/topo/federal_Lands_Route> .
+
+_:node1e5fp7aiix5 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:FEDERAL_LA\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix5 .
+
+km-dev:PredicateObjectMap_09585626-bc14-4118-b3f9-b028838e6334 rr:objectMap _:node1e5fp7aiix5 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_09585626-bc14-4118-b3f9-b028838e6334 .
+
+km-dev:PredicateObjectMap_09585626-bc14-4118-b3f9-b028838e6334 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_09585626-bc14-4118-b3f9-b028838e6334 .
+
+km-dev:PredicateObjectMap_aa76d61e-2307-455e-b8d2-2aba3e5676f2 rr:predicate <http://data.usgs.gov/lod/topo/full_Street_Name> .
+
+_:node1e5fp7aiix6 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:FULL_STREE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix6 .
+
+km-dev:PredicateObjectMap_aa76d61e-2307-455e-b8d2-2aba3e5676f2 rr:objectMap _:node1e5fp7aiix6 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_aa76d61e-2307-455e-b8d2-2aba3e5676f2 .
+
+km-dev:PredicateObjectMap_aa76d61e-2307-455e-b8d2-2aba3e5676f2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aa76d61e-2307-455e-b8d2-2aba3e5676f2 .
+
+km-dev:PredicateObjectMap_8263ebbc-2ab9-4eb2-a2f6-503ab768cd0f rr:predicate <http://data.usgs.gov/lod/topo/interstate> .
+
+_:node1e5fp7aiix7 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:INTERSTATE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix7 .
+
+km-dev:PredicateObjectMap_8263ebbc-2ab9-4eb2-a2f6-503ab768cd0f rr:objectMap _:node1e5fp7aiix7 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_8263ebbc-2ab9-4eb2-a2f6-503ab768cd0f .
+
+km-dev:PredicateObjectMap_8263ebbc-2ab9-4eb2-a2f6-503ab768cd0f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8263ebbc-2ab9-4eb2-a2f6-503ab768cd0f .
+
+km-dev:PredicateObjectMap_eff5968f-f4bc-4bd9-9c3f-9a706f1a697d rr:predicate <http://data.usgs.gov/lod/topo/interstate_A> .
+
+_:node1e5fp7aiix8 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:INTERSTA_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix8 .
+
+km-dev:PredicateObjectMap_eff5968f-f4bc-4bd9-9c3f-9a706f1a697d rr:objectMap _:node1e5fp7aiix8 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_eff5968f-f4bc-4bd9-9c3f-9a706f1a697d .
+
+km-dev:PredicateObjectMap_eff5968f-f4bc-4bd9-9c3f-9a706f1a697d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_eff5968f-f4bc-4bd9-9c3f-9a706f1a697d .
+
+km-dev:PredicateObjectMap_408e2a56-911b-410e-bb05-d1857edf90ed rr:predicate <http://data.usgs.gov/lod/topo/interstate_B> .
+
+_:node1e5fp7aiix9 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:INTERSTA_2\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix9 .
+
+km-dev:PredicateObjectMap_408e2a56-911b-410e-bb05-d1857edf90ed rr:objectMap _:node1e5fp7aiix9 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_408e2a56-911b-410e-bb05-d1857edf90ed .
+
+km-dev:PredicateObjectMap_408e2a56-911b-410e-bb05-d1857edf90ed a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_408e2a56-911b-410e-bb05-d1857edf90ed .
+
+km-dev:PredicateObjectMap_f4f38bd8-5ed3-4b7d-a53c-eed09a851873 rr:predicate <http://data.usgs.gov/lod/topo/interstate_C> .
+
+_:node1e5fp7aiix10 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:INTERSTA_3\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix10 .
+
+km-dev:PredicateObjectMap_f4f38bd8-5ed3-4b7d-a53c-eed09a851873 rr:objectMap _:node1e5fp7aiix10 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_f4f38bd8-5ed3-4b7d-a53c-eed09a851873 .
+
+km-dev:PredicateObjectMap_f4f38bd8-5ed3-4b7d-a53c-eed09a851873 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f4f38bd8-5ed3-4b7d-a53c-eed09a851873 .
+
+km-dev:PredicateObjectMap_73685167-5ee7-4d16-a7dd-448d9f5de959 rr:predicate <http://data.usgs.gov/lod/topo/loadDate_Standard> .
+
+_:node1e5fp7aiix11 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:LOADDATE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#dateTime" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix11 .
+
+km-dev:PredicateObjectMap_73685167-5ee7-4d16-a7dd-448d9f5de959 rr:objectMap _:node1e5fp7aiix11 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_73685167-5ee7-4d16-a7dd-448d9f5de959 .
+
+km-dev:PredicateObjectMap_73685167-5ee7-4d16-a7dd-448d9f5de959 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_73685167-5ee7-4d16-a7dd-448d9f5de959 .
+
+km-dev:PredicateObjectMap_735fdfc5-cdbf-4d13-871a-3eb4ee5a7632 rr:predicate <http://data.usgs.gov/lod/topo/mtfcc_Code> .
+
+_:node1e5fp7aiix12 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:MTFCC_CODE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix12 .
+
+km-dev:PredicateObjectMap_735fdfc5-cdbf-4d13-871a-3eb4ee5a7632 rr:objectMap _:node1e5fp7aiix12 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_735fdfc5-cdbf-4d13-871a-3eb4ee5a7632 .
+
+km-dev:PredicateObjectMap_735fdfc5-cdbf-4d13-871a-3eb4ee5a7632 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_735fdfc5-cdbf-4d13-871a-3eb4ee5a7632 .
+
+km-dev:PredicateObjectMap_c30e3651-ce63-4504-a034-b12959a8e4b7 rr:predicate <http://data.usgs.gov/lod/topo/objectID> .
+
+_:node1e5fp7aiix13 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:OBJECTID\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "objectID" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix13 .
+
+km-dev:PredicateObjectMap_c30e3651-ce63-4504-a034-b12959a8e4b7 rr:objectMap _:node1e5fp7aiix13 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_c30e3651-ce63-4504-a034-b12959a8e4b7 .
+
+km-dev:PredicateObjectMap_c30e3651-ce63-4504-a034-b12959a8e4b7 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c30e3651-ce63-4504-a034-b12959a8e4b7 .
+
+km-dev:PredicateObjectMap_b4da7f13-5adc-4a22-a2a6-71ae4f533824 rr:predicate <http://data.usgs.gov/lod/topo/permanent_Identifier> .
+
+_:node1e5fp7aiix14 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:PERMANENT_\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix14 .
+
+km-dev:PredicateObjectMap_b4da7f13-5adc-4a22-a2a6-71ae4f533824 rr:objectMap _:node1e5fp7aiix14 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_b4da7f13-5adc-4a22-a2a6-71ae4f533824 .
+
+km-dev:PredicateObjectMap_b4da7f13-5adc-4a22-a2a6-71ae4f533824 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b4da7f13-5adc-4a22-a2a6-71ae4f533824 .
+
+km-dev:PredicateObjectMap_6f0de470-874e-4488-b6e8-cc0255e686ad rr:predicate <http://data.usgs.gov/lod/topo/shape_Length> .
+
+_:node1e5fp7aiix15 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:SHAPE_Leng\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#double" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix15 .
+
+km-dev:PredicateObjectMap_6f0de470-874e-4488-b6e8-cc0255e686ad rr:objectMap _:node1e5fp7aiix15 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_6f0de470-874e-4488-b6e8-cc0255e686ad .
+
+km-dev:PredicateObjectMap_6f0de470-874e-4488-b6e8-cc0255e686ad a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6f0de470-874e-4488-b6e8-cc0255e686ad .
+
+km-dev:PredicateObjectMap_da75226f-8179-4c10-9dd6-c5850405e0a0 rr:predicate <http://data.usgs.gov/lod/topo/source_DataDesc> .
+
+_:node1e5fp7aiix16 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:SOURCE_D_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix16 .
+
+km-dev:PredicateObjectMap_da75226f-8179-4c10-9dd6-c5850405e0a0 rr:objectMap _:node1e5fp7aiix16 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_da75226f-8179-4c10-9dd6-c5850405e0a0 .
+
+km-dev:PredicateObjectMap_da75226f-8179-4c10-9dd6-c5850405e0a0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_da75226f-8179-4c10-9dd6-c5850405e0a0 .
+
+km-dev:PredicateObjectMap_75e38d33-0aee-441d-b240-7dfe1303b5f6 rr:predicate <http://data.usgs.gov/lod/topo/source_DatasetID> .
+
+_:node1e5fp7aiix17 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:SOURCE_DAT\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix17 .
+
+km-dev:PredicateObjectMap_75e38d33-0aee-441d-b240-7dfe1303b5f6 rr:objectMap _:node1e5fp7aiix17 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_75e38d33-0aee-441d-b240-7dfe1303b5f6 .
+
+km-dev:PredicateObjectMap_75e38d33-0aee-441d-b240-7dfe1303b5f6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_75e38d33-0aee-441d-b240-7dfe1303b5f6 .
+
+km-dev:PredicateObjectMap_53f721ae-54ae-4674-97ef-bb2862857d5a rr:predicate <http://data.usgs.gov/lod/topo/source_FeatureID_100> .
+
+_:node1e5fp7aiix18 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:SOURCE_FEA\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix18 .
+
+km-dev:PredicateObjectMap_53f721ae-54ae-4674-97ef-bb2862857d5a rr:objectMap _:node1e5fp7aiix18 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_53f721ae-54ae-4674-97ef-bb2862857d5a .
+
+km-dev:PredicateObjectMap_53f721ae-54ae-4674-97ef-bb2862857d5a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_53f721ae-54ae-4674-97ef-bb2862857d5a .
+
+km-dev:PredicateObjectMap_783fa605-2b77-427d-9b55-d0d45e87aea2 rr:predicate <http://data.usgs.gov/lod/topo/source_Originator> .
+
+_:node1e5fp7aiix19 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:SOURCE_ORI\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix19 .
+
+km-dev:PredicateObjectMap_783fa605-2b77-427d-9b55-d0d45e87aea2 rr:objectMap _:node1e5fp7aiix19 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_783fa605-2b77-427d-9b55-d0d45e87aea2 .
+
+km-dev:PredicateObjectMap_783fa605-2b77-427d-9b55-d0d45e87aea2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_783fa605-2b77-427d-9b55-d0d45e87aea2 .
+
+km-dev:PredicateObjectMap_6afbd77f-239f-4801-bb41-9de5c2390fd0 rr:predicate <http://data.usgs.gov/lod/topo/state_ROUTE_A> .
+
+_:node1e5fp7aiix20 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:STATE_RO_1\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix20 .
+
+km-dev:PredicateObjectMap_6afbd77f-239f-4801-bb41-9de5c2390fd0 rr:objectMap _:node1e5fp7aiix20 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_6afbd77f-239f-4801-bb41-9de5c2390fd0 .
+
+km-dev:PredicateObjectMap_6afbd77f-239f-4801-bb41-9de5c2390fd0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6afbd77f-239f-4801-bb41-9de5c2390fd0 .
+
+km-dev:PredicateObjectMap_2acc10f0-0ec1-4f04-b95d-3a280b5b6629 rr:predicate <http://data.usgs.gov/lod/topo/state_ROUTE_B> .
+
+_:node1e5fp7aiix21 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:STATE_RO_2\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix21 .
+
+km-dev:PredicateObjectMap_2acc10f0-0ec1-4f04-b95d-3a280b5b6629 rr:objectMap _:node1e5fp7aiix21 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_2acc10f0-0ec1-4f04-b95d-3a280b5b6629 .
+
+km-dev:PredicateObjectMap_2acc10f0-0ec1-4f04-b95d-3a280b5b6629 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2acc10f0-0ec1-4f04-b95d-3a280b5b6629 .
+
+km-dev:PredicateObjectMap_e02ba1e3-86f1-4aa1-8508-fb249c7291df rr:predicate <http://data.usgs.gov/lod/topo/state_ROUTE_C> .
+
+_:node1e5fp7aiix22 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:STATE_RO_3\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix22 .
+
+km-dev:PredicateObjectMap_e02ba1e3-86f1-4aa1-8508-fb249c7291df rr:objectMap _:node1e5fp7aiix22 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_e02ba1e3-86f1-4aa1-8508-fb249c7291df .
+
+km-dev:PredicateObjectMap_e02ba1e3-86f1-4aa1-8508-fb249c7291df a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e02ba1e3-86f1-4aa1-8508-fb249c7291df .
+
+km-dev:PredicateObjectMap_32361c83-2569-42b3-915e-0f9d8c56e612 rr:predicate <http://data.usgs.gov/lod/topo/state_Route> .
+
+_:node1e5fp7aiix23 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:STATE_ROUT\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix23 .
+
+km-dev:PredicateObjectMap_32361c83-2569-42b3-915e-0f9d8c56e612 rr:objectMap _:node1e5fp7aiix23 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_32361c83-2569-42b3-915e-0f9d8c56e612 .
+
+km-dev:PredicateObjectMap_32361c83-2569-42b3-915e-0f9d8c56e612 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_32361c83-2569-42b3-915e-0f9d8c56e612 .
+
+km-dev:PredicateObjectMap_76a7f12f-f66a-46af-8a95-d9d34d0af9d8 rr:predicate <http://data.usgs.gov/lod/topo/stco_FIPSCode> .
+
+_:node1e5fp7aiix24 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:STCO_FIPSC\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix24 .
+
+km-dev:PredicateObjectMap_76a7f12f-f66a-46af-8a95-d9d34d0af9d8 rr:objectMap _:node1e5fp7aiix24 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_76a7f12f-f66a-46af-8a95-d9d34d0af9d8 .
+
+km-dev:PredicateObjectMap_76a7f12f-f66a-46af-8a95-d9d34d0af9d8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_76a7f12f-f66a-46af-8a95-d9d34d0af9d8 .
+
+km-dev:PredicateObjectMap_672ff684-b746-496d-8c10-aaf67ecb0b41 rr:predicate <http://data.usgs.gov/lod/topo/tnmFRC> .
+
+km-dev:RefObjectMap_48b8e042-459a-49a1-882f-874264d6b842 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_d2d0f125-1195-47b9-8091-85b8e7f815aa ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap km-dev:RefObjectMap_48b8e042-459a-49a1-882f-874264d6b842 .
+
+km-dev:PredicateObjectMap_672ff684-b746-496d-8c10-aaf67ecb0b41 rr:objectMap km-dev:RefObjectMap_48b8e042-459a-49a1-882f-874264d6b842 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_672ff684-b746-496d-8c10-aaf67ecb0b41 .
+
+km-dev:PredicateObjectMap_672ff684-b746-496d-8c10-aaf67ecb0b41 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_672ff684-b746-496d-8c10-aaf67ecb0b41 .
+
+km-dev:PredicateObjectMap_aecd81dd-25c1-4065-ae84-932764693618 rr:predicate <http://data.usgs.gov/lod/topo/us_ROUTE_A> .
+
+_:node1e5fp7aiix25 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:US_ROUTE_A\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix25 .
+
+km-dev:PredicateObjectMap_aecd81dd-25c1-4065-ae84-932764693618 rr:objectMap _:node1e5fp7aiix25 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_aecd81dd-25c1-4065-ae84-932764693618 .
+
+km-dev:PredicateObjectMap_aecd81dd-25c1-4065-ae84-932764693618 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aecd81dd-25c1-4065-ae84-932764693618 .
+
+km-dev:PredicateObjectMap_90e28c7a-9391-489a-a11f-ae210ff56372 rr:predicate <http://data.usgs.gov/lod/topo/us_ROUTE_B> .
+
+_:node1e5fp7aiix26 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:US_ROUTE_B\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix26 .
+
+km-dev:PredicateObjectMap_90e28c7a-9391-489a-a11f-ae210ff56372 rr:objectMap _:node1e5fp7aiix26 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_90e28c7a-9391-489a-a11f-ae210ff56372 .
+
+km-dev:PredicateObjectMap_90e28c7a-9391-489a-a11f-ae210ff56372 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_90e28c7a-9391-489a-a11f-ae210ff56372 .
+
+km-dev:PredicateObjectMap_29718e60-59e2-4289-bd66-8ffc815eb6a5 rr:predicate <http://data.usgs.gov/lod/topo/us_ROUTE_C> .
+
+_:node1e5fp7aiix27 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:US_ROUTE_C\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix27 .
+
+km-dev:PredicateObjectMap_29718e60-59e2-4289-bd66-8ffc815eb6a5 rr:objectMap _:node1e5fp7aiix27 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_29718e60-59e2-4289-bd66-8ffc815eb6a5 .
+
+km-dev:PredicateObjectMap_29718e60-59e2-4289-bd66-8ffc815eb6a5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_29718e60-59e2-4289-bd66-8ffc815eb6a5 .
+
+km-dev:PredicateObjectMap_7ffdbeb7-91c4-432c-985a-112fc83722ee rr:predicate <http://data.usgs.gov/lod/topo/us_Route> .
+
+_:node1e5fp7aiix28 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:US_ROUTE\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#string" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix28 .
+
+km-dev:PredicateObjectMap_7ffdbeb7-91c4-432c-985a-112fc83722ee rr:objectMap _:node1e5fp7aiix28 .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_7ffdbeb7-91c4-432c-985a-112fc83722ee .
+
+km-dev:PredicateObjectMap_7ffdbeb7-91c4-432c-985a-112fc83722ee a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7ffdbeb7-91c4-432c-985a-112fc83722ee .
+
+km-dev:PredicateObjectMap_b0cd6ed9-f5fe-49c2-be65-0b31436517bf rr:predicate geo:hasGeometry .
+
+km-dev:RefObjectMap_b077af44-3522-49f7-b4fc-7ca1733efe5d a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap km-dev:RefObjectMap_b077af44-3522-49f7-b4fc-7ca1733efe5d .
+
+km-dev:PredicateObjectMap_b0cd6ed9-f5fe-49c2-be65-0b31436517bf rr:objectMap km-dev:RefObjectMap_b077af44-3522-49f7-b4fc-7ca1733efe5d .
+
+km-dev:TriplesMap_00566970-eb3f-4f08-b073-fc9e977635da rr:predicateObjectMap km-dev:PredicateObjectMap_b0cd6ed9-f5fe-49c2-be65-0b31436517bf .
+
+km-dev:PredicateObjectMap_b0cd6ed9-f5fe-49c2-be65-0b31436517bf a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b0cd6ed9-f5fe-49c2-be65-0b31436517bf .
+
+km-dev:TriplesMap_d2d0f125-1195-47b9-8091-85b8e7f815aa a rr:TriplesMap .
+
+_:node1e5fp7aiix1 km-dev:hasTriplesMap km-dev:TriplesMap_d2d0f125-1195-47b9-8091-85b8e7f815aa .
+
+km-dev:TriplesMap_d2d0f125-1195-47b9-8091-85b8e7f815aa km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix29 rr:tableName "Trans_RoadSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasLogicalTable _:node1e5fp7aiix29 .
+
+km-dev:TriplesMap_d2d0f125-1195-47b9-8091-85b8e7f815aa rr:logicalTable _:node1e5fp7aiix29 ;
+	rr:subjectMap _:node1e5fp7aiix30 .
+
+_:node1e5fp7aiix1 km-dev:hasSubjectMap _:node1e5fp7aiix30 .
+
+_:node1e5fp7aiix30 km-dev:isPartOfMapping _:node1e5fp7aiix1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Class1" ;
+	rr:class gn:Class ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:TNMFRC\"]}" .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 a rr:TriplesMap .
+
+_:node1e5fp7aiix1 km-dev:hasTriplesMap km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix31 rr:tableName "Trans_RoadSegment" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasLogicalTable _:node1e5fp7aiix31 .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 rr:logicalTable _:node1e5fp7aiix31 ;
+	rr:subjectMap _:node1e5fp7aiix32 .
+
+_:node1e5fp7aiix1 km-dev:hasSubjectMap _:node1e5fp7aiix32 .
+
+_:node1e5fp7aiix32 km-dev:isPartOfMapping _:node1e5fp7aiix1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.opengis.net/ont/geosparql#Geometry1" ;
+	rr:class geo:Geometry ;
+	rr:template "{[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:id\"]}" .
+
+km-dev:PredicateObjectMap_f064049e-e539-4382-b854-367dd1b923c4 rr:predicate geo:asGML .
+
+_:node1e5fp7aiix33 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"gml:posList\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:gmlLiteral" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix33 .
+
+km-dev:PredicateObjectMap_f064049e-e539-4382-b854-367dd1b923c4 rr:objectMap _:node1e5fp7aiix33 .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 rr:predicateObjectMap km-dev:PredicateObjectMap_f064049e-e539-4382-b854-367dd1b923c4 .
+
+km-dev:PredicateObjectMap_f064049e-e539-4382-b854-367dd1b923c4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f064049e-e539-4382-b854-367dd1b923c4 .
+
+km-dev:PredicateObjectMap_4dda6d65-399b-425a-b086-27b778e326c0 rr:predicate geo:asWKT .
+
+_:node1e5fp7aiix34 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"gml:curveMember\",\"gml:LineString\",\"wkt\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "geo:wktLiteral" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix34 .
+
+km-dev:PredicateObjectMap_4dda6d65-399b-425a-b086-27b778e326c0 rr:objectMap _:node1e5fp7aiix34 .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 rr:predicateObjectMap km-dev:PredicateObjectMap_4dda6d65-399b-425a-b086-27b778e326c0 .
+
+km-dev:PredicateObjectMap_4dda6d65-399b-425a-b086-27b778e326c0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4dda6d65-399b-425a-b086-27b778e326c0 .
+
+km-dev:PredicateObjectMap_c60e7562-6842-4f32-83f7-e845ee045512 rr:predicate geo:coordinateDimension .
+
+_:node1e5fp7aiix35 rr:column "[\"wfs:FeatureCollection\",\"wfs:member\",\"usgsns:Trans_RoadSegment\",\"usgsns:the_geom\",\"gml:MultiCurve\",\"srsDimension\"]" ;
+	a rr:ObjectMap ;
+	rr:datatype "http://www.w3.org/2001/XMLSchema#integer" ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasObjectMap _:node1e5fp7aiix35 .
+
+km-dev:PredicateObjectMap_c60e7562-6842-4f32-83f7-e845ee045512 rr:objectMap _:node1e5fp7aiix35 .
+
+km-dev:TriplesMap_73a7c791-0da1-4200-bc0b-7449a535ba39 rr:predicateObjectMap km-dev:PredicateObjectMap_c60e7562-6842-4f32-83f7-e845ee045512 .
+
+km-dev:PredicateObjectMap_c60e7562-6842-4f32-83f7-e845ee045512 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1e5fp7aiix1 .
+
+_:node1e5fp7aiix1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c60e7562-6842-4f32-83f7-e845ee045512 .
