@@ -12,7 +12,7 @@ COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
 COPY deployment_scripts /deployment_scripts
 RUN chmod 600 /root/.ssh/*
-COPY karma /root/karma
+COPY karma /usr/local/tomcat/karma
 COPY /jar/marmotta584.war $webapps/marmotta.war
 
 

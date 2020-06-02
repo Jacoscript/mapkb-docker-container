@@ -62,7 +62,7 @@ if [ "$1" = 'catalina.sh' ]; then
         #cat /jetty.out | grep "Started Jetty Server" > /dev/null
         #while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
         #rm -rf /makb_assets/rdf_data
-        $1 stop
+        #$1 stop
         #pkill java
         mv /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/lib/asm-debug-all-4.1.jar /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/classes/
         mv /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/lib/asm-all-repackaged-2.2.0-b21.jar /usr/local/tomcat/webapps/web-services-rdf-0.0.1-SNAPSHOT/WEB-INF/classes/
@@ -72,14 +72,14 @@ if [ "$1" = 'catalina.sh' ]; then
         mv /marmotta/config /usr/local/tomcat/webapps/marmotta
         mv /marmotta/* /usr/local/tomcat/webapps/marmotta
         rmdir /marmotta
-        rm /usr/local/tomcat/logs/catalina.out
-        $1 start
-        cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
-        while [ $? -ne 0 ]; do
-            echo "Waiting for catalina..."
-            sleep 1s
-            cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
-        done
+        #rm /usr/local/tomcat/logs/catalina.out
+        #$1 start
+        #cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+        #while [ $? -ne 0 ]; do
+        #    echo "Waiting for catalina..."
+        #    sleep 1s
+        #    cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+        #done
         /makb_assets/scripts/convert.sh
         $1 stop
         /makb_assets/scripts/import_marmotta.sh
