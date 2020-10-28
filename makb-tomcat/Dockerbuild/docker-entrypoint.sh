@@ -108,7 +108,7 @@ if [ "$1" = 'catalina.sh' ]; then
 
         # Clone the repo if we are not in development
         if [ ! -e /.is_development ]; then 
-            git clone git@code.chs.usgs.gov:cegis/makb.git /usr/local/tomcat/webapps/makb
+            git clone git@code.usgs.gov:makb/MapKB.git /usr/local/tomcat/webapps/makb
             if [ ! -z ${BRANCH+x} ]; then 
                 cd /usr/local/tomcat/webapps/makb
                 git checkout $BRANCH 
