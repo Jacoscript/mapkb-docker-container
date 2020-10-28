@@ -36,7 +36,7 @@ RUN chmod -R a+x /deployment_scripts; \
 
 
 # Clone asset repo and copy .war files to webapps folder
-RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets; \
+RUN git clone git@code.usgs.gov:makb/mapkb-assets.git /makb_assets; \
     mv /makb_assets/archives/*.war $webapps
 
 # Make scripts executable
