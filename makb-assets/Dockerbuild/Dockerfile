@@ -5,13 +5,11 @@ ENV webapps /usr/local/tomcat/webapps
 
 # Install Maven
 RUN apt-get update && apt-get install maven p7zip-full -y; \
-    mv  $webapps.dist/* $webapps; \
-    mkdir /root/.ssh; \ 
-   echo 'StrictHostKeyChecking no' >> /root/.ssh/config
-COPY .ssh/* /root/.ssh/
+    mv  $webapps.dist/* $webapps
+#COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
 COPY deployment_scripts /deployment_scripts
-RUN chmod 600 /root/.ssh/*
+# RUN chmod 600 /root/.ssh/*
 COPY karma /usr/local/tomcat/karma
 COPY /jar/marmotta584.war $webapps/marmotta.war
 
@@ -36,7 +34,7 @@ RUN chmod -R a+x /deployment_scripts; \
 
 
 # Clone asset repo and copy .war files to webapps folder
-RUN git clone git@code.usgs.gov:makb/mapkb-assets.git /makb_assets; \
+RUN git clone https://code.usgs.gov/makb/mapkb-assets.git /makb_assets; \
     mv /makb_assets/archives/*.war $webapps
 
 # Make scripts executable

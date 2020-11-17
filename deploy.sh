@@ -178,9 +178,9 @@ confirm_docker_superuser
 checked_deployed
 confirm_doi_deployment
 check_makb_assets_rebuild
-check_ssh
+#check_ssh
 check_dev_mode
-copy_ssh
+#copy_ssh
 create_doiroot_script
 build_makb_assets
 deploy
