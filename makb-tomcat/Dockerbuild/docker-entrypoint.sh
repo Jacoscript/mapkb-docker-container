@@ -83,8 +83,8 @@ if [ "$1" = 'catalina.sh' ]; then
         done
         /makb_assets/scripts/convert.sh
         $1 stop
-        rm /usr/local/tomcat/bin/catalina.pid
-        rm /usr/local/tomcat/logs/*
+        #rm /usr/local/tomcat/bin/catalina.pid
+        #rm /usr/local/tomcat/logs/*
         # Add LD Cache endpoint
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.name = Karma Endpoint - USGS WFS' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
         echo 'ldcache.endpoint.karma\ endpoint\ \ usgs\ wfs.prio = 2' >> /usr/local/tomcat/webapps/marmotta/system-config.properties
@@ -102,7 +102,7 @@ if [ "$1" = 'catalina.sh' ]; then
 
 
         # Setup database
-        cat /usr/local/tomcat/webapps/marmotta/system-config.properties | sed 's/ = sa/ = postgres/' | sed -e 's/database.url = .*/database.url = jdbc:postgresql:\/\/makb-docker-container_postgresql_1:5432\/marmotta\ndatabase.type = postgres/' > /usr/local/tomcat/webapps/marmotta/system-config.properties.temp
+        cat /usr/local/tomcat/webapps/marmotta/system-config.properties | sed 's/ = sa/ = postgres/' | sed -e 's/database.url = .*/database.url = jdbc:postgresql:\/\/mapkb-docker-container_postgresql_1:5432\/marmotta\ndatabase.type = postgres/' > /usr/local/tomcat/webapps/marmotta/system-config.properties.temp
         mv /usr/local/tomcat/webapps/marmotta/system-config.properties.temp /usr/local/tomcat/webapps/marmotta/system-config.properties
 
 
@@ -114,7 +114,6 @@ if [ "$1" = 'catalina.sh' ]; then
                 git checkout $BRANCH 
             fi
         fi
-
         /makb_assets/scripts/import_marmotta.sh &
 
     fi 
