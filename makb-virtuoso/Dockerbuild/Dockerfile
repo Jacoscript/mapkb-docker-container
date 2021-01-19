@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM makb-assets
 COPY doiroot.sh /doiroot.sh
 RUN /bin/bash -c "chmod a+x /doiroot.sh; \
     apt-get update && apt-get install git ca-certificates wget automake autoconf libtool bison flex g++ gawk  \ 

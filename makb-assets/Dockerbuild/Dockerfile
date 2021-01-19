@@ -1,13 +1,14 @@
-FROM tomcat:9.0.30-jdk11-openjdk
+FROM debian:stretch
 ENV tomcat_dir /usr/local/tomcat
 ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /usr/local/tomcat/webapps
 
 # Install Maven
-RUN apt-get update && apt-get install maven p7zip-full -y; \
+RUN apt-get update && apt-get install maven p7zip-full jdk-default curl wget -y; \
     mv  $webapps.dist/* $webapps; \
     mkdir /root/.ssh; \ 
-   echo 'StrictHostKeyChecking no' >> /root/.ssh/config
+   echo 'StrictHostKeyChecking no' >> /root/.ssh/config; \
+
 COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
 COPY deployment_scripts /deployment_scripts
