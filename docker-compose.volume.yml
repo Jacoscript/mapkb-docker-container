@@ -10,12 +10,14 @@ services:
             - MAKB_SRC
         build: "./makb-tomcat/Dockerbuild"
         ports:
-            - "8080:8080"
+            - "8080:8080""
+            - "8890:8890"
+            - "80:80"
         volumes: 
-            - $MAKB_SRC:/usr/local/tomcat/webapps/makb
+            - $MAKB_SRC:/var/www/html
         tty: true
-    postgresql:
-        restart: always
-        build: "./makb-postgresql/Dockerbuild"
-        ports:
-            - "5432:5432"
+    #postgresql:
+    #    restart: always
+    #    build: "./makb-postgresql/Dockerbuild"
+    #    ports:
+    #        - "5432:5432"

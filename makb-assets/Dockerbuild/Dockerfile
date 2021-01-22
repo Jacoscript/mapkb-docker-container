@@ -1,20 +1,25 @@
 FROM debian:stretch
-ENV tomcat_dir /usr/local/tomcat
+ENV tomcat_dir /opt/tomcat
 ENV tomcat_bin $tomcat_dir/bin
-ENV webapps /usr/local/tomcat/webapps
+ENV webapps /opt/tomcat/webapps
 
 # Install Maven
-RUN apt-get update && apt-get install maven p7zip-full jdk-default curl wget -y; \
-    mv  $webapps.dist/* $webapps; \
+RUN apt-get update && apt-get install maven p7zip-full default-jdk curl apache2 wget git unzip -y; \
     mkdir /root/.ssh; \ 
-   echo 'StrictHostKeyChecking no' >> /root/.ssh/config; \
+    echo 'StrictHostKeyChecking no' >> /root/.ssh/config; \
+    TOMCAT_URL=`curl https://tomcat.apache.org/download-90.cgi | grep nofollow | grep -oP "https://.*apache-tomcat-(\d|\.)+\.tar\.gz"`; \
+    curl $TOMCAT_URL > /opt/tomcat.tar.gz; \
+    tar xvf /opt/tomcat.tar.gz -C /opt; \
+    EXTRACT_DIR=`echo $TOMCAT_URL | grep -oP "apache-tomcat-\d+\.\d+\.\d+"`; \
+    mv /opt/$EXTRACT_DIR /opt/tomcat; \
+    rm /opt/tomcat.tar.gz;
 
-COPY .ssh/* /root/.ssh/
+# COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
 COPY deployment_scripts /deployment_scripts
-RUN chmod 600 /root/.ssh/*
+# RUN chmod 600 /root/.ssh/*
 COPY karma /root/karma
-COPY /jar/marmotta584.war $webapps/marmotta.war
+#COPY /jar/marmotta584.war $webapps/marmotta.war
 
 
 
@@ -23,12 +28,12 @@ RUN chmod -R a+x /deployment_scripts; \
     for i in `ls /deployment_scripts`; do if [ -x /deployment_scripts/$i ]; then /deployment_scripts/$i; fi; done; \
     rm -rf /deployment_scripts/; \
     wget -O geoserver.zip http://sourceforge.net/projects/geoserver/files/GeoServer/2.16.0/geoserver-2.16.0-war.zip; \
-    unzip geoserver.zip -d geoserver; \
+    7z x geoserver.zip -ogeoserver; \
     mv geoserver/geoserver.war $webapps; \
     rm geoserver.zip; \
     rm -rf geoserver/; \
     git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; \ 
-    mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps
+    mv /karma4marmotta/src/ui/usgs/ /opt/tomcat/webapps
 
 # Install OpenJDK 8 and Marmotta
 #RUN sh -c "cd /opt; wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; tar xvf OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; rm OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz"
@@ -38,7 +43,7 @@ RUN chmod -R a+x /deployment_scripts; \
 
 # Clone asset repo and modify web-services rdf war file to work with tomcat
 # Copy .war files to webapps folder
-RUN git clone git@code.chs.usgs.gov:cegis/makb_assets.git /makb_assets; \
+RUN git clone https://code.usgs.gov/makb/mapkb-assets.git /makb_assets; \
     7z rn /makb_assets/archives/web-services-rdf-0.0.1-SNAPSHOT.war \ 
         WEB-INF/lib/asm-all-repackaged-2.2.0-b21.jar \ 
         WEB-INF/classes/asm-all-repackaged-2.2.0-b21.jar; \

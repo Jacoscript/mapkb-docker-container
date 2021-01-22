@@ -8,13 +8,15 @@
 FROM makb-assets
 ARG ENV
 ENV karma karma-web-0.0.1-SNAPSHOT
-ENV tomcat_dir /usr/local/tomcat
+ENV tomcat_dir /opt/tomcat
 ENV tomcat_bin $tomcat_dir/bin
-ENV webapps /usr/local/tomcat/webapps
-ENV marmotta_dir /marmotta
-ENV marmotta_config_dir $marmotta_dir/config
+ENV webapps /opt/tomcat/webapps
+# ENV marmotta_dir /marmotta
+# ENV marmotta_config_dir $marmotta_dir/config
 ENV jar jar
 
+# Set first run
+RUN touch /.first_run
 # Set development flag
 RUN if [ "$ENV" = "dev" ]; then touch /.is_development; fi
 
@@ -25,15 +27,15 @@ RUN if [ "$ENV" = "dev" ]; then apt-get update && apt-get install openssh-server
 RUN apt-get update && apt-get install htop
 
 # Create a user called tomcat with password s3cret to access manager/html
-COPY 'tomcat-users.xml' '/usr/local/tomcat/conf'
+COPY 'tomcat-users.xml' '/opt/tomcat/conf'
 
 # Let all hosts (including local machine) access the manager
-RUN mkdir -p '/usr/local/tomcat/conf/Catalina/localhost'
-COPY 'manager.xml' '/usr/local/tomcat/conf/Catalina/localhost'
+RUN mkdir -p '/opt/tomcat/conf/Catalina/localhost'
+COPY 'manager.xml' '/opt/tomcat/conf/Catalina/localhost'
 
 # Copy SSH GitLab keys if we have them
-COPY .ssh/* /root/.ssh/
-RUN chmod 600 /root/.ssh/*
+# COPY .ssh/* /root/.ssh/
+# RUN chmod 600 /root/.ssh/*
 
 # Deploy requisite war files 
 #COPY $jar/geoserver.war $webapps
@@ -46,11 +48,11 @@ RUN chmod 600 /root/.ssh/*
 #COPY $jar/usgs $webapps/usgs
 
 # Configure Tomcat
-RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/webapps/marmotta' > $tomcat_bin/setenv.sh 
+# RUN echo 'export MARMOTTA_HOME=/usr/local/tomcat/webapps/marmotta' > $tomcat_bin/setenv.sh 
 RUN echo 'CATALINA_PID="$CATALINA_BASE/bin/catalina.pid"' >> $tomcat_bin/setenv.sh
 RUN echo 'export JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Xmx4096m -XX:PermSize=128m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError"' >> $tomcat_bin/setenv.sh
 RUN echo 'export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=128m"' >> $tomcat_bin/setenv.sh
-RUN echo 'export KARMA_USER_HOME=/usr/local/tomcat/karma' >> $tomcat_bin/setenv.sh
+RUN echo 'export KARMA_USER_HOME=/opt/tomcat/karma' >> $tomcat_bin/setenv.sh
 
 # Configure SSH
 RUN if [ "$ENV" = "dev" ]; then echo "root:toor" | chpasswd; fi
@@ -67,12 +69,12 @@ RUN mkdir /data
 COPY data /data
 
 # Configure Marmotta
-RUN mkdir -p $marmotta_config_dir
-COPY karma_wfs_config.properties $marmotta_config_dir
-COPY karma_wfs_mappings.properties $marmotta_config_dir
-COPY karma_wfs_uris.properties $marmotta_config_dir
-RUN mkdir -p $marmotta_dir/WEB-INF/lib
-COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
+# RUN mkdir -p $marmotta_config_dir
+# COPY karma_wfs_config.properties $marmotta_config_dir
+# COPY karma_wfs_mappings.properties $marmotta_config_dir
+# COPY karma_wfs_uris.properties $marmotta_config_dir
+# RUN mkdir -p $marmotta_dir/WEB-INF/lib
+# COPY $jar/ldclient-provider-karma-wfs-3.3.0.jar $marmotta_dir/WEB-INF/lib
 #COPY karma_wfs_uris.properties $marmotta_dir/system-config.properties
 
 # TODO: Write intialization script to start catalina and move configs
