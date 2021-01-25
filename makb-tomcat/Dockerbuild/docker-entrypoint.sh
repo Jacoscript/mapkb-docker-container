@@ -56,10 +56,11 @@ if [ "$1" = 'catalina.sh' ]; then
 
 
 
-        mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
-        for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
-        mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
-        cat /jetty.out | grep "Started Jetty Server" > /dev/null
+        #mkdir /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples; \
+        for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /usr/local/tomcat/webapps/examples; done
+        #for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
+        #mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
+        #cat /jetty.out | grep "Started Jetty Server" > /dev/null
         while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
         rm -rf /makb_assets/rdf_data
         /makb_assets/scripts/convert.sh
