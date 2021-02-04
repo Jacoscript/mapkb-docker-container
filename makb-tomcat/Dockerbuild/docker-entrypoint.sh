@@ -8,11 +8,11 @@ if [ "$1" = 'catalina.sh' ]; then
     if [ -e /.first_run ]; then
         echo "Initializing MAKB, this will take about 60 seconds"
         $1 start
-        cat /opt/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+        cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
         while [ $? -ne 0 ]; do
             echo "Waiting for catalina..."
             sleep 1s
-            cat /opt/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
+            cat /usr/local/tomcat/logs/catalina.out | grep "Server startup" > /dev/null
         done
         
         # Configure GeoServer
@@ -52,7 +52,7 @@ if [ "$1" = 'catalina.sh' ]; then
             featuretype=`echo $i | sed "s/\..*//g"`
             $CURL -X PUT -H "Content-Type: application/json"  -d @/makb_assets/json_data/$i $REST/workspaces/usgsns/datastores/boundaries/featuretypes/$featuretype
         done
-        # If geoserver url is set, run the export script, oterhwise just use what is in the json data folder
+        # If geoserver url is set, run the export script, otherwise just use what is in the json data folder
 
 
 
@@ -61,7 +61,7 @@ if [ "$1" = 'catalina.sh' ]; then
         #for i in `ls /makb_assets/models/`; do mv /makb_assets/models/$i /Web-Karma/karma-web-services/web-services-rdf/src/main/webapp/examples/; done
         #mvn -Djetty.port=9999 -f /Web-Karma/karma-web-services/web-services-rdf/pom.xml jetty:run > /jetty.out 2>&1 &
         #cat /jetty.out | grep "Started Jetty Server" > /dev/null
-        while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
+        #while [ $? -ne 0 ]; do echo "Waiting for Jetty..."; sleep 1s; cat /jetty.out | grep "Started Jetty Server" > /dev/null; done
         rm -rf /makb_assets/rdf_data
         /makb_assets/scripts/convert.sh
         /makb_assets/scripts/import_marmotta.sh
@@ -103,7 +103,6 @@ if [ "$1" = 'catalina.sh' ]; then
                 git checkout $BRANCH 
             fi
         fi
-
     fi 
 
 fi
