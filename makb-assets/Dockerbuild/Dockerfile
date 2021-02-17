@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install maven p7zip-full default-jdk curl apache2 
     tar xvf /usr/local/tomcat.tar.gz -C /opt; \
     EXTRACT_DIR=`echo $TOMCAT_URL | grep -oP "apache-tomcat-\d+\.\d+\.\d+"`; \
     mv /opt/$EXTRACT_DIR /usr/local/tomcat; \
-    rm /usr/local/tomcat.tar.gz;
+    rm /usr/local/tomcat.tar.gz; \
+    mkdir ${webapps}/marmotta; \
+    mkdir ${webapps}/marmotta/import
 
 # COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
