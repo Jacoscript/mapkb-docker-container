@@ -2,11 +2,14 @@ FROM debian:stretch
 ENV tomcat_dir /opt/tomcat
 ENV tomcat_bin $tomcat_dir/bin
 ENV webapps /opt/tomcat/webapps
+COPY deployment_scripts /deployment_scripts
 
 # Install Maven
-RUN apt-get update && apt-get install maven p7zip-full default-jdk curl apache2 wget git unzip -y; \
+RUN apt-get update && apt-get install maven p7zip-full default-jre curl apache2 wget git unzip -y; \
     mkdir /root/.ssh; \ 
     echo 'StrictHostKeyChecking no' >> /root/.ssh/config; \
+    chmod -R a+x /deployment_scripts/*; \
+    /deployment_scripts/doiroot.sh; \
     TOMCAT_URL=`curl https://tomcat.apache.org/download-90.cgi | grep nofollow | grep -oP "https://.*apache-tomcat-(\d|\.)+\.tar\.gz"`; \
     curl $TOMCAT_URL > /opt/tomcat.tar.gz; \
     tar xvf /opt/tomcat.tar.gz -C /opt; \
