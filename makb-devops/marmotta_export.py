@@ -4,13 +4,17 @@ from context import Context
 from typing import Callable, List
 from io import BytesIO
 import pathlib
+import sys
 
+#LINUX: str = "linux"
+#MACOS: str = "darwin"
+WINDOWS: str = "win32"
 CONTEXT_URI_PLACEHOLDER: str = "%CONTEXT_URL%"
 EXPORT_URL: str = f"http://144.47.161.52:8080/marmotta/export/download?context={CONTEXT_URI_PLACEHOLDER}" \
                    "&format=text%2Fturtle"
 GET_CONTEXTS_URL: str = "http://144.47.161.52:8080/marmotta/context/list?labels=true"
 MARMOTTA_CONTEXT_ENCODING = "utf-8"
-EXPORT_FOLDER = "export\\"
+EXPORT_FOLDER = "export\\" if sys.platform == WINDOWS else "export/"
 EXT = ".ttl"
 
 
