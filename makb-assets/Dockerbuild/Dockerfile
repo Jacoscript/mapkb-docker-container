@@ -1,8 +1,8 @@
 FROM debian:stretch
-ENV tomcat_dir /opt/tomcat
+ENV tomcat_dir /usr/local/tomcat
 ENV tomcat_bin $tomcat_dir/bin
-ENV webapps /opt/tomcat/webapps
 COPY deployment_scripts /deployment_scripts
+ENV webapps /usr/local/tomcat/webapps
 
 # Install Maven
 RUN apt-get update && apt-get install maven p7zip-full default-jre curl apache2 wget git unzip -y; \
@@ -11,11 +11,13 @@ RUN apt-get update && apt-get install maven p7zip-full default-jre curl apache2 
     chmod -R a+x /deployment_scripts/*; \
     /deployment_scripts/doiroot.sh; \
     TOMCAT_URL=`curl https://tomcat.apache.org/download-90.cgi | grep nofollow | grep -oP "https://.*apache-tomcat-(\d|\.)+\.tar\.gz"`; \
-    curl $TOMCAT_URL > /opt/tomcat.tar.gz; \
-    tar xvf /opt/tomcat.tar.gz -C /opt; \
+    curl $TOMCAT_URL > /usr/local/tomcat.tar.gz; \
+    tar xvf /usr/local/tomcat.tar.gz -C /opt; \
     EXTRACT_DIR=`echo $TOMCAT_URL | grep -oP "apache-tomcat-\d+\.\d+\.\d+"`; \
-    mv /opt/$EXTRACT_DIR /opt/tomcat; \
-    rm /opt/tomcat.tar.gz;
+    mv /opt/$EXTRACT_DIR /usr/local/tomcat; \
+    rm /usr/local/tomcat.tar.gz; \
+    mkdir ${webapps}/marmotta; \
+    mkdir ${webapps}/marmotta/import
 
 # COPY .ssh/* /root/.ssh/
 # Copy over any deployment scripts
@@ -36,7 +38,7 @@ RUN chmod -R a+x /deployment_scripts; \
     rm geoserver.zip; \
     rm -rf geoserver/; \
     git clone  https://github.com/tpehle/karma4marmotta /karma4marmotta; \ 
-    mv /karma4marmotta/src/ui/usgs/ /opt/tomcat/webapps
+    mv /karma4marmotta/src/ui/usgs/ /usr/local/tomcat/webapps
 
 # Install OpenJDK 8 and Marmotta
 #RUN sh -c "cd /opt; wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; tar xvf OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz; rm OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz"
