@@ -76,6 +76,7 @@ def __create_export_folder():
 
 
 def main():
+    __create_export_folder()
     contexts: List[Context] = get_contexts()
     export_contexts(contexts, save_exported_context)
 
