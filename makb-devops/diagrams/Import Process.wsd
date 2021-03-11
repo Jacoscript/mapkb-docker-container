@@ -1,0 +1,46 @@
+@startuml "MapKB Data Import Process"
+skinparam monochrome true
+interface "SPARQL\nEndpoint" as sparql
+interface "Map Data" as tnm_data
+interface GML as gml
+interface R2RML as r2rml
+interface "Turtle/RDF" as rdf
+interface "Shapefiles" as shapefiles
+[Virtuoso Triplestore] as virtuoso
+[Geoserver] as geoserver
+[Karma as a Service] as kaas
+[Web Karma] as wk
+[GDAL] as gdal
+[The National Map] as tnm
+wk --[hidden]-- kaas
+gdal --[hidden]--tnm
+geoserver --[hidden]-- kaas
+kaas -( gml
+gml - geoserver
+r2rml . wk
+kaas -( r2rml
+kaas - rdf
+rdf )- virtuoso
+shapefiles - gdal
+geoserver -( shapefiles
+tnm - tnm_data
+tnm_data )- gdal
+virtuoso - sparql
+note right of wk
+    Web Karma is used 
+    separately to create R2RML
+    models that are used by
+    Karma as a Service.
+    Web Karma is not used during
+    the import process.
+end note
+note left of tnm
+    Process starts here 
+    if importing data from
+    the National Map.
+end note
+note top of shapefiles
+    If shapefiles already exist 
+    the import process starts here.
+end note
+@enduml
