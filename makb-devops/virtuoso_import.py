@@ -55,6 +55,7 @@ def create_query() -> str:
 def save_query(query: str) -> None:
     file = open(f"{IMPORT_FOLDER}import_{time()}.sql", 'w')
     file.write(query)
+    file.close()
 
 
 def main():
