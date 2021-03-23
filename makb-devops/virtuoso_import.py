@@ -7,6 +7,7 @@ import re
 from io import StringIO
 from time import time
 
+RUN_CHECKPOINT = False
 WINDOWS: str = "win32"
 EXPORT_FOLDER: str = "export\\" if sys.platform == WINDOWS else "export/"
 IMPORT_FOLDER: str = "import\\" if sys.platform == WINDOWS else "import/"
@@ -43,12 +44,13 @@ def create_graph_tuples(filenames: List[str]) -> None:
         graphs.append(__create_graph_iri(i))
 
 
-def create_query() -> str:
+def create_query(checkpoint: bool = True) -> str:
     query: StringIO = StringIO()
     for i in graphs:
         query.write(QUERY.replace(GRAPH_URI, i[1]))
     query.write(RDF_LOADER_RUN)
-    query.write(CHECKPOINT)
+    if checkpoint:
+        query.write(CHECKPOINT)
     return query.getvalue()
 
 
@@ -62,7 +64,7 @@ def main():
     create_import_folder()
     filenames = parse_filenames()
     create_graph_tuples(filenames)
-    query = create_query()
+    query = create_query(RUN_CHECKPOINT)
     save_query(query)
 
 
