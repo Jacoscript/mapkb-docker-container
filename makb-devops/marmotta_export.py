@@ -44,8 +44,11 @@ def export_context(context: Context, c: pycurl.Curl = None, buffer: BytesIO = No
 def export_contexts(contexts: List[Context],
                     save_func: Callable[[Context, str], None] = lambda a, b: None) -> None:
     for i in contexts:
-        body = export_context(i)
-        save_func(i, body)
+        try:
+            body = export_context(i)
+            save_func(i, body)
+        except:
+            print(f"Unable to export ${i.label}", file=sys.stderr)
 
 
 def save_exported_context(context: Context, body: str) -> None:
