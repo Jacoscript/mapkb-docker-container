@@ -3,6 +3,7 @@ import sys
 from typing import List
 from typing import Tuple
 WINDOWS: str = "win32"
+EXPORT_FOLDER: str = "export\\" if sys.platform == WINDOWS else "export/"
 IMPORT_FOLDER: str = "import\\" if sys.platform == WINDOWS else "import/"
 GRAPH_URI: str = "$GRAPH_URI"
 QUERY: str = f"ld_dir_all('/export', '${GRAPH_URI}.ttl', 'http://data.usgs.gov/${GRAPH_URI}.ttl');"
