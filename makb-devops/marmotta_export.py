@@ -14,7 +14,8 @@ EXPORT_URL: str = f"http://144.47.161.52:8080/marmotta/export/download?context={
                    "&format=text%2Fturtle"
 GET_CONTEXTS_URL: str = "http://144.47.161.52:8080/marmotta/context/list?labels=true"
 MARMOTTA_CONTEXT_ENCODING = "utf-8"
-EXPORT_FOLDER = "export\\" if sys.platform == WINDOWS else "export/"
+EXPORT_FOLDER_V1 = "export\\" if sys.platform == WINDOWS else "export/"
+EXPORT_FOLDER_V2 = "export\\v2\\" if sys.platform == WINDOWS else "export/v2/"
 EXT = ".ttl"
 
 
@@ -27,7 +28,11 @@ def get_contexts(c: pycurl.Curl = None, buffer: BytesIO = None) -> List[Context]
     body = __curl(GET_CONTEXTS_URL, buffer, c)
     context_dict = json.loads(body)
     for i in context_dict:
-        contexts.append(Context(**i))
+        context = Context(**i)
+        if Context.V2 in context.uri:
+            context.version = Context.V2
+        contexts.append(context)
+
     return contexts
 
 
@@ -52,7 +57,11 @@ def export_contexts(contexts: List[Context],
 
 
 def save_exported_context(context: Context, body: str) -> None:
-    filename: str = f"{EXPORT_FOLDER}{context.label}{EXT}"
+    filename: str
+    if context.version == Context.V1:
+        filename = f"{EXPORT_FOLDER_V1}{context.label}{EXT}"
+    else:
+        filename = f"{EXPORT_FOLDER_V2}{context.label}{EXT}"
     f = open(filename, "w")
     f.write(body)
     f.close()
@@ -73,13 +82,15 @@ def __curl(url: str, buffer: BytesIO = None, c: pycurl.Curl = None) -> bytes:
     return buffer.getvalue()
 
 
-def __create_export_folder():
-    path = pathlib.Path(EXPORT_FOLDER)
+def __create_export_folders():
+    path = pathlib.Path(EXPORT_FOLDER_V1)
+    path.mkdir(parents=True, exist_ok=True)
+    path = pathlib.Path(EXPORT_FOLDER_V2)
     path.mkdir(parents=True, exist_ok=True)
 
 
 def main():
-    __create_export_folder()
+    __create_export_folders()
     contexts: List[Context] = get_contexts()
     export_contexts(contexts, save_exported_context)
 

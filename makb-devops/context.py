@@ -1,4 +1,6 @@
 from sys import stderr
+
+
 class Context:
     label: str = "",
     uri: str = "",
@@ -8,7 +10,7 @@ class Context:
     V1: str = "v1"
     V2: str = "v2"
 
-    def __init__(self, label: str, uri: str, size: int, version: str):
+    def __init__(self, label: str, uri: str, size: int, version: str = V1):
         self.label = label
         self.uri = uri
         self.size = size
