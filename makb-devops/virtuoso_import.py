@@ -40,7 +40,7 @@ def parse_filenames() -> Tuple[List[str], List[str]]:
         files_v1[idx] = match.group(1)
 
     files_v2 = glob(GLOB_STRING_V2)
-    regex: str = f"{win_export_folder_v2}(.*?\\.ttl)" if sys.platform == WINDOWS else f"{EXPORT_FOLDER_V2}(.*?/.ttl)"
+    regex: str = f"{win_export_folder_v2}(.*?\\.ttl)" if sys.platform == WINDOWS else f"{EXPORT_FOLDER_V2}(.*?\\.ttl)"
     for idx, i in enumerate(files_v2):
         match = re.search(regex, i)
         files_v2[idx] = match.group(1)
