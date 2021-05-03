@@ -1,16 +1,19 @@
-# Steps for installing
-1.  Clone this repository on a USGS server running Docker
-2.  Change directory to the cloned repository
-3.  Run `$ ./deploy.sh`
-4.  Answer the questions at the prompts provided
-5.  Acquire a tasty beverage (this may take awhile....)
-6.  There is no step 6
-
-# After the container is installed
-1.  Navigate to http://\<server-ip>:8080/marmotta/core/admin/contexts.html, where server-ip is the IP address of your server
-2.  Acquire another tasty beverage while the RDF contexts import
-3.  Enjoy!
-
+# Introduction
+MapKB is a collection of geospatial data compiled from the USGS and presented using Semantic standards.
+# Quick Start
+1.  Install Docker or Docker Desktop on your computer.
+    - If you are running Windows also install WSL and your favorite Linux distribution.  WSL 2 is recommended.  Docker Desktop will need to be configured for WSL integration.
+    - If docker-compose is not provided with your Docker installation you will need to install it as well.
+2.  From within your favorite terminal application go to the folder to which you cloned this repository and run `./deploy.sh`
+    - Windows users will need to do this from within a WSL terminal.
+3.  In your favorite web browser go to http://localhost
+# Reinstalling MapKB
+* In your favorite terminal go to the folder where you cloned this repository and type `docker-compose down`
+* Run `./deploy.sh` again.
+# Advanced Installation Options
+MapKB offers several different installation options.
+# Technical Details
+# Accessing Graph Data
 <!-->
 1.  Create a support ticket with the IT Service Desk to install Docker if it is not already installed on your computer.
 2.  Clone this repository. __Do not change the folder name.  It must be stay makb-docker-container, otherwise it will break Docker__
