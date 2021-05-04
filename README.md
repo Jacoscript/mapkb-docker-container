@@ -7,14 +7,22 @@ MapKB is a collection of geospatial data compiled from the USGS and presented us
 2.  From within your favorite terminal application go to the folder to which you cloned this repository and run `./deploy.sh`
     - Windows users will need to do this from within a WSL terminal.
 3.  In your favorite web browser go to http://localhost
+## Department of the Interior Installation
+Users wishing to install MapKB on a computer that is running in the Department of interior should run `./deploy.sh --doi` as this will configure MapKB based on compliance rules set forth by the Department of the Interior and the Department of Homeland Security.  __This installation method will not work outside of the Department of Interior!__
 # Reinstalling MapKB
 * In your favorite terminal go to the folder where you cloned this repository and type `docker-compose down`
 * Run `./deploy.sh` again.
 # Advanced Installation Options
-MapKB offers several different installation options.
+MapKB offers several different installation options.  To access them run `./deploy.sh --advanced`, this will prompt the deployment script to ask you several questions about how you would like to configure your installation.
+## Deployment Modes
+MapKB offers two deployment modes.
+### Production Mode
+This mode automatically clones the master branch of the MapKB project.  If you wish to clone from a different branch specify the `--advanced` argument to `./deploy.sh`.  Production mode is the default deployment mode.
+### Development Mode
+Development mode is designed to configure MapKB to allow you to develop against it.  Development mode does not clone the MapKB project and expects you to do that.  To enable development mode specify the `--advanced` argument to `./deploy.sh`.  You will be asked to specify the fully qualifed pathname in Linux (or WSL - Windows paths will not work) to the folder where you cloned the MapKB project.  The MapKB project can be found at https://code.usgs.gov/makb/MapKB.  `./deploy.sh` will configure a volume mount inside the container that maps to the path you provide.  Alternatively, if you do not provide a path the script will configure the container to open port 2222 to allow for SSH connections.  The preferred method is to use the volume mount, as the SSH method breaks the implicit ephemerality of the Docker container. 
 # Technical Details
 # Accessing Graph Data
-<!-->
+<!--
 1.  Create a support ticket with the IT Service Desk to install Docker if it is not already installed on your computer.
 2.  Clone this repository. __Do not change the folder name.  It must be stay makb-docker-container, otherwise it will break Docker__
 3.  Copy the jar folder from `N:\CEGIS\Jacques\makb_container` to `./makb-tomcat/Dockerbuild`  
