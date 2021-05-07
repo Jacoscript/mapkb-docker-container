@@ -12,8 +12,8 @@ except ImportError:
     os.system('pip3 install docker')
     if platform == "win32":
         os.system(f"python {site.getsitepackages()[0]}\\Scripts\\pywin32_postinstall.py -install")
-    print("The Docker python module has been installed, continuing...", file=stderr)
-    import docker
+    print("The Docker python module has been installed, please run this script again.", file=stderr)
+    exit(1)
 
 args = None
 PRODUCTION = "production"
