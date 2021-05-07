@@ -9,7 +9,7 @@ import site
 try:
     import docker
 except ImportError:
-    os.system('pip install docker')
+    os.system('pip3 install docker')
     if platform == "win32":
         os.system(f"python {site.getsitepackages()[0]}\\Script\\pywin32_postinstall.py -install")
     print("The Docker python module has been installed, continuing...", file=stderr)
