@@ -42,13 +42,13 @@ def _parse_args():
 
 
 def main():
+    _parse_args()
     if not _check_for_docker():
         return
-    _parse_args()
     _check_makb_assets()
     if args.interactive:
         interactive_mode()
-    print(docker.DockerClient().version())
+    _build_makb_assets()
 
 
 def _argument_is_default(arg_check: Callable[[], bool]):
@@ -121,6 +121,12 @@ def _check_for_docker() -> bool:
         print("Please install Docker Compose", file=stderr)
         return False
     return True
+
+
+def _build_makb_assets():
+    if not makb_assets_built or args.rebuild_assets:
+        client = docker.DockerClient()
+        client.images.build("../makb-assets/Dockerbuild")
 
 
 if __name__ == "__main__":
