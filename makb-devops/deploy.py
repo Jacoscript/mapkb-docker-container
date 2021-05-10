@@ -42,7 +42,8 @@ def _parse_args():
 
 
 def main():
-    _check_for_docker()
+    if not _check_for_docker():
+        return
     _parse_args()
     _check_makb_assets()
     if args.interactive:
