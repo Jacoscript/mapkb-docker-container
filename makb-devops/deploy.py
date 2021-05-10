@@ -20,9 +20,11 @@ except ImportError:
 
 args = None
 incorrect_arguments = False
+makb_assets_built = False
 PRODUCTION = "production"
 DEVELOPMENT = "development"
 MASTER = "master"
+MAKB_ASSETS = "makb-assets:latest"
 
 
 def _parse_args():
@@ -41,6 +43,7 @@ def _parse_args():
 
 def main():
     _parse_args()
+    _check_makb_assets()
     if args.interactive:
         interactive_mode()
     print(docker.DockerClient().version())
@@ -65,7 +68,7 @@ def _set_interactive_string(is_valid: Callable[[str], bool] = lambda x: True) ->
         return response
     else:
         print("This response is not valid, please try again")
-        return
+        return _set_interactive_string(is_valid)
 
 
 def interactive_mode():
@@ -87,8 +90,21 @@ def interactive_mode():
                 print("Please enter the path to the MapKB source code, or leave blank to use an SSH tunnel.")
                 args.source_path = _set_interactive_string()
 
-def check_makb_assets:
+            if _argument_is_default(lambda: args.rebuild_assets is False) and makb_assets_built:
+                print("MAKB Assets has already been built, would you like to rebuild it?")
+                args.rebuild_assets = _set_interactive_bool()
 
+
+def _check_makb_assets() -> None:
+    global makb_assets_built
+    client = docker.DockerClient()
+    images = client.images.list()
+    for i in images:
+        for j in i.tags:
+            if j == MAKB_ASSETS:
+                makb_assets_built = True
+                return
+    makb_assets_built = False
 
 
 if __name__ == "__main__":
