@@ -42,6 +42,7 @@ def _parse_args():
 
 
 def main():
+    _check_for_docker()
     _parse_args()
     _check_makb_assets()
     if args.interactive:
@@ -105,6 +106,20 @@ def _check_makb_assets() -> None:
                 makb_assets_built = True
                 return
     makb_assets_built = False
+
+
+def _check_for_docker() -> bool:
+    result: int
+
+    result = os.system("docker")
+    if result != 0:
+        print("Please install Docker or Docker Desktop", file=stderr)
+        return False
+    result = os.system("docker-compose")
+    if result != 0:
+        print("Please install Docker Compose", file=stderr)
+        return False
+    return True
 
 
 if __name__ == "__main__":
