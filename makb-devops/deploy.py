@@ -76,7 +76,7 @@ def interactive_mode():
                   "(This includes servers, workstations and DOI issued laptops)")
             args.doi = _set_interactive_bool()
 
-            if _argument_is_default(lambda: args.developer_mode is False):
+            if _argument_is_default(lambda: args.deployment_mode is False):
                 print("Would you like to deploy MapKB in development mode?")
                 if _set_interactive_bool():
                     args.deployment_mode = DEVELOPMENT
@@ -86,6 +86,8 @@ def interactive_mode():
             if args.deployment_mode == DEVELOPMENT and _argument_is_default(lambda: args.source_path):
                 print("Please enter the path to the MapKB source code, or leave blank to use an SSH tunnel.")
                 args.source_path = _set_interactive_string()
+
+def check_makb_assets:
 
 
 
