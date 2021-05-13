@@ -42,10 +42,12 @@ def _parse_args():
 
 def main():
     _parse_args()
+    if not _check_for_docker():
+        return
     _check_makb_assets()
     if args.interactive:
         interactive_mode()
-    print(docker.DockerClient().version())
+    _build_makb_assets()
 
 
 def _argument_is_default(arg_check: Callable[[], bool]):
@@ -165,6 +167,19 @@ def _build_image(path: str, tag: str, buildargs: dict = None) -> None:
         buildargs = {}
     client = docker.DockerClient()
     client.images.build(path=path, tag=tag, buildargs=buildargs)
+
+def _check_for_docker() -> bool:
+    result: int
+
+    result = os.system("docker")
+    if result != 0:
+        print("Please install Docker or Docker Desktop", file=stderr)
+        return False
+    result = os.system("docker-compose")
+    if result != 0:
+        print("Please install Docker Compose", file=stderr)
+        return False
+    return True
 
 
 if __name__ == "__main__":
