@@ -8,7 +8,6 @@ from sys import stdin
 from sys import platform
 import site
 
-
 try:
     import docker
 except ImportError:
@@ -58,12 +57,12 @@ def _argument_is_default(arg_check: Callable[[], bool]):
 
 
 def _set_interactive_bool() -> bool:
-    response = stdin.read()
+    response = stdin.readline()
     return response == "yes" or response == "y" or response == "YES" or response == "Y"
 
 
 def _set_interactive_string(is_valid: Callable[[str], bool] = lambda x: True) -> str:
-    response = stdin.read()
+    response = stdin.readline()
     if is_valid(response):
         return response
     else:
@@ -79,20 +78,39 @@ def interactive_mode():
                   "(This includes servers, workstations and DOI issued laptops)")
             args.doi = _set_interactive_bool()
 
-            if _argument_is_default(lambda: args.deployment_mode is False):
+            if _argument_is_default(lambda: args.deployment_mode == PRODUCTION):
                 print("Would you like to deploy MapKB in development mode?")
                 if _set_interactive_bool():
                     args.deployment_mode = DEVELOPMENT
                 else:
                     args.deployment_mode = PRODUCTION
 
-            if args.deployment_mode == DEVELOPMENT and _argument_is_default(lambda: args.source_path):
+            if args.deployment_mode == DEVELOPMENT and _argument_is_default(lambda: args.source_path == ""):
                 print("Please enter the path to the MapKB source code, or leave blank to use an SSH tunnel.")
                 args.source_path = _set_interactive_string()
+            elif args.deployment_mode == PRODUCTION and _argument_is_default(lambda: args.branch == MASTER):
+                print("What branch of MapKB would you like to use?  (Leave blank for master)")
+                args.branch = _set_interactive_string()
 
             if _argument_is_default(lambda: args.rebuild_assets is False) and makb_assets_built:
                 print("MAKB Assets has already been built, would you like to rebuild it?")
                 args.rebuild_assets = _set_interactive_bool()
+        _print_interactive_settings()
+
+
+def _print_interactive_settings():
+    global incorrect_arguments
+    print("MapKB will be configured with the following settings.\n")
+    print(f"Deploying at DOI: {args.doi}")
+    print(f"Deployment mode: {args.deployment_mode}")
+    if args.deployment_mode == PRODUCTION:
+        print(f"Branch: {args.branch}")
+    else:
+        print(f"MapKB source code location: {args.source_path}")
+    print(f"Rebuild MapKB Assets image: {args.rebuild_assets}")
+
+    print("Are these settings correct?")
+    incorrect_arguments = not _set_interactive_bool()
 
 
 def _check_makb_assets() -> None:
@@ -105,6 +123,48 @@ def _check_makb_assets() -> None:
                 makb_assets_built = True
                 return
     makb_assets_built = False
+
+
+def _build_makb_tomcat() -> None:
+    path = "../makb-tomcat/Dockerbuild"
+    tag = "makb-tomcat"
+    if args.deployment_mode == DEVELOPMENT:
+        buildargs = {
+            "ENV": "dev"
+        }
+        _build_image(path, tag, buildargs)
+    else:
+        _build_image(path, tag)
+
+
+def _build_makb_assets() -> None:
+    _build_image("../makb-assets/Dockerbuild", MAKB_ASSETS)
+
+
+def _build_makb_virtuoso() -> None:
+    path = "../makb-virtuoso/Dockerbuild"
+    tag = "makb-virtuoso"
+    if args.doi:
+        buildargs = {
+            "DOI": "1"
+        }
+        _build_image(path, tag, buildargs)
+    else:
+        _build_image(path, tag)
+
+
+def _deploy_makb_virtuoso() -> None:
+    if args.source_path != "":
+        os.system("docker-compose ../../docker-compose.volume.yml")
+    else:
+        os.system("docker-compose ../../docker-compose.yml")
+
+
+def _build_image(path: str, tag: str, buildargs: dict = None) -> None:
+    if buildargs is None:
+        buildargs = {}
+    client = docker.DockerClient()
+    client.images.build(path=path, tag=tag, buildargs=buildargs)
 
 
 if __name__ == "__main__":
