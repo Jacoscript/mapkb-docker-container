@@ -8,6 +8,9 @@ if [ -e /.is_development ]; then service ssh start; fi
 
 # ---  Uncomment all these lines to reenable Tomcat ---
 #if [ "$1" = 'catalina.sh' ]; then
+    cd /usr/local/virtuoso-opensource/var/lib/virtuoso/db
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+    $VIRTUOSO_T &
     if [ -e /.first_run ]; then
 #        echo "Initializing MAKB, this will take about 60 seconds"
 #        $1 start
@@ -110,17 +113,13 @@ if [ -e /.is_development ]; then service ssh start; fi
         fi
 
         # Configure Virtuoso for the first time
-        7z x -o$MAKB_ASSETS/export $MAKB_ASSETS/export.7z
-        cd /usr/local/virtuoso-opensource/var/lib/virtuoso/db
+        7z x -o$MAKB_ASSETS $MAKB_ASSETS/export.7z
         ln -s $MAKB_ASSETS/export /export
         ln -s $MAKB_ASSETS/import /import
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-        $VIRTUOSO_T &
         $ISQL /import/import.sql
         $ISQL <(echo "checkpoint;")
-        $ISQL <(echo "shutdown();")
+        #$ISQL <(echo "shutdown();")
     fi 
 
 #fi
-$VIRTUOSO_T &
 exec "$@"

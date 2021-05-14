@@ -224,7 +224,7 @@ def _build_image(path: str, tag: str, buildargs: dict = None) -> None:
 def _check_for_docker() -> bool:
     result: int
 
-    result = os.system(_fmt_path("docker"))
+    result = os.system(_fmt_path("docker --version"))
     if result != 0:
         print("Please install Docker or Docker Desktop", file=stderr)
         return False
@@ -242,7 +242,13 @@ def _fmt_path(path: str) -> str:
 
 
 def _create_docker_client() -> docker.DockerClient:
-    return docker.from_env()
+    client = None
+    try:
+        client = docker.from_env()
+    except docker.errors.DockerException:
+        print("Please make sure Docker is running before you run this script.", file=stderr)
+        exit(1)
+    return client
 
 
 def _reset_all() -> None:
@@ -256,7 +262,18 @@ def _reset_all() -> None:
             i.remove()
 
     for i in tags:
-        client.images.remove(i)
+        print(f"Removing {i}")
+        try:
+            client.images.remove(i)
+        except docker.errors.ImageNotFound:
+            print(f"Image {i} was not found and may have already been deleted.", file=stderr)
+
+    print("Removing dangling images")
+    images = client.images.list(filters={"dangling": True})
+    for i in images:
+        print(f"Removing {i.id}")
+        client.images.remove(i.id)
+    os.system("docker builder prune -a -f")
 
 
 if __name__ == "__main__":

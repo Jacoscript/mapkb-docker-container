@@ -19,7 +19,8 @@ RUN chmod a+x /usr/local/bin/entrypoint.sh; \
     ./configure --enable-proj4=/usr/local/ --enable-geos=/usr/local/; \
     make; \
     make install
-RUN cat /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.ini | sed -re 's%(DirsAllowed.*)%\1, /export%' > /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.new; \
+RUN touch /.first_run; \
+    cat /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.ini | sed -re 's%(DirsAllowed.*)%\1, /export%' > /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.new; \
     mv /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.new /usr/local/virtuoso-opensource/var/lib/virtuoso/db/virtuoso.ini; \
     if [[ ! -z ${doi+x} ]]; then a2enmod ssl proxy proxy_http include; fi; \
     if [ -z ${doi+x} ]; then a2enmod proxy proxy_http include; fi; \
